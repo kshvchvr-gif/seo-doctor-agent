@@ -5,6 +5,7 @@ Orchestrates: GSC fetch -> GA4 fetch -> sitemap crawl -> embeddings (cached)
 """
 import os
 import json
+import time
 import hashlib
 import datetime
 import numpy as np
@@ -68,11 +69,16 @@ def get_embeddings_with_cache(pages: list) -> dict:
             to_embed.append(page)
 
     print(f"Embedding {len(to_embed)} pages ({len(pages) - len(to_embed)} served from cache)...")
-    for page in to_embed:
+    for i, page in enumerate(to_embed):
         content = f"{page.get('title','')}\n\n{page.get('text','')[:3000]}"
         vec = emb.embed_text(content)
         result[page["url"]] = vec
         cache[page["url"]] = {"hash": _content_hash(content), "vector": vec}
+        # save progress incrementally so a mid-run quota failure never loses work
+        if (i + 1) % 5 == 0 or i == len(to_embed) - 1:
+            _save_embed_cache(cache)
+        print(f"   embedded {i + 1}/{len(to_embed)}: {page['url']}")
+        time.sleep(1.5)  # pace below free-tier requests-per-minute limit
 
     _save_embed_cache(cache)
     return result

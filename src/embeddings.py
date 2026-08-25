@@ -15,8 +15,8 @@ EMBED_URL = (
 )
 
 
-def embed_text(text: str, retries: int = 3) -> np.ndarray:
-    """Returns a single embedding vector for the given text."""
+def embed_text(text: str, retries: int = 6) -> np.ndarray:
+    """Returns a single embedding vector. Handles free-tier rate limits patiently."""
     text = text[:8000]  # model input limit safety margin
     url = EMBED_URL.format(api_key=config.GEMINI_API_KEY)
     body = {"model": "models/gemini-embedding-001", "content": {"parts": [{"text": text}]}}
@@ -26,8 +26,11 @@ def embed_text(text: str, retries: int = 3) -> np.ndarray:
         if resp.status_code == 200:
             values = resp.json()["embedding"]["values"]
             return np.array(values, dtype=np.float32)
-        if resp.status_code == 429:  # rate limited, back off
-            time.sleep(2 ** attempt)
+        if resp.status_code == 429 or resp.status_code == 503:
+            # rate limited - back off politely and wait for the quota window
+            wait = min(90, 15 * (2 ** attempt))
+            print(f"   rate limited, waiting {wait}s...")
+            time.sleep(wait)
             continue
         resp.raise_for_status()
     raise RuntimeError(f"Embedding failed after {retries} retries: {resp.text}")
