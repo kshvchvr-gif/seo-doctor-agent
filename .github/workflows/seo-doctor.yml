@@ -1,0 +1,66 @@
+name: SEO Doctor Weekly
+
+on:
+  schedule:
+    # Every Sunday 3:00 AM UTC = ~8:30 AM IST
+    - cron: "0 3 * * 0"
+  workflow_dispatch: {}  # lets you trigger it manually from the Actions tab
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  run-seo-doctor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Restore embedding cache
+        uses: actions/cache@v4
+        with:
+          path: cache/
+          key: seo-embed-cache-${{ github.run_id }}
+          restore-keys: |
+            seo-embed-cache-
+
+      - name: Run SEO Doctor
+        env:
+          GSC_SA_KEY: ${{ secrets.GSC_SA_KEY }}
+          GSC_SITE_URL: ${{ secrets.GSC_SITE_URL }}
+          GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          SITEMAP_URL: ${{ secrets.SITEMAP_URL }}
+        run: python -m src.main
+
+      - name: Commit report only (cache is NOT committed, avoids repo bloat)
+        run: |
+          git config user.name "seo-doctor-bot"
+          git config user.email "actions@github.com"
+          git add reports/
+          git diff --quiet && git diff --staged --quiet || git commit -m "SEO Doctor report $(date +%F)"
+          git push
+
+      - name: Open GitHub Issue with the report
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const body = fs.readFileSync('reports/latest.md', 'utf8');
+            const today = new Date().toISOString().slice(0, 10);
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `SEO Doctor Report — ${today}`,
+              body: body.slice(0, 65000),
+              labels: ["seo-report"],
+            });
