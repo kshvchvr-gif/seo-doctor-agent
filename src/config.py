@@ -27,7 +27,9 @@ GSC_SITE_URL = os.environ.get("GSC_SITE_URL", "sc-domain:krishnbhakti.com")
 GA4_PROPERTY_ID = os.environ.get("GA4_PROPERTY_ID", "")
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
 # Stable, cost-efficient model for structured SEO recommendations. Override in Actions if desired.
-GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash-lite")
+GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.5-flash-lite")
+# If the configured model is deprecated/404, we transparently retry with these newer ones.
+GEMINI_FALLBACK_MODELS = ["gemini-3.5-flash-lite", "gemini-2.5-flash"]
 SITEMAP_URL = os.environ.get("SITEMAP_URL", "https://krishnbhakti.com/sitemap.xml")
 
 # how far back to pull data
