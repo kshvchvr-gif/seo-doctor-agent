@@ -50,17 +50,41 @@ jobs:
           git diff --quiet && git diff --staged --quiet || git commit -m "SEO Doctor report $(date +%F)"
           git push
 
-      - name: Open GitHub Issue with the report
+      - name: Publish rolling SEO Doctor issue (dedup, no weekly spam)
         uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
-            const body = fs.readFileSync('reports/latest.md', 'utf8');
-            const today = new Date().toISOString().slice(0, 10);
-            await github.rest.issues.create({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              title: `SEO Doctor Report — ${today}`,
-              body: body.slice(0, 65000),
-              labels: ["seo-report"],
-            });
+            const { owner, repo } = context.repo;
+            const LABEL = 'seo-report';
+            const ROLLING_TITLE = 'SEO Doctor Report — Latest';
+            const body = fs.readFileSync('reports/latest.md', 'utf8').slice(0, 65000);
+
+            // All currently-open report issues (normal issues only, not PRs).
+            const openIssues = (await github.paginate(github.rest.issues.listForRepo, {
+              owner, repo, state: 'open', labels: LABEL, per_page: 100,
+            })).filter(i => !i.pull_request);
+
+            const rolling = openIssues.find(i => i.title === ROLLING_TITLE);
+
+            if (rolling) {
+              await github.rest.issues.update({
+                owner, repo, issue_number: rolling.number, body,
+              });
+              console.log(`Updated rolling issue #${rolling.number}`);
+            } else {
+              const created = await github.rest.issues.create({
+                owner, repo, title: ROLLING_TITLE, body, labels: [LABEL],
+              });
+              console.log(`Created rolling issue #${created.data.number}`);
+            }
+
+            // Close any older, per-date report issues so only the rolling one stays open.
+            for (const issue of openIssues) {
+              if (issue.title === ROLLING_TITLE) continue;
+              await github.rest.issues.update({
+                owner, repo, issue_number: issue.number,
+                state: 'closed', state_reason: 'not_planned',
+              });
+              console.log(`Closed stale report issue #${issue.number} (${issue.title})`);
+            }

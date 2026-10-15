@@ -1,9 +1,28 @@
 """Builds the human-readable weekly SEO Doctor treatment report."""
 import datetime
+from collections import Counter, defaultdict
 
 
 def _fmt_pct(x):
     return f"{x:.2%}"
+
+
+def aggregate_technical_issues(pages):
+    """
+    Roll the per-page technical flags into a ranked, de-duplicated summary so the
+    report shows "META_LENGTH: 40 pages" instead of 145 raw one-line flags.
+    Returns list of (issue_type, pages_affected, [example_urls]).
+    """
+    counts = Counter()
+    examples = defaultdict(list)
+    for p in pages:
+        for issue in p.get("technical_issues", []):
+            base = issue.split(":", 1)[0]  # normalise "MISSING_IMAGE_ALT:3" -> "MISSING_IMAGE_ALT"
+            counts[base] += 1
+            if len(examples[base]) < 3:
+                examples[base].append(p.get("url", ""))
+    ranked = sorted(counts.items(), key=lambda kv: kv[1], reverse=True)
+    return [(name, n, examples[name]) for name, n in ranked]
 
 
 def _bullets(items, limit=8):
@@ -17,6 +36,7 @@ def build_report(priority_pages, content_gaps, link_suggestions, traffic_sources
     pages = pages or []
     overall_ctr = (total_clicks / total_impressions) if total_impressions else 0
     technical_issues = sum(len(p.get("technical_issues", [])) for p in pages)
+    tech_ranked = aggregate_technical_issues(pages)
     lines = [f"# 🩺 SEO Doctor Report — {today}", "", "## Executive Diagnosis"]
     lines += [
         f"- Total clicks (last 90d): **{total_clicks}**",
@@ -24,11 +44,18 @@ def build_report(priority_pages, content_gaps, link_suggestions, traffic_sources
         f"- Overall CTR: **{_fmt_pct(overall_ctr)}**",
         f"- Priority pages: **{len(priority_pages)}**",
         f"- Content-gap opportunities: **{len(content_gaps)}**",
-        f"- Technical issues found: **{technical_issues}**",
+        f"- Technical flags: **{technical_issues}** across **{len(tech_ranked)}** issue types",
         "",
-        "> **Important:** CTR curves are heuristics for prioritization, not Google's private ranking formula. Recommendations should be validated after publishing.",
+        "> **Important:** CTR curves are heuristics for ranking priorities, not Google's private algorithm. Recommendations should be validated before publishing.",
         "",
     ]
+
+    if tech_ranked:
+        lines += ["## 🧱 Technical Issues — grouped & ranked (fix the top of this list first)",
+                  "| Issue type | Pages affected | Example page |", "|---|---:|---|"]
+        for name, count, ex in tech_ranked:
+            lines.append(f"| {name} | {count} | {ex[0] if ex else ''} |")
+        lines.append("")
 
     if traffic_sources:
         lines += ["## Traffic Sources (last 28 days, GA4)", "| Source | Sessions | Users |", "|---|---:|---:|"]

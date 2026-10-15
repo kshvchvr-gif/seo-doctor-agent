@@ -27,7 +27,10 @@ prioritized report as a GitHub Issue.
 8. **Technical SEO checks** — title/meta length, H1 count, canonical, image alt
    text and thin-content flags.
 9. Writes `reports/YYYY-MM-DD.md` and commits it to the repo
-10. Opens a GitHub Issue with the report body (this is what you'll read on your phone)
+10. Updates a **single rolling GitHub Issue** ("SEO Doctor Report — Latest") and auto-closes
+    any older weekly issues, so you never get notification spam
+11. Technical flags are grouped by type and ranked by pages affected (e.g. "META_LENGTH: 40 pages")
+    instead of dumping hundreds of raw per-page flags
 
 ## One-time setup (~20 minutes)
 
