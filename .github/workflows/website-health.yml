@@ -1,0 +1,77 @@
+name: Website Health
+
+on:
+  schedule:
+    # Daily at 2:00 AM UTC (~7:30 AM IST)
+    - cron: "0 2 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run website health checks
+        id: health
+        run: |
+          set +e
+          python -m src.health
+          code=$?
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Commit health report
+        run: |
+          git config user.name "seo-doctor-bot"
+          git config user.email "actions@github.com"
+          git pull --rebase origin main || true
+          git add reports/health/
+          git diff --quiet && git diff --staged --quiet || git commit -m "Website health report $(date +%F) [skip ci]"
+          git push || echo "Nothing to push"
+
+      - name: Publish rolling health issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const { owner, repo } = context.repo;
+            const LABEL = 'site-health';
+            const ROLLING_TITLE = 'Website Health — Latest';
+            let body = fs.readFileSync('reports/health/latest.md', 'utf8').slice(0, 65000);
+            const critical = '${{ steps.health.outputs.exit_code }}' !== '0';
+            if (critical) body = '> 🔴 **CRITICAL issues detected this run.**\n\n' + body;
+
+            const openIssues = (await github.paginate(github.rest.issues.listForRepo, {
+              owner, repo, state: 'open', labels: LABEL, per_page: 100,
+            })).filter(i => !i.pull_request);
+
+            const rolling = openIssues.find(i => i.title === ROLLING_TITLE);
+            if (rolling) {
+              await github.rest.issues.update({ owner, repo, issue_number: rolling.number, body });
+            } else {
+              await github.rest.issues.create({ owner, repo, title: ROLLING_TITLE, body, labels: [LABEL] });
+            }
+            for (const issue of openIssues) {
+              if (issue.title === ROLLING_TITLE) continue;
+              await github.rest.issues.update({ owner, repo, issue_number: issue.number, state: 'closed', state_reason: 'not_planned' });
+            }
+
+      - name: Fail the run if critical (so GitHub alerts you)
+        if: steps.health.outputs.exit_code != '0'
+        run: |
+          echo "::error::Website health check found CRITICAL issues — see the 'Website Health — Latest' issue."
+          exit 1

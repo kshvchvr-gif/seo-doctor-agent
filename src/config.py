@@ -31,6 +31,7 @@ GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.5-flash-lite")
 # If the configured model is deprecated/404, we transparently retry with these newer ones.
 GEMINI_FALLBACK_MODELS = ["gemini-3.5-flash-lite", "gemini-2.5-flash"]
 SITEMAP_URL = os.environ.get("SITEMAP_URL", "https://krishnbhakti.com/sitemap.xml")
+SITE_URL = os.environ.get("SITE_URL", "https://krishnbhakti.com")
 
 # how far back to pull data
 GSC_LOOKBACK_DAYS = 90
