@@ -1,0 +1,32 @@
+{
+  "fixes": [
+    {
+      "url": "https://krishnbhakti.com/hindi-blogs/gita-shloka-6-10-yogi-kaise-kare-abhyas",
+      "file": "hindi-blogs/gita-shloka-6-10-yogi-kaise-kare-abhyas.html",
+      "image_alt": "Bhagavad Gita 6.10 in Hindi focusing on meditation preparation and yogi practice",
+      "reason": "AI treatment (gemini:gemini-3.5-flash-lite)"
+    },
+    {
+      "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-17-balance-in-eating-rest-work-sleep-ends-all-suffering",
+      "file": "english-blogs/bhagavad-gita-6-17-balance-in-eating-rest-work-sleep-ends-all-suffering.html",
+      "title": "Bhagavad Gita 6.17: Balance in Eating, Rest & Work Ends Suffering",
+      "meta_description": "Discover Bhagavad Gita 6.17 meaning on balance in food, sleep, work and rest. Krishna's formula for health, peace, and ending all suffering.",
+      "image_alt": "Bhagavad Gita 6.17 verse illustration showing balance in eating, rest, work, and sleep to end suffering.",
+      "reason": "AI treatment (gemini:gemini-3.5-flash-lite)"
+    },
+    {
+      "url": "https://krishnbhakti.com/gita-gpt",
+      "file": "gita-gpt.html",
+      "title": "Gita GPT — Ask Questions & Get Bhagavad Gita Answers",
+      "meta_description": "Use Gita GPT free online tool. Ask life questions in Hindi or English and get wisdom-based answers directly from Bhagavad Gita shlokas.",
+      "image_alt": "Gita GPT AI tool interface for Bhagavad Gita answers in Hindi and English",
+      "reason": "AI treatment (gemini:gemini-3.5-flash-lite)"
+    },
+    {
+      "url": "https://krishnbhakti.com/hindi-blogs/gita-shloka-5-13-nau-darwaze-ek-raja-kya-tum-apne-hi-ghar-mein-gulam-ho",
+      "file": "hindi-blogs/gita-shloka-5-13-nau-darwaze-ek-raja-kya-tum-apne-hi-ghar-mein-gulam-ho.html",
+      "ensure_meta": true,
+      "reason": "deterministic: derive missing meta description from page content"
+    }
+  ]
+}
