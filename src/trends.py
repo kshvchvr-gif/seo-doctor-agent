@@ -122,6 +122,30 @@ def _is_rising(d, prev_row):
     return imp_gain or clk_gain or pos_better
 
 
+def _direction(cur_row, prev_row, d):
+    """
+    Single, mutually-exclusive direction for a page/query: 'declining',
+    'rising', or None. Clicks decide the direction; impressions then position
+    break ties. This stops the same item being listed as both declining and
+    rising (e.g. position improves but clicks fall = a real loss).
+    """
+    if cur_row is None and prev_row is not None:
+        return "declining"  # vanished from the data entirely
+    if prev_row is None:
+        # brand-new key: only notable if it already earns meaningful visibility
+        if cur_row and (cur_row.get("impressions", 0) >= MIN_IMPRESSION_DROP_ABS
+                        or cur_row.get("clicks", 0) >= MIN_CLICKS_DROP_ABS):
+            return "rising"
+        return None
+    if not (_is_declining(d, prev_row) or _is_rising(d, prev_row)):
+        return None
+    if d["clicks_delta"] != 0:
+        return "rising" if d["clicks_delta"] > 0 else "declining"
+    if d["impressions_delta"] != 0:
+        return "rising" if d["impressions_delta"] > 0 else "declining"
+    return "rising" if (d["position_delta"] is not None and d["position_delta"] < 0) else "declining"
+
+
 def _classify_cause(cur_row, prev_row, d):
     """
     Deterministic cause heuristic + evidence + next action, derived only from
@@ -204,16 +228,18 @@ def _top_declining_queries_for_page(query_rows_cur, query_rows_prev, page_url, l
     return out[:limit]
 
 
-def _rank_movement(cur_by, prev_by, classifier, top_n):
-    """Shared declining/rising ranking over a keyed map of rows."""
+def _rank_movement(cur_by, prev_by, direction, top_n):
+    """Shared ranking over a keyed map of rows, filtered to one direction."""
     out = []
     for key in set(cur_by) | set(prev_by):
         cur_row, prev_row = cur_by.get(key), prev_by.get(key)
         d = _delta(cur_row, prev_row)
-        if classifier(d, prev_row):
+        if _direction(cur_row, prev_row, d) == direction:
             out.append({"key": key, "cur": cur_row, "prev": prev_row, **d})
-    # biggest absolute losses/gains first; clicks matter most, then impressions
-    out.sort(key=lambda x: (x["clicks_delta"], x["impressions_delta"]))
+    # biggest absolute moves first; clicks matter most, then impressions.
+    # declining -> most negative first; rising -> most positive first.
+    out.sort(key=lambda x: (x["clicks_delta"], x["impressions_delta"]),
+             reverse=(direction == "rising"))
     return out[:top_n]
 
 
@@ -260,10 +286,10 @@ def analyze():
 
         declining_pages = _annotate_pages(
             _rank_movement(_by(pages_cur, "page"), _by(pages_prev, "page"),
-                           _is_declining, TOP_N_DECLINING),
+                           "declining", TOP_N_DECLINING),
             queries_cur, queries_prev)
         rising_pages = _rank_movement(
-            _by(pages_cur, "page"), _by(pages_prev, "page"), _is_rising, TOP_N_RISING)
+            _by(pages_cur, "page"), _by(pages_prev, "page"), "rising", TOP_N_RISING)
 
         # query-level: aggregate across pages by query text
         def _agg_queries(rows):
@@ -292,8 +318,8 @@ def analyze():
         _fill_pos(q_cur, queries_cur)
         _fill_pos(q_prev, queries_prev)
 
-        declining_queries = _rank_movement(q_cur, q_prev, _is_declining, TOP_N_DECLINING)
-        rising_queries = _rank_movement(q_cur, q_prev, _is_rising, TOP_N_RISING)
+        declining_queries = _rank_movement(q_cur, q_prev, "declining", TOP_N_DECLINING)
+        rising_queries = _rank_movement(q_cur, q_prev, "rising", TOP_N_RISING)
 
         windows.append({
             "label": f"{days}d",
