@@ -89,11 +89,11 @@
 
 | Page | Clicks Δ | Impressions Δ | Position Δ |
 |---|---:|---:|---:|
-| https://krishnbhakti.com/english-blogs/bhagavad-gita-6-13-how-to-hold-your-body-in-meditation-krishnas-exact-posture | -3 | +69 | -2.0 |
-| https://krishnbhakti.com/ | -2 | +17 | -5.9 |
-| https://krishnbhakti.com/english-blogs/bhagavad-gita-7-24-god-formless-or-personal | -1 | -51 | -2.7 |
-| https://krishnbhakti.com/english-blogs/bhagavad-gita-6-26-how-to-calm-the-wandering-mind | -1 | -21 | -22.8 |
-| https://krishnbhakti.com/english-blogs/bhagavad-gita-7-14-how-to-overcome-maya | -1 | -10 | -6.0 |
+| https://krishnbhakti.com/english-blogs/bhagavad-gita-6-17-balance-in-eating-rest-work-sleep-ends-all-suffering | +3 | -13 | -0.9 |
+| https://krishnbhakti.com/english-blogs/bhagavad-gita-chapter-2-verse-7-english | +2 | +28 | n/a |
+| https://krishnbhakti.com/english-blogs/gita-chapter-2-verse-4-english | +2 | +17 | n/a |
+| https://krishnbhakti.com/hindi-blogs/bhagavad-gita-7-24-nirakar-sakar-bramh | +1 | +198 | -0.4 |
+| https://krishnbhakti.com/hindi-blogs/bhagavad-gita-chapter-6-verse-34-hindi | +1 | +66 | -0.2 |
 
 **Declining queries:**
 
@@ -103,7 +103,7 @@
 | `man ko shant kaise kare bhagwat geeta` | +0 | -49 |
 | `अभ्यास के दौरान मन बार-बार भटकता है। इसका क्या अर्थ है? व्यक्ति ध्यान के योग्य नहीं है अभ्यास असफल हो गया मन का भटकना सामान्य है और उसे वापस लाना अभ्यास का हिस्सा है तुरंत अभ्यास बंद करना चाहिए` | +0 | -14 |
 | `yukta ahara vihara` | +0 | -8 |
-| `bhagavad gita 6.14` | +0 | -6 |
+| `bhagwan sakar hai ya nirakar` | +0 | -6 |
 
 ### Window: last 7d vs previous 7d
 
@@ -155,11 +155,11 @@
 
 | Page | Clicks Δ | Impressions Δ | Position Δ |
 |---|---:|---:|---:|
-| https://krishnbhakti.com/hindi-blogs/gita-shloka-6-13-body-posture-dhyan-mein | -1 | +10 | +0.8 |
-| https://krishnbhakti.com/english-blogs/bhagavad-gita-chapter-2-verse-11-english | -1 | +24 | -4.7 |
-| https://krishnbhakti.com/english-blogs/bhagavad-gita-chapter-2-verse-3-english | +0 | -22 | -3.7 |
-| https://krishnbhakti.com/english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins | +0 | -17 | -2.4 |
-| https://krishnbhakti.com/hindi-blogs/bhagavad-gita-2-5-arjun-dilemma-hindi | +0 | -12 | -2.8 |
+| https://krishnbhakti.com/hindi-blogs/gita-shloka-6-26-man-bhage-to-wapas-lao | +1 | +4 | -2.0 |
+| https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-38-mind-distraction | +1 | +1 | +0.7 |
+| https://krishnbhakti.com/english-blogs/bhagavad-gita-6-5-uplift-yourself-before-your-mind-destroys-you | +1 | -2 | -2.8 |
+| https://krishnbhakti.com/hindi-blogs/bhagavad-gita-2-12-atma-ki-amarta | +0 | +18 | +2.0 |
+| https://krishnbhakti.com/hindi-blogs/bhagavad-gita-chapter-6-verse-34-hindi | +0 | +9 | +0.0 |
 
 **Declining queries:**
 
@@ -167,6 +167,9 @@
 |---|---:|---:|
 | `निराकार ब्रह्म` | -1 | -2 |
 | `bhagavad gita 5.27` | +0 | -6 |
+| `bg 6.12` | +0 | -4 |
+| `bhagavad gita 2.3` | +0 | -3 |
+| `head tilted back during meditation` | +0 | -3 |
 
 ## 🩺 Treatment Plan — Fix These First
 
@@ -179,25 +182,27 @@
 
 #### Exact Prescription
 - **Primary keyword:** man ko shant kaise kare bhagwat geeta
-- **Secondary keywords:** bhagavad gita 6 26, मन को शांत कैसे करें भगवद्गीता
-- **Recommended title:** Man Ko Shant Kaise Kare Bhagwat Geeta | Gita 6.26 Hindi
-- **Recommended meta description:** Bhagavad Gita 6.26 me man ko shant karne ka kya tarika bataya gaya hai? Jaaniye chanchal man ko kaise control karein aur aatmik shanti prapt karein.
-- **Recommended H1:** Bhagavad Gita 6.26: Man Ko Shant Kaise Kare
+- **Secondary keywords:** bhagavad gita 6 26, man ki shanti ke upay, gita shlok for mental peace, mind control in bhagavad gita hindi
+- **Recommended title:** Bhagavad Gita 6.26: Man Ko Shant Kaise Kare | Geeta Shlok
+- **Recommended meta description:** Bhagavad Gita 6.26 ke anusaar man ko shant kaise karein. Jaaniye Krishna dwara bataye gaye man par niyantran pane ke asardar tarike aur shlok.
+- **Recommended H1:** Bhagavad Gita 6.26: Man Ko Shant Kaise Karein
 - **Priority:** High
 - **Content changes:**
-  - Add a direct translation and explanation of Bhagavad Gita Verse 6.26 in simple Hindi.
-  - Structure the content to directly answer 'man ko shant kaise kare' using the teachings of Bhagavad Gita.
-  - Include practical steps derived from the verse on how to bring the restless mind back under the control of the Self.
+  - Add a dedicated H2 section explaining Bhagavad Gita Chapter 6 Verse 26 in simple Hindi.
+  - Include practical steps derived from the shlok on how to bring a wandering mind back under control.
+  - Address the exact search query intent directly in the introduction paragraph.
 - **FAQ questions:**
-  - Bhagavad Gita ke 6.26 shlok mein man ko shant karne ke liye kya kaha gaya hai?
-  - Chanchal man ko vash mein kaise karein?
+  - Bhagavad Gita 6.26 mein man ko shant karne ke liye kya bataya gaya hai?
+  - Chanchal man ko niyantran mein kaise layein?
+  - Geeta ke anusar man ki asanthi ka kya karan hai?
 - **Schema:** FAQPage and Article Schema
 - **Image filename:** bhagavad-gita-6-26-man-ko-shant-kaise-kare.jpg
-- **Image alt text:** Bhagavad Gita 6.26 verse explaining how to calm the restless mind
+- **Image alt text:** Bhagavad Gita 6.26 verse illustration depicting mind control and inner peace in Hindi
 - **Internal links to add:**
-  - [Bhagavad Gita quotes on peace](/hindi-blogs/bhagavad-gita-quotes-on-peace)
-- **Why this treatment:** Generated by Gemini (gemini-3.5-flash-lite). The page currently has no title, meta description, or H1, resulting in a 0% CTR despite ranking on page 1 (position 5.8) for 'man ko shant kaise kare bhagwat geeta'. Adding metadata directly targets this exact query to capture lost clicks.
-- **Caution:** Do not over-optimize or keyword-stuff the H1 and title; keep it natural and aligned with the actual Bhagavad Gita verse 6.26 context.
+  - [Bhagavad Gita quotes in Hindi](/hindi-blogs/bhagavad-gita-quotes-in-hindi)
+  - [Lord Krishna teachings on peace](/hindi-blogs/lord-krishna-teachings-on-peace)
+- **Why this treatment:** Generated by Gemini (gemini-3.5-flash-lite). The page currently has 0% CTR despite ranking on position 5.8 for 'man ko shant kaise kare bhagwat geeta'. Adding a precise title, meta description, and H1 will fix the snippet loss and capture relevant search traffic.
+- **Caution:** Do not overstuff keywords in the H1 or title. Keep the tone respectful, spiritual, and aligned with Krishna bhakti.
 
 ### 2. [https://krishnbhakti.com/english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you](https://krishnbhakti.com/english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you)
 - **Diagnosis:** RANK_LOW_AND_WEAK, SNIPPET_LOSS
@@ -210,26 +215,26 @@
 
 #### Exact Prescription
 - **Primary keyword:** bhagavad gita 6.6
-- **Secondary keywords:** atmana sargo jitah meaning in hindi, bhagavad gita 6.6 meaning, mind control bhagavad gita
-- **Recommended title:** Bhagavad Gita 6.6: The Mind That Saves You or Destroys You
-- **Recommended meta description:** Discover Bhagavad Gita 6.6 meaning on mind control. Learn how a conquered mind becomes your greatest friend while an uncontrolled mind acts like an enemy.
+- **Secondary keywords:** atmana sargo jitah meaning in hindi, bhagavad gita 6.6 meaning, how to control the mind gita
+- **Recommended title:** Bhagavad Gita 6.6: The Mind That Saves You vs Controls You
+- **Recommended meta description:** Explore Bhagavad Gita 6.6 meaning on how a controlled mind becomes your best friend and an uncontrolled mind becomes your enemy. Read clear insights.
 - **Recommended H1:** Bhagavad Gita 6.6 — The Mind You Control Becomes the Mind That Saves You
-- **Priority:** Medium
+- **Priority:** High
 - **Content changes:**
-  - Add a dedicated, clear H2 or H3 section explicitly answering 'Atmana Sargo Jitah Meaning in Hindi' to directly capture search intent and improve snippet eligibility.
-  - Ensure clear subheadings addressing how to practically transition from an uncontrolled mind to a disciplined mind using commentary from Swami Mukundananda and Srila Prabhupada.
+  - Add a dedicated H2 or H3 subheading explicitly addressing 'Atmana Sargo Jitah Meaning in Hindi' to capture the exact user query receiving impressions.
+  - Ensure clear Sanskrit verse breakdown and word-by-word contextual meaning for bandhur atmatmanas tasya yenatmaivatmana jitah.
 - **FAQ questions:**
-  - {'question': 'What is the exact meaning of Bhagavad Gita 6.6?', 'answer': 'Bhagavad Gita 6.6 explains that for someone who has conquered the mind, it is the best of friends. For one who has failed to control it, the mind remains the greatest enemy.'}
-  - {'question': 'What is the meaning of Atmana Sargo Jitah in Hindi?', 'answer': 'Atmana Sargo Jitah refers to conquering or subduing the mind and self, transforming the inner nature so that the mind acts as an ally rather than an adversary.'}
-  - {'question': 'How can I control a restless mind according to the Bhagavad Gita?', 'answer': 'Control begins with conscious observation of thoughts, pausing before reacting to impulses, and anchoring the mind in higher spiritual wisdom rather than temporary distractions.'}
-- **Schema:** BlogPosting and FAQPage schema
-- **Image filename:** bhagavad-gita-6-6-mind-control-friend-enemy.jpg
-- **Image alt text:** Bhagavad Gita 6.6 verse illustration on controlling the mind as friend or enemy
+  - What is the exact meaning of Bhagavad Gita 6.6?
+  - What is the meaning of Atmana Sargo Jitah in Hindi?
+  - How does Krishna suggest we conquer the restless mind in Gita 6.6?
+- **Schema:** Article and FAQPage Schema
+- **Image filename:** bhagavad-gita-6-6-mind-friend-or-enemy.jpg
+- **Image alt text:** Bhagavad Gita 6.6 verse illustration showing the mind as friend or enemy
 - **Internal links to add:**
-  - [how to control the restless mind](https://krishnbhakti.com/english-blogs/how-to-control-the-restless-mind-gita-6-35)
-  - [मन की चंचलता का समाधान](https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-36-man-ki-chanchalta-ka-samadhan)
-- **Why this treatment:** Generated by Gemini (gemini-3.5-flash-lite). Capturing exact phrase queries for 'atmana sargo jitah meaning in hindi' and 'bhagavad gita 6.6' by adding direct textual clarity and targeting featured snippets.
-- **Caution:** Do not alter the devotional tone or remove established commentary from Swami Mukundananda and Srila Prabhupada.
+  - [how to control a restless mind according to Gita 6.35](https://krishnbhakti.com/english-blogs/how-to-control-the-restless-mind-gita-6-35)
+  - [मन कींचंचलता का समाधान (Gita 6.36)](https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-36-man-ki-chanchalta-ka-samadhan)
+- **Why this treatment:** Generated by Gemini (gemini-3.5-flash-lite). Targeting high-impression queries like 'atmana sargo jitah meaning in hindi' and 'bhagavad gita 6.6' directly within content headings and metadata will capture missed clicks and improve position CTR.
+- **Caution:** Do not overload keyword variations unnaturally. Keep the Hindi translation section natural and contextually tied to verse 6.6.
 
 ### 3. [https://krishnbhakti.com/hindi-blogs/gita-shloka-6-10-yogi-kaise-kare-abhyas](https://krishnbhakti.com/hindi-blogs/gita-shloka-6-10-yogi-kaise-kare-abhyas)
 - **Diagnosis:** SNIPPET_LOSS
@@ -244,21 +249,23 @@
 - **Recommended title:** Bhagavad Gita 6.10 in Hindi — ध्यान करने की 5 ज़रूरी बातें
 - **Recommended meta description:** भगवद गीता 6.10 in hindi में जानिए ध्यान करने की 5 ज़रूरी बातें। श्रीकृष्ण के अनुसार योगी कैसे करे अभ्यास, एकांत और शांति पाने की सटीक विधि।
 - **Recommended H1:** भगवद गीता 6.10 — ध्यान करना चाहते हो? पहले यह पाँच चीज़ें जान लो
-- **Priority:** Medium
+- **Priority:** High
 - **Content changes:**
-  - Add a direct, concise definition paragraph immediately below the H1 for better Google featured snippet eligibility.
-  - Structure the 5 key points (रहसि, एकाकी, यतचित्तात्मा, निराशी, अपरिग्रह) using clear HTML heading tags or bullet points with bold prefixes.
-  - Ensure the exact keyword phrase 'bhagavad gita 6.10 in hindi' appears naturally within the first 100 words of the body text.
+  - Add explicit direct answer paragraphs immediately below the H1 to target featured snippets for 'bhagavad gita 6.10 in hindi'.
+  - Format the 5 key requirements (रहसि, एकाकी, यतचित्तात्मा, निराशी, अपरिग्रह) into a structured HTML list (ul/li) with bolded terms to improve snippet extraction.
+  - Ensure expert commentary from Swami Ramsukhdas, Srila Prabhupada, and Swami Mukundananda are structured clearly with subheadings.
 - **FAQ questions:**
-  - {'question': 'गृहस्थ जीवन में एकांत कैसे मिलेगा जब घर में हमेशा शोर रहता है?', 'answer': 'स्वामी मुकुन्दानंद जी के अनुसार एकांत बाहर नहीं, अंदर बनता है। सुबह जल्दी उठकर या रात को सोने से पहले 10-15 मिनट का समय निकालें जब आप सच में अकेले हों।'}
-  - {'question': 'सततम् यानी हर पल ध्यान क्या गृहस्थों के लिए सम्भव है?', 'answer': 'स्वामी रामसुखदास जी के अनुसार शुरुआत में यह कठिन लग सकता है, पर अभ्यास के साथ मन की एक धारा लगातार परमात्मा की तरफ बहने लगती है।'}
-- **Schema:** Article
-- **Image filename:** bhagavad-gita-6-10-hindi-meditation.jpg
-- **Image alt text:** Bhagavad Gita 6.10 in Hindi - Yogi meditation posture and preparation
+  - गृहस्थ जीवन में एकांत कैसे मिलेगा जब घर में हमेशा शोर रहता है?
+  - सततम् यानी हर पल ध्यान करना क्या संभव है?
+  - ध्यान करते समय मन में आने वाली अपेक्षाओं (Expectations) को कैसे रोकें?
+  - अपरिग्रह का ध्यान साधना में क्या महत्व है?
+- **Schema:** FAQPage and Article Schema
+- **Image filename:** bhagavad-gita-6-10-hindi-meditation-practice.jpg
+- **Image alt text:** Bhagavad Gita 6.10 in Hindi explaining meditation practice in solitude
 - **Internal links to add:**
   - [Bhagavad Gita 6.12 Meditation Guide](https://krishnbhakti.com/english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins)
-- **Why this treatment:** Generated by Gemini (gemini-3.5-flash-lite). The page ranks at position 9 for its exact target query with 0 CTR and snippet loss. Restructuring the introduction and formatting key concepts with clear markup will help capture the featured snippet and improve visibility.
-- **Caution:** Do not alter the spiritual tone or commentary from Swami Ramsukhdas and Srila Prabhupada. Preserve the Hindi Devanagari script integrity.
+- **Why this treatment:** Generated by Gemini (gemini-3.5-flash-lite). The page currently ranks at position 9 for the target query but suffers from snippet loss. Structuring the definitions of the 5 rules clearly into lists will help capture the featured snippet and improve CTR.
+- **Caution:** Do not alter the spiritual tone or remove commentaries from Swami Ramsukhdas, Srila Prabhupada, or Swami Mukundananda.
 
 ### 4. [https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-38-mind-distraction](https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-38-mind-distraction)
 - **Diagnosis:** SNIPPET_LOSS
@@ -269,26 +276,25 @@
 
 #### Exact Prescription
 - **Primary keyword:** भगवद गीता 6.38
-- **Secondary keywords:** ध्यान में मन भटकना, भगवद गीता अध्याय 6 श्लोक 38, योगभ्रष्ट का अर्थ, ध्यान में असफलता
+- **Secondary keywords:** ध्यान में मन भटकना, योगभ्रष्ट, भगवद गीता अध्याय 6 श्लोक 38, मन का भटकना सामान्य है
 - **Recommended title:** भगवद गीता 6.38: क्या ध्यान में मन भटकना असफलता है?
-- **Recommended meta description:** क्या ध्यान में मन भटकना असफलता है? भगवद गीता 6.38 के माध्यम से जानें कि कृष्ण अर्जुन के इस डर को कैसे दूर करते हैं और मन को वापस लाना क्यों अभ्यास का हिस्सा है।
-- **Recommended H1:** भगवद गीता 6.38: क्या ध्यान में मन भटकना असफलता है?
+- **Recommended meta description:** क्या ध्यान में मन भटकना असफलता है? भगवद गीता 6.38 में जानिए कृष्ण का अर्जुन को दिया गया वह आश्वासन जो आधुनिक तनाव और भटकते मन को राहत देता है।
+- **Recommended H1:** क्या ध्यान में भटकना मतलब 'असफलता' है? कृष्ण का जवाब आपको सुकून देगा
 - **Priority:** High
 - **Content changes:**
-  - Add a direct answer box immediately below the introduction addressing the Search Console query: 'अभ्यास के दौरान मन बार-बार भटकता है। इसका क्या अर्थ है? मन का भटकना सामान्य है और उसे वापस लाना अभ्यास का हिस्सा है, यह कोई असफलता नहीं है।'
-  - Incorporate clearer subheadings matching user intent around meditation distraction and Krishna's perspective in Gita 6.38.
-  - Ensure the transition from the content excerpt to the commentaries (Swami Ramsukhdas, Srila Prabhupada, Swami Mukundananda) flows logically without abrupt cutoffs.
+  - Add a direct definition section addressing the Search Console query pattern: 'अभ्यास के दौरान मन बार-बार भटकता है' directly under the H1 to capture the featured snippet lost.
+  - Structure the specific query match clearly in a dedicated paragraph explaining that mind wandering is a normal part of practice and bringing it back is the actual discipline.
 - **FAQ questions:**
-  - {'question': 'अभ्यास के दौरान मन बार-बार भटकता है, इसका क्या अर्थ है?', 'answer': 'मन का भटकना पूरी तरह सामान्य है। इसका अर्थ यह नहीं है कि आप ध्यान के योग्य नहीं हैं या आपका अभ्यास असफल हो गया है। मन को बार-बार वापस लाना ही ध्यान के अभ्यास का मुख्य हिस्सा है।'}
-  - {'question': 'भगवद गीता 6.38 में अर्जुन का मुख्य डर क्या था?', 'answer': 'अर्जुन को डर था कि योग के मार्ग पर चलने वाला व्यक्ति यदि पूर्णता तक पहुँचने से पहले विचलित हो जाए, तो क्या वह छिन्न-भिन्न बादलों की तरह नष्ट हो जाता है और दोनों तरफ से चूक जाता है।'}
+  - {'question': 'अभ्यास के दौरान मन बार-बार भटकता है, इसका क्या अर्थ है?', 'answer': 'भगवद गीता 6.38 के अनुसार, ध्यान या अभ्यास के दौरान मन का भटकना पूरी तरह सामान्य है। इसका यह अर्थ बिल्कुल नहीं है कि व्यक्ति ध्यान के योग्य नहीं है या उसका अभ्यास असफल हो गया है। मन को बार-बार वापस अपने लक्ष्य पर लाना ही साधना का असली हिस्सा है।'}
+  - {'question': 'क्या ध्यान में असफलता मिलने पर अभ्यास तुरंत बंद कर देना चाहिए?', 'answer': "नहीं, ध्यान या साधना में कठिनाई आने पर अभ्यास कभी भी तुरंत बंद नहीं करना चाहिए। कृष्ण के अनुसार आध्यात्मिक मार्ग में किया गया प्रयास कभी व्यर्थ नहीं जाता, बल्कि वह 'आध्यात्मिक पूंजी' के रूप में जमा होता रहता है।"}
 - **Schema:** FAQPage
-- **Image filename:** bhagavad-gita-6-38-mind-distraction.jpg
-- **Image alt text:** भगवद गीता 6.38 ध्यान में मन भटकना और कृष्ण का उपदेश
+- **Image filename:** bhagavad-gita-6-38-mind-distraction-meditation.jpg
+- **Image alt text:** भगवद गीता 6.38 - ध्यान में मन भटकने और कृष्ण के संदेश को दर्शाती शांतिपूर्ण छवि
 - **Internal links to add:**
-  - [भगवद गीता 6.40: असफलता का डर](https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-40-hindi)
-  - [भगवद गीता 6.39: साधना व्यर्थ क्यों नहीं जाती](https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-39-hindi)
-- **Why this treatment:** Generated by Gemini (gemini-3.5-flash-lite). Fixing snippet loss by directly answering the specific user intent queries found in Search Console regarding meditation distraction and embedding clear FAQ schema.
-- **Caution:** Do not alter the spiritual tone or teachings of Swami Ramsukhdas, Srila Prabhupada, or Swami Mukundananda. Keep the H1 natural and strictly aligned with the core verse theme.
+  - [भगवद गीता 6.40](https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-40-hindi)
+  - [भगवद गीता 6.39](https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-39-hindi)
+- **Why this treatment:** Generated by Gemini (gemini-3.5-flash-lite). The page suffered a snippet loss because the exact query variation 'अभ्यास के दौरान मन बार-बार भटकता है' was not directly and cleanly answered in a concise text block. Adding a direct answer and FAQ schema will help regain the featured snippet position.
+- **Caution:** Do not alter the spiritual tone or philosophical depth of the commentary from Swami Ramsukhdas, Srila Prabhupada, and Swami Mukundananda. Keep the Hindi natural and free of robotic keyword stuffing.
 
 ### 5. [https://krishnbhakti.com/english-blogs/bhagavad-gita-6-17-balance-in-eating-rest-work-sleep-ends-all-suffering](https://krishnbhakti.com/english-blogs/bhagavad-gita-6-17-balance-in-eating-rest-work-sleep-ends-all-suffering)
 - **Diagnosis:** SNIPPET_LOSS
@@ -299,26 +305,28 @@
 
 #### Exact Prescription
 - **Primary keyword:** Bhagavad Gita 6.17
-- **Secondary keywords:** yukta ahara vihara, balance in eating rest work sleep, Bhagavad Gita on lifestyle balance
-- **Recommended title:** Bhagavad Gita 6.17: Balance in Eating, Rest & Work Ends Suffering
-- **Recommended meta description:** Discover Bhagavad Gita 6.17 meaning on yukta ahara vihara. Learn Lord Krishna's simple formula for balance in eating, rest, work, and sleep to end suffering.
-- **Recommended H1:** Bhagavad Gita 6.17 — Balance in Eating, Rest, Work and Sleep Is What Actually Ends Suffering
+- **Secondary keywords:** yukta ahara vihara, balance in eating rest work sleep, Bhagavad Gita balance of life, yogo bhavati duhkha ha
+- **Recommended title:** Bhagavad Gita 6.17: Balance in Eating, Rest, Work & Sleep
+- **Recommended meta description:** Discover Bhagavad Gita 6.17 on yukta ahara vihara. Learn Krishna's practical formula of balanced eating, rest, work, and sleep to end all suffering.
+- **Recommended H1:** Bhagavad Gita 6.17 — Balance in Eating, Rest, Work and Sleep Ends Suffering
 - **Priority:** Medium
 - **Content changes:**
-  - Add explicit Sanskrit breakdown definitions early in the text to capture the 'yukta ahara vihara' search query intent directly.
-  - Include clear subheadings addressing modern stress, sleep, and dietary balance using traditional commentary references.
+  - Add a dedicated Sanskrit glossary section defining 'yukta ahara vihara', 'yukta cheshta karmasu', and 'yukta svapna-avabodha' explicitly to target search intent for the Sanskrit phrase.
+  - Include direct actionable bullet points on how to apply the four pillars of balance in a modern daily routine.
+  - Improve subheadings with clear keyword variations related to lifestyle balance and mental peace.
 - **FAQ questions:**
-  - What is the meaning of Bhagavad Gita Verse 6.17?
-  - What does yukta ahara vihara mean in the Bhagavad Gita?
-  - How does Bhagavad Gita 6.17 help in reducing modern stress and lifestyle diseases?
-- **Schema:** FAQPage
+  - What is the exact meaning of Bhagavad Gita Verse 6.17?
+  - What does 'yukta ahara vihara' mean in daily life?
+  - How does balance in eating, rest, work, and sleep end suffering according to Krishna?
+  - What do commentators like Swami Ramsukhdas and Srila Prabhupada say about Gita 6.17?
+- **Schema:** Article and FAQPage Schema
 - **Image filename:** bhagavad-gita-6-17-balance-eating-sleep-work.jpg
-- **Image alt text:** Bhagavad Gita 6.17 illustration showing balanced lifestyle of eating rest work and sleep for spiritual and physical peace
+- **Image alt text:** Bhagavad Gita 6.17 illustration showing balance in eating, rest, work, and sleep for ending suffering
 - **Internal links to add:**
-  - [हिंदी में पढ़ें: भगवद गीता 6.17 संतुलन की कला](https://krishnbhakti.com/hindi-blogs/bhagavad-gita-chapter-6-verse-17-balance-life)
-  - [भगवद गीता 6.32: सुख-दुख में समता का रहस्य](https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-32-samta-ka-rahasya)
-- **Why this treatment:** Generated by Gemini (gemini-3.5-flash-lite). Addressing snippet loss for 'yukta ahara vihara' by tightening definition clarity and improving alignment with exact user query intent.
-- **Caution:** Do not alter the canonical URL, slug, or remove existing commentary references from Swami Ramsukhdas Ji, Srila Prabhupada, and Swami Mukundananda Ji.
+  - [हिंदी में भगवद गीता 6.17 संतुलन लेख पढ़ें](https://krishnbhakti.com/hindi-blogs/bhagavad-gita-chapter-6-verse-17-balance-life)
+  - [Bhagavad Gita 6.32 Samta (Equanimity)](https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-32-samta-ka-rahasya)
+- **Why this treatment:** Generated by Gemini (gemini-3.5-flash-lite). Addressing snippet loss and capturing impressions for the specific Sanskrit search query 'yukta ahara vihara' by improving clarity and adding explicit terminology definitions.
+- **Caution:** Do not alter the spiritual tone of the commentary or remove references to Swami Ramsukhdas Ji, Srila Prabhupada, and Swami Mukundananda.
 
 ### 6. [https://krishnbhakti.com/english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins](https://krishnbhakti.com/english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins)
 - **Diagnosis:** SNIPPET_LOSS
@@ -330,28 +338,27 @@
 
 #### Exact Prescription
 - **Primary keyword:** bhagavad gita 6.12
-- **Secondary keywords:** bhagavad gita meditation verses, how to meditate according to bhagavad gita, ekagram manah bhagavad gita, bhagavad gita 6.12 meaning
-- **Recommended title:** Bhagavad Gita 6.12 — Sit Down and Focus the Mind for Meditation
-- **Recommended meta description:** Discover Bhagavad Gita 6.12 meaning on meditation. Learn how to sit, make the mind one-pointed, control senses, and practice yoga for inner purification.
+- **Secondary keywords:** bhagavad gita meditation verses, how to meditate bhagavad gita, control mind and senses gita
+- **Recommended title:** Bhagavad Gita 6.12 — How to Focus the Mind and Begin Meditation
+- **Recommended meta description:** Discover Bhagavad Gita 6.12 insights on how to sit, make the mind one-pointed, control your senses, and practice meditation for inner self-purification.
 - **Recommended H1:** Bhagavad Gita 6.12 — Sit Down, Focus the Mind — This Is Exactly How Meditation Begins
 - **Priority:** Medium
 - **Content changes:**
-  - Add a direct, concise summary definition box near the top of the article targeting the exact snippet format for 'bhagavad gita 6.12' to resolve snippet loss.
-  - Structure the core components of the verse (Upavisya asane, Ekagram manah, Yata-chitta-indriya-kriyah, Atma-visuddhaye) into distinct HTML list items or bullet points with bold prefixes to improve featured snippet eligibility.
-  - Ensure the closing paragraphs naturally integrate key teachings without trailing off awkwardly.
+  - Add a dedicated, concise summary definition box at the top of the article directly answering what Bhagavad Gita 6.12 instructs about meditation to recover featured snippet visibility.
+  - Structure the commentaries from Swami Ramsukhdas Ji, Srila Prabhupada, and Swami Mukundananda Ji with clear sub-headings using HTML tags to improve readability and target long-tail search intent.
 - **FAQ questions:**
-  - What is the exact instruction given in Bhagavad Gita 6.12 for meditation?
-  - What does Ekagram Manah mean in Bhagavad Gita 6.12?
-  - What is the ultimate purpose of meditation according to Bhagavad Gita 6.12?
+  - What does Bhagavad Gita 6.12 teach about meditation?
+  - How do you make the mind one-pointed according to Krishna in Gita 6.12?
+  - What is the ultimate purpose of meditation in Bhagavad Gita 6.12?
 - **Schema:** Article
 - **Image filename:** bhagavad-gita-6-12-meditation-focus.jpg
-- **Image alt text:** Bhagavad Gita 6.12 teaching on how to sit and focus the mind for meditation
+- **Image alt text:** Bhagavad Gita 6.12 instruction on sitting and focusing the mind for meditation
 - **Internal links to add:**
-  - [Bhagavad Gita 6.14](https://krishnbhakti.com/english-blogs/bhagavad-gita-6-14-where-to-fix-the-mind-in-meditation-krishna-reveals-the-secret)
-  - [Bhagavad Gita 6.26](https://krishnbhakti.com/english-blogs/bhagavad-gita-6-26-wherever-the-mind-wanders-bring-it-back-that-is-meditation)
-  - [Bhagavad Gita 6.20](https://krishnbhakti.com/english-blogs/bhagavad-gita-6-20-where-mind-stops-and-soul-sees-itself-the-deepest-meditation)
-- **Why this treatment:** Generated by Gemini (gemini-3.5-flash-lite). Optimizing structure and adding concise direct answer blocks will capture the featured snippet for 'bhagavad gita 6.12' and improve CTR from impression position 11.4.
-- **Caution:** Do not alter the philosophical interpretations of Swami Ramsukhdas Ji, Srila Prabhupada, or Swami Mukundananda Ji. Maintain respectful devotional tone.
+  - [where to fix the mind in meditation](https://krishnbhakti.com/english-blogs/bhagavad-gita-6-14-where-to-fix-the-mind-in-meditation-krishna-reveals-the-secret)
+  - [bringing the mind back when it wanders](https://krishnbhakti.com/english-blogs/bhagavad-gita-6-26-wherever-the-mind-wanders-bring-it-back-that-is-meditation)
+  - [deepest meditation in Bhagavad Gita 6.20](https://krishnbhakti.com/english-blogs/bhagavad-gita-6-20-where-mind-stops-and-soul-sees-itself-the-deepest-meditation)
+- **Why this treatment:** Generated by Gemini (gemini-3.5-flash-lite). Optimizing structure and direct answers for target keyword 'bhagavad gita 6.12' to recover snippet loss and improve ranking position from 11.4.
+- **Caution:** Do not alter the philosophical interpretations of Swami Ramsukhdas Ji, Srila Prabhupada, or Swami Mukundananda Ji, and maintain the existing word count integrity.
 
 ### 7. [https://krishnbhakti.com/english-blogs/bhagavad-gita-6-14-where-to-fix-the-mind-in-meditation-krishna-reveals-the-secret](https://krishnbhakti.com/english-blogs/bhagavad-gita-6-14-where-to-fix-the-mind-in-meditation-krishna-reveals-the-secret)
 - **Diagnosis:** RANK_LOW_AND_WEAK
@@ -363,24 +370,22 @@
 #### Exact Prescription
 - **Primary keyword:** bhagavad gita 6.14
 - **Secondary keywords:** bhagavad gita 6.14 meaning, where to fix the mind in meditation, bhagavad gita on meditation mind control
-- **Recommended title:** Bhagavad Gita 6.14 Meaning: Where to Fix the Mind in Meditation
-- **Recommended meta description:** Read Bhagavad Gita 6.14 meaning and commentary. Krishna reveals the secret to staying focused, calm, and fixing the mind on God during meditation.
+- **Recommended title:** Bhagavad Gita 6.14: Where to Fix the Mind in Meditation
+- **Recommended meta description:** Discover Bhagavad Gita 6.14 meaning. Learn where to fix the mind in meditation, how to overcome fear, and how Krishna reveals the secret to inner calm.
 - **Recommended H1:** Bhagavad Gita 6.14 — Where Should the Mind Go in Meditation? Krishna Reveals the Secret
 - **Priority:** Medium
 - **Content changes:**
-  - Add a clear, concise summary paragraph at the very top (above the fold) directly answering the search intent for 'bhagavad gita 6.14' to improve initial user engagement.
-  - Ensure clear H2 and H3 heading hierarchies break down Swami Ramsukhdas Ji, Srila Prabhupada, and Swami Mukundananda Ji's commentaries distinctly.
-  - Add a practical conclusion section offering actionable steps for daily meditation based on the five qualities mentioned in the verse.
+  - Ensure the primary keyword 'bhagavad gita 6.14' appears naturally within the first 100 words of the introduction.
+  - Add subheadings with clear structural hierarchy (H2 and H3) covering the five inner qualities mentioned in the verse (Prashanta-atma, Vigata-bhih, Brahmacharivrate sthitah, Manah samyamya, Mach-chittah mat-parah).
+  - Expand slightly on practical modern applications of Swami Ramsukhdas Ji's and Srila Prabhupada's commentaries regarding daily meditation struggles.
 - **FAQ questions:**
-  - {'question': 'What is the meaning of Bhagavad Gita 6.14?', 'answer': 'Bhagavad Gita 6.14 explains the inner state required for meditation. Lord Krishna states that a practitioner should sit for yoga with a serene, fearless mind, established in brahmacharya, having controlled the senses, and with the heart and mind completely fixed on Him as the supreme goal.'}
-  - {'question': 'Where should we fix the mind during meditation according to Krishna?', 'answer': 'According to Bhagavad Gita 6.14, the ultimate destination for the mind during meditation is Krishna Himself (mach-chittah mat-parah). Meditation is not just about mental emptiness or breathing techniques, but anchoring the conscious mind in remembrance of the Supreme.'}
+  - {'question': 'What is the meaning of Bhagavad Gita 6.14?', 'answer': 'Bhagavad Gita 6.14 explains the inner state required for meditation. Lord Krishna states that a practitioner should sit with a serene, fearless mind, established in brahmacharya, with controlled senses, and fix their mind completely on Krishna as the supreme goal.'}
+  - {'question': 'Where should the mind be fixed during meditation according to Krishna?', 'answer': 'According to Bhagavad Gita 6.14, the ultimate destination for the mind during meditation is Krishna. Instead of an empty void or abstract concept, the mind should rest in conscious awareness of the Supreme.'}
 - **Schema:** Article
 - **Image filename:** bhagavad-gita-6-14-meditation-mind-control.jpg
-- **Image alt text:** Bhagavad Gita 6.14 illustration of meditation and fixing the mind on Krishna
-- **Internal links to add:**
-  - [Bhagavad Gita Chapter 6](https://krishnbhakti.com/english-blogs/bhagavad-gita-chapter-6-summary)
-- **Why this treatment:** Generated by Gemini (gemini-3.5-flash-lite). The page ranks on the second page (position 16.8) for its exact target query with zero clicks. Optimizing the title, meta description, and adding a direct answer summary will improve CTR and push rankings into the top 10.
-- **Caution:** Do not alter the Sanskrit shloka or misrepresent the commentaries of Swami Ramsukhdas Ji, Srila Prabhupada, and Swami Mukundananda Ji.
+- **Image alt text:** Bhagavad Gita 6.14 illustration showing Krishna explaining how to fix the mind in meditation
+- **Why this treatment:** Generated by Gemini (gemini-3.5-flash-lite). The page currently ranks on page 2 for its exact target query 'bhagavad gita 6.14'. Minor optimization of meta tags, reinforcing keyword placement in the intro, and adding FAQ schema will push it into top 10 positions.
+- **Caution:** Do not alter the Sanskrit verse accuracy or misrepresent the commentaries of Swami Ramsukhdas Ji, Srila Prabhupada, or Swami Mukundananda Ji.
 
 ### 8. [https://krishnbhakti.com/gita-gpt](https://krishnbhakti.com/gita-gpt)
 - **Diagnosis:** RANK_LOW_AND_WEAK
@@ -392,28 +397,28 @@
 
 #### Exact Prescription
 - **Primary keyword:** gita gpt
-- **Secondary keywords:** bhagwat geeta gpt, gita ai chatbot, bhagavad gita answers online, गीता gpt
-- **Recommended title:** Gita GPT — Ask Questions & Get Bhagavad Gita Answers Online
-- **Recommended meta description:** Use Gita GPT free tool to get life answers based on Bhagavad Gita shlokas. Ask questions in Hindi or English and find instant Krishna wisdom.
-- **Recommended H1:** Gita GPT: भगवद् गीता आधारित प्रश्न और उत्तर
-- **Priority:** High
+- **Secondary keywords:** bhagwat geeta gpt, gita ai tool, bhagavad gita answers online, गीता gpt
+- **Recommended title:** Gita GPT — Ask Questions & Get Bhagavad Gita Answers
+- **Recommended meta description:** Use Gita GPT free tool to get wisdom-based answers from the Bhagavad Gita for your life questions in Hindi and English. Krishna ki vaani, aapke sawaal.
+- **Recommended H1:** गीता GPT — भगवद् गीता के ज्ञान से अपने प्रश्नों के उत्तर पाएँ
+- **Priority:** Medium
 - **Content changes:**
-  - Add explicit introductory headings and context clarifying how the AI maps life problems directly to relevant Gita verses like Chapter 2 Verse 7.
-  - Embed inline text links to existing deep-dive articles such as the Bhagavad Gita 2.7 commentary to improve dwell time and topical relevance.
-  - Expand word count slightly by adding practical examples of what users can ask (e.g., career confusion, mental peace, duty vs desire) to improve semantic depth.
+  - Add a clear H2 section detailing how to frame questions effectively for the AI to retrieve accurate Bhagavad Gita verses.
+  - Enhance introductory copy with exact user intent matching 'bhagwat geeta gpt' naturally within the first 150 words.
+  - Add contextual internal links to related verse deep-dives within the AI response sample templates.
 - **FAQ questions:**
   - Gita GPT kya hai?
   - Kya Gita GPT ka use free hai?
   - Kya Gita GPT sirf Hindi mein jawab deta hai?
   - Kya Gita GPT ke jawab Bhagavad Gita shlok par aadharit hain?
-- **Schema:** {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Gita GPT kya hai?", "acceptedAnswer": {"@type": "Answer", "text": "गीता GPT एक मुफ़्त AI टूल है जो भगवद् गीता के ज्ञान के आधार पर आपके जीवन के सवालों के उत्तर देता है।"}}, {"@type": "Question", "name": "Kya Gita GPT ka use free hai?", "acceptedAnswer": {"@type": "Answer", "text": "हाँ, गीता GPT का उपयोग बिल्कुल मुफ़्त है। कोई पेमेंट या रजिस्ट्रेशन नहीं लगता।"}}]}
-- **Image filename:** gita-gpt-ai-tool-krishna-bhakti.jpg
-- **Image alt text:** Gita GPT interface showing Bhagavad Gita shloka answers in Hindi and English
+- **Schema:** SoftwareApplication
+- **Image filename:** gita-gpt-ai-tool.webp
+- **Image alt text:** Gita GPT tool interface for asking Bhagavad Gita questions in Hindi and English
 - **Internal links to add:**
-  - [भगवद् गीता 2.7 श्लोक और भ्रम का निवारण](https://krishnbhakti.com/hindi-blogs/bhagavad-gita-chapter-2-verse-7-hindi)
+  - [भगवद गीता 2.7](https://krishnbhakti.com/hindi-blogs/bhagavad-gita-chapter-2-verse-7-hindi)
   - [Krishna Bhakti Mission](https://krishnbhakti.com/about)
-- **Why this treatment:** Generated by Gemini (gemini-3.5-flash-lite). The page ranks on page 5-6 for 'gita gpt' and 'bhagwat geeta gpt' with zero clicks. Optimizing title length, adding internal links to deep Gita commentaries, and refining metadata will improve click-through rates and relevance signals.
-- **Caution:** Do not alter the functional JavaScript chatbot interface or remove the bilingual language toggle while making textual and structural SEO updates.
+- **Why this treatment:** Generated by Gemini (gemini-3.5-flash-lite). Low initial impressions and positions (50-57) indicate the page needs tighter alignment with exact search queries like 'bhagwat geeta gpt' and better on-page keyword density for AI tool terms.
+- **Caution:** Do not over-optimize or keyword-stuff 'gita gpt' unnaturally; preserve the devotional and philosophical tone of the page.
 
 ### 9. [https://krishnbhakti.com/english-blogs/bhagavad-gita-5-27-when-mind-wont-stop-gita-says-do-this](https://krishnbhakti.com/english-blogs/bhagavad-gita-5-27-when-mind-wont-stop-gita-says-do-this)
 - **Diagnosis:** RANK_LOW
