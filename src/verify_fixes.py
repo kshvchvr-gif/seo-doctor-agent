@@ -198,12 +198,12 @@ def run(check_prs=True, auto_revert=None, dry_run=False) -> int:
     token = _token()
     today = datetime.date.today()
     auto_revert = AUTO_REVERT if auto_revert is None else auto_revert
-    revised = 0
+    refreshed = 0   # PR statuses whose state actually changed
+    verified = 0    # entries newly classified against GSC data
 
     for entry in history:
-        if check_prs:
-            refresh_pr_status(entry, token)
-            revised += 1
+        if check_prs and refresh_pr_status(entry, token):
+            refreshed += 1
         if entry.get("status") != "merged":
             continue
         if entry.get("direction") in ("improved", "worse", "flat"):
@@ -218,6 +218,7 @@ def run(check_prs=True, auto_revert=None, dry_run=False) -> int:
             continue
         entry["verification"] = metrics
         entry["direction"] = metrics["direction"]
+        verified += 1
         print(f"   verify #{entry.get('pr')}: {metrics['direction']} "
               f"(before {metrics['before']} / after {metrics['after']})")
         if metrics["direction"] == "worse" and auto_revert:
@@ -227,7 +228,7 @@ def run(check_prs=True, auto_revert=None, dry_run=False) -> int:
 
     with open(HISTORY_PATH, "w", encoding="utf-8") as f:
         json.dump(history, f, indent=2, ensure_ascii=False)
-    print(f"Updated fixes_history.json ({revised} entries refreshed).")
+    print(f"fixes_history.json: {refreshed} PR status change(s), {verified} fix(es) verified.")
     return 0
 
 
