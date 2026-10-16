@@ -1,0 +1,72 @@
+name: SEO Dashboard
+
+# Rebuilds the static dashboard from reports/ + fixes_history.json and publishes
+# it to GitHub Pages. Triggered whenever a report workflow finishes (workflow_run
+# fires even for pushes made with the built-in GITHUB_TOKEN, which a plain
+# `on: push` would not), plus manual runs and edits to the generator itself.
+on:
+  workflow_run:
+    workflows: ["SEO Doctor Weekly", "Website Health"]
+    types: [completed]
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - "src/dashboard.py"
+      - "requirements.txt"
+      - ".github/workflows/dashboard.yml"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never let two Pages deployments race each other.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    # Run for manual pushes and for finished report runs — including a *failed*
+    # health run, because that is exactly when the dashboard should show the
+    # critical status. Only cancelled runs are skipped.
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion != 'cancelled' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build dashboard
+        run: python -m src.dashboard --out docs
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

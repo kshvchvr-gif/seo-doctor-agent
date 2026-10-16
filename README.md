@@ -40,6 +40,12 @@ prioritized report as a GitHub Issue.
     `main`. Merged fixes are verified against Search Console a couple of weeks later
     (improved / worse / flat) and logged in `fixes_history.json`; a clearly-worse fix can
     be auto-reverted via another draft PR (`AUTOFIX_AUTO_REVERT=1`).
+14. **Dashboard** — a static HTML dashboard is rebuilt from `reports/*.md`,
+    `reports/fix_plan.json` and `fixes_history.json` and published to GitHub Pages:
+    **https://kshvchvr-gif.github.io/seo-doctor-agent/**. It shows website health,
+    priority pages, content gaps, technical-issue trends, the decline list and the full
+    fix history. The parsed data is also emitted as a small JSON index at
+    `docs/data/index.json`.
 
 ## One-time setup (~20 minutes)
 
@@ -96,6 +102,14 @@ UTC** (~8:30 AM IST). You can also trigger it manually anytime: Actions →
 automatically after each weekly report (and can be run manually), but only does
 anything once `SITE_REPO_TOKEN` is set.
 
+### 7. Enable the dashboard (GitHub Pages)
+
+Repo → Settings → Pages → **Source: GitHub Actions** (one time). The
+**"SEO Dashboard"** workflow then rebuilds and republishes the dashboard after
+every weekly/health run. It is served at
+`https://<owner>.github.io/<repo>/`. Note: on a **public** repo Pages is public,
+so the dashboard (like `reports/*.md` itself) is world-readable.
+
 ## Cost
 
 ₹0. Search Console API, GA4 API, GitHub Actions (public repo), and Gemini
@@ -117,11 +131,13 @@ src/
   fixes.py               # Phase 3: plan + apply minimal-diff on-page fixes
   auto_fix.py            # Phase 3: open/update a reviewable PR against the site repo
   verify_fixes.py        # Phase 3: verify merged fixes + optional revert PR
+  dashboard.py           # Phase 4: build the static dashboard + JSON index
   main.py                # orchestrates everything
 fixes_history.json                    # Phase 3: log of applied fixes + outcomes
 .github/workflows/seo-doctor.yml     # the weekly cron schedule
 .github/workflows/website-health.yml # the daily health cron schedule
 .github/workflows/auto-fix.yml       # Phase 3: verify + open the auto-fix PR
+.github/workflows/dashboard.yml      # Phase 4: build + publish the dashboard to Pages
 ```
 
 ## Local testing (optional, before automating)
@@ -136,3 +152,9 @@ export SITEMAP_URL="https://krishnbhakti.com/sitemap.xml"
 python -m src.main
 ```
 Report will appear in `reports/`.
+
+Build the dashboard locally (no API keys needed — it only reads the files above):
+
+```bash
+python -m src.dashboard --out docs   # then open docs/index.html
+```

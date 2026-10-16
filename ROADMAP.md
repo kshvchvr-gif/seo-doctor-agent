@@ -1,7 +1,8 @@
 # SEO Agent Roadmap & Resume Notes
 
 > **Last updated:** 2026-10-16
-> **Resume point:** ▶️ **Phase 4 — Dashboard** (see below). Phases 0, 1, 2 & 3 are DONE and live.
+> **Resume point:** ✅ **All planned phases (0–4) are DONE and live.** See
+> "Ideas / backlog" at the bottom for optional next work.
 
 This file is the single source of truth for where the project is and what to do next.
 When resuming, read this file top-to-bottom, then start at the **Resume point**.
@@ -40,6 +41,9 @@ Two separate repos:
 `SITE_REPO_TOKEN` — a fine-grained PAT with `Contents: Read and write` +
 `Pull requests: Read and write` on **`krishnbhakti-web`** only. Without it the
 auto-fix workflow prints setup instructions and skips (it never fails the run).
+It is **set** as of 2026-10-16; it is currently the account's `gh` OAuth token
+(broad `repo`+`workflow` scope) — replace it with a scoped fine-grained PAT when
+convenient (no code change needed; CI just reads the secret).
 
 ## Status at a glance
 
@@ -49,7 +53,7 @@ auto-fix workflow prints setup instructions and skips (it never fails the run).
 | 1 | Daily website health monitor | ✅ Done |
 | 2 | Traffic decline diagnosis (evidence-based) | ✅ Done |
 | 3 | Safe auto-fix via PR + verify + rollback | ✅ Done |
-| 4 | Dashboard | ⬜ **NEXT** |
+| 4 | Dashboard | ✅ Done |
 
 ---
 
@@ -138,12 +142,54 @@ Verify in CI: Actions → "SEO Auto-Fix" → Run workflow.
 
 ---
 
-## ⬜ Phase 4 — Dashboard
+## ✅ Phase 4 — Dashboard (DONE)
 
-**Resume here.**
+**Goal:** ek jagah sab kuch — health, priority pages, content gaps, technical trends,
+decline list, fix history — bina kisi server ke, GitHub Pages pe.
 
-- Static HTML generated from `reports/*.md` + a small JSON index, published via GitHub Pages.
-- Show: health status, priority pages, content gaps, technical issue trends, decline list, fix history.
+**Built:**
+- `src/dashboard.py` (new): pure-stdlib parser + static-site generator. Reads
+  `reports/YYYY-MM-DD.md`, `reports/health/*.md`, `reports/fix_plan.json` and
+  `fixes_history.json`, and writes:
+  - `docs/index.html` — the dashboard: KPI cards (with deltas), status, trend charts
+    (inline SVG), technical issues + per-type sparkline trends, priority pages,
+    content gaps, declining/rising pages, and the full fix history (with diffs).
+  - `docs/data/index.json` — the small JSON index (every parsed run, health, plan, history).
+  - `docs/reports/<date>.html` + `docs/reports/health/<date>.html` — the full markdown
+    reports, rendered (via the `markdown` package); `docs/reports/index.html` lists them.
+  - Charts are **adaptive**: they use the 28-day window once Phase 2 has ≥3 runs, and
+    fall back to the rolling 90-day totals so the dashboard is never empty.
+  - Parsing is defensive (missing section → `None`) and all report text is HTML-escaped
+    (an explicit `_Safe` marker distinguishes trusted HTML from data — a value like
+    `<h1>` is escaped, never injected).
+- `.github/workflows/dashboard.yml` (new): builds `docs/` and deploys it to GitHub Pages
+  via `actions/configure-pages` + `upload-pages-artifact` + `deploy-pages`. Triggers on
+  `workflow_run` completion of the weekly + health workflows (so it catches their
+  report commits, which a plain `on: push` would miss), plus push to `src/dashboard.py`
+  and manual dispatch. Publishes even when a health run *fails* (that's when you most
+  want to see the critical status).
+- `requirements.txt` — added `markdown==3.10.2` (only used to render the full reports).
+- `.gitignore` — ignores the generated `docs/` (built in CI, not committed).
+- GitHub Pages enabled (Source: GitHub Actions). Live at
+  **https://kshvchvr-gif.github.io/seo-doctor-agent/**
+
+**Acceptance:** ✅ generator + workflow live; offline tests pass (74 checks: real
+report/health parsing, index build, HTML structure + tag balance, XSS escaping,
+empty/malformed input, full build output). Pages deploys green.
+
+Verify locally: `python -m src.dashboard --out docs` then open `docs/index.html`.
+Verify in CI: Actions → "SEO Dashboard" → Run workflow.
+
+---
+
+## Ideas / backlog (optional, not started)
+
+- **AI treatments are currently falling back** — the weekly log shows
+  `gemini-2.5-flash: HTTP 404 ... no longer available to new users`. Bump
+  `GEMINI_MODEL` (env/secret) to a current model so real AI titles/metas return.
+- Private-vs-public dashboard: Pages on a public repo is public (already-public
+  `reports/*.md` data), publish elsewhere if that should change.
+- Per-page drill-down + historical GSC charts; Slack/email digest; more fix types.
 
 ---
 
@@ -156,4 +202,4 @@ Verify in CI: Actions → "SEO Auto-Fix" → Run workflow.
 
 ## One-line resume prompt for next session
 
-> "seo-doctor-agent me ROADMAP.md padho aur **Phase 4 (Dashboard)** se continue karo."
+> "seo-doctor-agent me ROADMAP.md padho — sab phases done hain; backlog dekho aur jo chuno woh karo."
