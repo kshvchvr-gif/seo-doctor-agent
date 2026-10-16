@@ -31,6 +31,9 @@ prioritized report as a GitHub Issue.
     any older weekly issues, so you never get notification spam
 11. Technical flags are grouped by type and ranked by pages affected (e.g. "META_LENGTH: 40 pages")
     instead of dumping hundreds of raw per-page flags
+12. **Traffic decline diagnosis** — compares the current period against the previous one
+    (last 28d vs prior 28d, and last 7d vs prior 7d) and, for every notable drop, answers:
+    what changed, which pages/queries, likely cause, evidence, and next action. Read-only.
 
 ## One-time setup (~20 minutes)
 
@@ -98,10 +101,13 @@ src/
   sitemap_crawler.py   # fetches sitemap + page text
   embeddings.py        # Gemini embedding calls + cosine similarity
   scoring.py            # SEO Doctor diagnosis logic
+  trends.py             # Phase 2: period-over-period traffic decline diagnosis
+  health.py             # Phase 1: daily website health monitor
   rag_linking.py        # internal link suggestions
   report_generator.py   # builds the markdown report
   main.py                # orchestrates everything
-.github/workflows/seo-doctor.yml   # the cron schedule
+.github/workflows/seo-doctor.yml     # the weekly cron schedule
+.github/workflows/website-health.yml # the daily health cron schedule
 ```
 
 ## Local testing (optional, before automating)

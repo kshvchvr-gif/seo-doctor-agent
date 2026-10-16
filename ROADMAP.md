@@ -1,7 +1,7 @@
 # SEO Agent Roadmap & Resume Notes
 
 > **Last updated:** 2026-10-16
-> **Resume point:** ▶️ **Phase 2 — Traffic Decline Diagnosis** (see below). Phases 0 & 1 are DONE and live.
+> **Resume point:** ▶️ **Phase 3 — Safe auto-fix (PR-based)** (see below). Phases 0, 1 & 2 are DONE and live.
 
 This file is the single source of truth for where the project is and what to do next.
 When resuming, read this file top-to-bottom, then start at the **Resume point**.
@@ -40,8 +40,8 @@ Two separate repos:
 |---|---|---|
 | 0 | Notification hygiene + grouped/ranked technical issues | ✅ Done |
 | 1 | Daily website health monitor | ✅ Done |
-| 2 | Traffic decline diagnosis (evidence-based) | ⬜ **NEXT** |
-| 3 | Safe auto-fix via PR + verify + rollback | ⬜ Todo |
+| 2 | Traffic decline diagnosis (evidence-based) | ✅ Done |
+| 3 | Safe auto-fix via PR + verify + rollback | ⬜ **NEXT** |
 | 4 | Dashboard | ⬜ Todo |
 
 ---
@@ -64,38 +64,34 @@ Verify: Actions → "Website Health" → Run workflow.
 
 ---
 
-## ▶️ Phase 2 — Traffic decline diagnosis (START HERE)
+## ✅ Phase 2 — Traffic decline diagnosis (DONE)
 
 **Goal:** jab traffic/visibility gire, evidence ke saath batao — *kya badla, kaunse pages/queries,
 likely cause, evidence, next action*. Read-only; koi live-site change nahi.
 
-**Files to add/change:**
-- `src/trends.py` (new): period-over-period comparison.
-  - Pull current vs previous period (e.g., last 28d vs prior 28d; last 7d vs prior 7d) from
-    `gsc_client.fetch_query_data()` / `fetch_page_data()` and GA4.
-    Use `gsc_client` date params (add a `date_range` param if needed).
-  - Compute per-page and per-query deltas: clicks, impressions, CTR, position.
-  - Flag **declining pages/queries** (biggest drops) and **rising** ones.
-  - Account for data lag (~2 days already handled in `gsc_client._date_range`) and incomplete
-    7-day windows; note seasonality qualitatively (do NOT invent causes).
-- `report_generator.py` — add a "Traffic Movement" section with the 5 answers per top decline.
-- `main.py` — call Phase 2 analysis and pass results into the report.
+**Built:**
+- `src/trends.py` (new): period-over-period comparison for the 28d and 7d windows.
+  - Pulls current vs previous period from `gsc_client.fetch_page_data()` / `fetch_query_data()`
+    and GA4 `fetch_traffic_sources()` (all now accept explicit `start_date`/`end_date`).
+  - Computes per-page and per-query deltas: clicks, impressions, CTR, position.
+  - Flags declining and rising pages/queries (absolute + relative thresholds for a tiny site).
+  - Deterministic cause heuristic per decline: vanished / ranking drop / demand (seasonality) /
+    snippet-CTR loss / mixed — each with evidence and a read-only next action.
+- `report_generator.py` — new "📉 Traffic Movement — period-over-period" section plus a
+  one-line movement headline in the Executive Diagnosis.
+- `main.py` — calls `trends.analyze()` (step 3/8); any failure degrades gracefully to no section.
 
 **Acceptance:** report shows period-over-period deltas + a ranked "declining pages" list with
-the 5-question explanation per top item. No live-site edits.
+the 5-question explanation per top item. No live-site edits. ✅
 
-**How to resume (fast):**
-```
-# in the seo-doctor-agent repo
-git pull
-# read commits after 1650ceb and this file
-# implement src/health.py-style module: src/decline.py / src/trends.py
-python -m src.main   # needs the GSC/GA4/Gemini env vars locally, or just run via Actions
-```
+Verify: Actions → "SEO Doctor Weekly" → Run workflow, then read the "Traffic Movement" section
+in the rolling issue.
 
 ---
 
 ## ⬜ Phase 3 — Safe auto-fix (PR-based) + verify + rollback
+
+**Resume here.**
 
 - New workflow in `seo-doctor-agent` (or a module triggered by it) that opens a **PR against
   `krishnbhakti-web`** (never push to main directly).
@@ -121,4 +117,4 @@ python -m src.main   # needs the GSC/GA4/Gemini env vars locally, or just run vi
 
 ## One-line resume prompt for next session
 
-> "seo-doctor-agent me ROADMAP.md padho aur **Phase 2 (Traffic decline diagnosis)** se continue karo."
+> "seo-doctor-agent me ROADMAP.md padho aur **Phase 3 (Safe auto-fix PR-based)** se continue karo."

@@ -25,11 +25,17 @@ def _date_range(days: int):
     return start.isoformat(), end.isoformat()
 
 
-def fetch_query_data(site_url: str = None, days: int = None, row_limit: int = 5000):
-    """Returns list of dicts: query, page, clicks, impressions, ctr, position"""
+def fetch_query_data(site_url: str = None, days: int = None, row_limit: int = 5000,
+                     start_date: str = None, end_date: str = None):
+    """Returns list of dicts: query, page, clicks, impressions, ctr, position.
+    Pass explicit start_date/end_date (ISO) to fetch an arbitrary period,
+    or days to use the default lagged lookback window."""
     site_url = site_url or config.GSC_SITE_URL
-    days = days or config.GSC_LOOKBACK_DAYS
-    start, end = _date_range(days)
+    if start_date and end_date:
+        start, end = start_date, end_date
+    else:
+        days = days or config.GSC_LOOKBACK_DAYS
+        start, end = _date_range(days)
     service = _get_service()
 
     rows = []
@@ -61,11 +67,16 @@ def fetch_query_data(site_url: str = None, days: int = None, row_limit: int = 50
     return rows
 
 
-def fetch_page_data(site_url: str = None, days: int = None, row_limit: int = 5000):
-    """Returns list of dicts: page, clicks, impressions, ctr, position (aggregated across queries)"""
+def fetch_page_data(site_url: str = None, days: int = None, row_limit: int = 5000,
+                    start_date: str = None, end_date: str = None):
+    """Returns list of dicts: page, clicks, impressions, ctr, position (aggregated across queries).
+    Pass explicit start_date/end_date (ISO) to fetch an arbitrary period."""
     site_url = site_url or config.GSC_SITE_URL
-    days = days or config.GSC_LOOKBACK_DAYS
-    start, end = _date_range(days)
+    if start_date and end_date:
+        start, end = start_date, end_date
+    else:
+        days = days or config.GSC_LOOKBACK_DAYS
+        start, end = _date_range(days)
     service = _get_service()
 
     body = {

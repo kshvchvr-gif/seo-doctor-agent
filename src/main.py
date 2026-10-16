@@ -19,6 +19,7 @@ from . import scoring
 from . import rag_linking
 from . import report_generator
 from . import ai_treatment
+from . import trends
 
 CACHE_DIR = os.path.join(os.path.dirname(__file__), "..", "cache")
 REPORTS_DIR = os.path.join(os.path.dirname(__file__), "..", "reports")
@@ -85,24 +86,31 @@ def get_embeddings_with_cache(pages: list) -> dict:
 
 
 def run():
-    print("1/7 Fetching Search Console data...")
+    print("1/8 Fetching Search Console data...")
     query_rows = gsc_client.fetch_query_data()
     total_clicks = sum(r["clicks"] for r in query_rows)
     total_impressions = sum(r["impressions"] for r in query_rows)
     print(f"   {len(query_rows)} query/page rows, {total_clicks} clicks, {total_impressions} impressions")
 
-    print("2/7 Fetching GA4 traffic sources...")
+    print("2/8 Fetching GA4 traffic sources...")
     traffic_sources = ga4_client.fetch_traffic_sources()
     print(f"   {len(traffic_sources)} source/medium rows")
 
-    print("3/7 Crawling sitemap...")
+    print("3/8 Comparing periods (traffic decline diagnosis)...")
+    try:
+        trends_result = trends.analyze()
+    except Exception as e:  # Phase 2 must never break the weekly report
+        print(f"   trends analysis failed, continuing without it: {e}")
+        trends_result = None
+
+    print("4/8 Crawling sitemap...")
     pages = sitemap_crawler.crawl_all_pages()
     print(f"   {len(pages)} pages crawled successfully")
 
-    print("4/7 Building embeddings (cached where possible)...")
+    print("5/8 Building embeddings (cached where possible)...")
     page_embeddings = get_embeddings_with_cache(pages)
 
-    print("5/7 Scoring pages + finding content gaps...")
+    print("6/8 Scoring pages + finding content gaps...")
     diagnosed = scoring.diagnose_all(query_rows)
     priority_pages = scoring.rank_priority_pages(diagnosed)
     content_gaps = scoring.find_content_gaps(query_rows)
@@ -115,12 +123,12 @@ def run():
     for pd in priority_pages:
         pd["technical_issues"] = page_by_url.get(pd["page"], {}).get("technical_issues", [])
 
-    print("6/7 Generating internal linking suggestions...")
+    print("7/8 Generating internal linking suggestions...")
     link_suggestions = rag_linking.suggest_links(pages, page_embeddings)
 
     # AI treatment: only the highest-opportunity pages get generation calls,
     # keeping the weekly run lightweight and free-tier friendly.
-    print(f"7/7 Writing AI treatment for up to {config.AI_TREATMENT_MAX_PAGES} priority pages...")
+    print(f"8/8 Writing AI treatment for up to {config.AI_TREATMENT_MAX_PAGES} priority pages...")
     related_by_page = {}
     for s in link_suggestions:
         related_by_page.setdefault(s["from_url"], []).append({"url": s["to_url"], "title": s["to_title"]})
@@ -140,6 +148,7 @@ def run():
         total_impressions=total_impressions,
         treatments=treatments,
         pages=pages,
+        trends=trends_result,
     )
 
     os.makedirs(REPORTS_DIR, exist_ok=True)

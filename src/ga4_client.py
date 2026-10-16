@@ -21,10 +21,15 @@ def _get_client():
     return BetaAnalyticsDataClient(credentials=credentials)
 
 
-def fetch_traffic_sources(property_id: str = None, days: int = None):
-    """Returns list of dicts: source_medium, sessions, active_users"""
+def fetch_traffic_sources(property_id: str = None, days: int = None,
+                          start_date: str = None, end_date: str = None):
+    """Returns list of dicts: source_medium, sessions, active_users.
+    Pass explicit start_date/end_date (ISO 'YYYY-MM-DD') to fetch an arbitrary period."""
     property_id = property_id or config.GA4_PROPERTY_ID
-    days = days or config.GA4_LOOKBACK_DAYS
+    if not (start_date and end_date):
+        days = days or config.GA4_LOOKBACK_DAYS
+        start_date = f"{days}daysAgo"
+        end_date = "today"
     if not property_id:
         return []
 
@@ -33,7 +38,7 @@ def fetch_traffic_sources(property_id: str = None, days: int = None):
         property=f"properties/{property_id}",
         dimensions=[Dimension(name="sessionSourceMedium")],
         metrics=[Metric(name="sessions"), Metric(name="activeUsers")],
-        date_ranges=[DateRange(start_date=f"{days}daysAgo", end_date="today")],
+        date_ranges=[DateRange(start_date=start_date, end_date=end_date)],
     )
     response = client.run_report(request)
 
