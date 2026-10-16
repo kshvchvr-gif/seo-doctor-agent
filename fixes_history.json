@@ -87,7 +87,7 @@
     ],
     "direction": "pending",
     "merged_at": null,
-    "merge_commit_sha": "9d1c755a0a1afd5d657e4410c6967d3a43e6f6ec"
+    "merge_commit_sha": "2ef1b2a12baaaf26dd8e6382cf32d1c4106f04ab"
   },
   {
     "date": "2026-10-16",
@@ -159,7 +159,7 @@
     ],
     "direction": "pending",
     "merged_at": null,
-    "merge_commit_sha": "9d1c755a0a1afd5d657e4410c6967d3a43e6f6ec"
+    "merge_commit_sha": "2ef1b2a12baaaf26dd8e6382cf32d1c4106f04ab"
   },
   {
     "date": "2026-10-16",
@@ -182,6 +182,152 @@
             "type": "BROKEN_META_REMOVED",
             "old": "content=\"क्या तुम अपने ही शरीर रूपी नगर में राजा हो या गुलाम?\"वशी\" बनने का सच।\">",
             "new": ""
+          }
+        ]
+      }
+    ],
+    "direction": "pending",
+    "merged_at": null,
+    "merge_commit_sha": "2ef1b2a12baaaf26dd8e6382cf32d1c4106f04ab"
+  },
+  {
+    "date": "2026-10-16",
+    "pr": 1,
+    "url": "https://github.com/kshvchvr-gif/krishnbhakti-web/pull/1",
+    "branch": "seo-autofix",
+    "status": "open",
+    "pages": [
+      "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-14-where-to-fix-the-mind-in-meditation-krishna-reveals-the-secret",
+      "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-17-balance-in-eating-rest-work-sleep-ends-all-suffering",
+      "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you",
+      "https://krishnbhakti.com/gita-gpt",
+      "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-38-mind-distraction"
+    ],
+    "files": [
+      "english-blogs/bhagavad-gita-6-14-where-to-fix-the-mind-in-meditation-krishna-reveals-the-secret.html",
+      "english-blogs/bhagavad-gita-6-17-balance-in-eating-rest-work-sleep-ends-all-suffering.html",
+      "english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you.html",
+      "gita-gpt.html",
+      "hindi-blogs/bhagavad-gita-6-38-mind-distraction.html"
+    ],
+    "fixes": [
+      {
+        "file": "english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you.html",
+        "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you",
+        "changes": [
+          {
+            "type": "TITLE",
+            "old": "Bhagavad Gita 6.6: The Mind That Saves You vs Controls You",
+            "new": "Bhagavad Gita 6.6 Meaning: The Mind That Controls You vs Saves You"
+          },
+          {
+            "type": "OG_TITLE",
+            "old": "Bhagavad Gita 6.6: The Mind That Saves You vs Controls You",
+            "new": "Bhagavad Gita 6.6 Meaning: The Mind That Controls You vs Saves You"
+          },
+          {
+            "type": "META_DESCRIPTION",
+            "old": "Explore Bhagavad Gita 6.6 meaning on how a controlled mind becomes your best friend and an uncontrolled mind becomes your enemy. Read clear insights.",
+            "new": "Discover Bhagavad Gita 6.6 meaning. Learn how a controlled mind becomes your greatest friend and an uncontrolled mind becomes your greatest enemy."
+          },
+          {
+            "type": "OG_DESCRIPTION",
+            "old": "Explore Bhagavad Gita 6.6 meaning on how a controlled mind becomes your best friend and an uncontrolled mind becomes your enemy. Read clear insights.",
+            "new": "Discover Bhagavad Gita 6.6 meaning. Learn how a controlled mind becomes your greatest friend and an uncontrolled mind becomes your greatest enemy."
+          }
+        ]
+      },
+      {
+        "file": "hindi-blogs/bhagavad-gita-6-38-mind-distraction.html",
+        "url": "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-38-mind-distraction",
+        "changes": [
+          {
+            "type": "TITLE",
+            "old": "भगवद गीता 6.38: क्या ध्यान में मन भटकना असफलता है?",
+            "new": "भगवद गीता 6.38: ध्यान में मन भटकना क्या असफलता है? जानिए"
+          },
+          {
+            "type": "OG_TITLE",
+            "old": "भगवद गीता 6.38: क्या ध्यान में मन भटकना असफलता है?",
+            "new": "भगवद गीता 6.38: ध्यान में मन भटकना क्या असफलता है? जानिए"
+          },
+          {
+            "type": "META_DESCRIPTION",
+            "old": "क्या ध्यान में मन भटकना असफलता है? भगवद गीता के छठे अध्याय के 38वें श्लोक में कृष्ण अर्जुन के डर को कैसे दूर करते हैं, जानें विस्तार से।",
+            "new": "भगवद गीता 6.38 के अनुसार ध्यान में मन भटकना असफलता नहीं है। जानें कृष्ण ने अर्जुन के इस डर को कैसे दूर किया और आधुनिक जीवन में इसका क्या अर्थ है।"
+          },
+          {
+            "type": "OG_DESCRIPTION",
+            "old": "क्या ध्यान में मन भटकना असफलता है? भगवद गीता के छठे अध्याय के 38वें श्लोक में कृष्ण अर्जुन के डर को कैसे दूर करते हैं, जानें विस्तार से।",
+            "new": "भगवद गीता 6.38 के अनुसार ध्यान में मन भटकना असफलता नहीं है। जानें कृष्ण ने अर्जुन के इस डर को कैसे दूर किया और आधुनिक जीवन में इसका क्या अर्थ है।"
+          }
+        ]
+      },
+      {
+        "file": "english-blogs/bhagavad-gita-6-17-balance-in-eating-rest-work-sleep-ends-all-suffering.html",
+        "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-17-balance-in-eating-rest-work-sleep-ends-all-suffering",
+        "changes": [
+          {
+            "type": "TITLE",
+            "old": "Bhagavad Gita 6.17: Balance in Eating, Rest &amp; Work Ends Suffering",
+            "new": "Bhagavad Gita 6.17: Balance in Eating, Rest & Work Ends Suffering"
+          },
+          {
+            "type": "OG_TITLE",
+            "old": "Bhagavad Gita 6.17: Balance in Eating, Rest &amp; Work Ends Suffering",
+            "new": "Bhagavad Gita 6.17: Balance in Eating, Rest & Work Ends Suffering"
+          },
+          {
+            "type": "META_DESCRIPTION",
+            "old": "Discover Bhagavad Gita 6.17 meaning on balance in food, sleep, work and rest. Krishna's formula for health, peace, and ending all suffering.",
+            "new": "Discover Bhagavad Gita 6.17 meaning on balance in eating, rest, work, and sleep. Learn Krishna's practical formula for health and ending suffering."
+          },
+          {
+            "type": "OG_DESCRIPTION",
+            "old": "Discover Bhagavad Gita 6.17 meaning on balance in food, sleep, work and rest. Krishna's formula for health, peace, and ending all suffering.",
+            "new": "Discover Bhagavad Gita 6.17 meaning on balance in eating, rest, work, and sleep. Learn Krishna's practical formula for health and ending suffering."
+          }
+        ]
+      },
+      {
+        "file": "english-blogs/bhagavad-gita-6-14-where-to-fix-the-mind-in-meditation-krishna-reveals-the-secret.html",
+        "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-14-where-to-fix-the-mind-in-meditation-krishna-reveals-the-secret",
+        "changes": [
+          {
+            "type": "META_DESCRIPTION",
+            "old": "Bhagavad Gita 6.14 — Krishna reveals the one secret to staying focused in meditation. Learn where to fix the mind, how to stay calm and fearless, and more.",
+            "new": "Discover Bhagavad Gita 6.14 meaning. Krishna reveals the secret to fixing the mind in meditation, staying fearless, and making Him the supreme goal."
+          },
+          {
+            "type": "OG_DESCRIPTION",
+            "old": "Bhagavad Gita 6.14 — Krishna reveals the one secret to staying focused in meditation. Learn where to fix the mind, how to stay calm and fearless, and more.",
+            "new": "Discover Bhagavad Gita 6.14 meaning. Krishna reveals the secret to fixing the mind in meditation, staying fearless, and making Him the supreme goal."
+          }
+        ]
+      },
+      {
+        "file": "gita-gpt.html",
+        "url": "https://krishnbhakti.com/gita-gpt",
+        "changes": [
+          {
+            "type": "TITLE",
+            "old": "Gita GPT — Ask Questions &amp; Get Bhagavad Gita Answers",
+            "new": "Gita GPT — Ask Questions & Get Bhagavad Gita Answers Online"
+          },
+          {
+            "type": "OG_TITLE",
+            "old": "Gita GPT — Ask Questions &amp; Get Bhagavad Gita Answers",
+            "new": "Gita GPT — Ask Questions & Get Bhagavad Gita Answers Online"
+          },
+          {
+            "type": "META_DESCRIPTION",
+            "old": "Use Gita GPT free online tool. Ask life questions in Hindi or English and get wisdom-based answers directly from Bhagavad Gita shlokas.",
+            "new": "Use Gita GPT free online tool to ask life questions and receive wisdom-based answers from the Bhagavad Gita in Hindi and English. No signup required."
+          },
+          {
+            "type": "OG_DESCRIPTION",
+            "old": "Use Gita GPT free online tool. Ask life questions in Hindi or English and get wisdom-based answers directly from Bhagavad Gita shlokas.",
+            "new": "Use Gita GPT free online tool to ask life questions and receive wisdom-based answers from the Bhagavad Gita in Hindi and English. No signup required."
           }
         ]
       }
