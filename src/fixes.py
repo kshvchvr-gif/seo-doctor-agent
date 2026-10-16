@@ -92,6 +92,43 @@ def _insert_meta_description(html: str, new_desc: str):
     return new_html, {"type": "META_DESCRIPTION", "old": "", "new": new_desc.strip()}
 
 
+# A leftover line like `    content="...">` — the remains of a
+# `<meta name="description" content="...">` whose opening tag was lost by an
+# earlier bulk edit. It has no '<', so browsers treat it as body text and it
+# shows up on the rendered page.
+_BROKEN_META_RE = re.compile(r"(?m)^[ \t]*content=[\"'].*$")
+
+
+def _has_valid_meta_description(html: str) -> bool:
+    return bool(re.search(r'<meta\s+name=["\']description["\']', html, flags=re.I))
+
+
+def _repair_meta_remnant(html: str, new_desc):
+    """
+    Fix a malformed meta-remnant line.
+
+    If the page already has a valid description the remnant is simply deleted;
+    otherwise it is replaced in place with a well-formed description meta. This
+    makes the repair idempotent: on a fresh clone it replaces, and on a branch
+    that already has an inserted description it deletes the leftover.
+    Returns (html, change_or_None).
+    """
+    m = _BROKEN_META_RE.search(html)
+    if not m:
+        return html, None
+    indent = re.match(r"[ \t]*", m.group(0)).group(0)
+    old = m.group(0).strip()
+    if _has_valid_meta_description(html) or not new_desc:
+        start, end = m.start(), m.end()
+        if end < len(html) and html[end] == "\n":
+            end += 1
+        return html[:start] + html[end:], {"type": "BROKEN_META_REMOVED", "old": old, "new": ""}
+    new_line = f'{indent}<meta name="description" content="{_esc_attr(new_desc)}">'
+    return html[:m.start()] + new_line + html[m.end():], {
+        "type": "META_DESCRIPTION_REPAIRED", "old": old, "new": new_line.strip(),
+    }
+
+
 def _mirror_og(html: str, prop: str, value: str):
     pat = re.compile(
         r'(<meta\s+property=["\']og:' + prop + r'["\']\s+content=)(["\'])(.*?)\2',
@@ -156,6 +193,52 @@ def _append_internal_links(html: str, links: list):
     return new_html, {"type": "INTERNAL_LINKS", "old": "", "new": items}
 
 
+def _apply_description(html: str, explicit, ensure_meta: bool):
+    """
+    Handle the meta description for one page, in a safe order:
+
+      1. repair/delete a malformed remnant line (see _repair_meta_remnant);
+      2. replace an existing description — only when an explicit value is given
+         (ensure_meta is FILL-ONLY and never overwrites);
+      3. insert a fresh tag if the page still has none;
+      4. keep og:description in sync whenever a description was set.
+    Returns (html, changes).
+    """
+    changes = []
+    if explicit:
+        target = explicit
+    elif ensure_meta:
+        target = _derive_meta_from_html(html)
+    else:
+        return html, changes
+    if not target:
+        return html, changes
+
+    set_desc = False
+    html, c = _repair_meta_remnant(html, target)
+    if c:
+        changes.append(c)
+        set_desc = c["type"] == "META_DESCRIPTION_REPAIRED"
+
+    if explicit:
+        html, c = _replace_meta_description(html, target)
+        if c:
+            changes.append(c)
+            set_desc = True
+
+    if not _has_valid_meta_description(html):
+        html, c = _insert_meta_description(html, target)
+        if c:
+            changes.append(c)
+            set_desc = True
+
+    if set_desc:
+        html, c = _mirror_og(html, "description", target)
+        if c:
+            changes.append(c)
+    return html, changes
+
+
 # --------------------------------------------------------------------------- #
 # high-level apply
 # --------------------------------------------------------------------------- #
@@ -171,32 +254,9 @@ def apply_page_fixes(html, url, title=None, meta_description=None, ensure_meta=F
             html, c2 = _mirror_og(html, "title", title)
             if c2:
                 changes.append(c2)
-    if meta_description:
-        # AI/plan-provided text: replace an existing description, or insert one
-        html, c = _replace_meta_description(html, meta_description)
-        if c:
-            changes.append(c)
-            html, c2 = _mirror_og(html, "description", meta_description)
-            if c2:
-                changes.append(c2)
-        else:
-            # no existing description: insert one, then mirror og if present
-            html, c = _insert_meta_description(html, meta_description)
-            if c:
-                changes.append(c)
-                html, c2 = _mirror_og(html, "description", meta_description)
-                if c2:
-                    changes.append(c2)
-    elif ensure_meta:
-        # derived text: FILL ONLY. Never overwrite an existing description.
-        derived = _derive_meta_from_html(html)
-        if derived:
-            html, c = _insert_meta_description(html, derived)
-            if c:
-                changes.append(c)
-                html, c2 = _mirror_og(html, "description", derived)
-                if c2:
-                    changes.append(c2)
+    if meta_description or ensure_meta:
+        html, desc_changes = _apply_description(html, meta_description, ensure_meta)
+        changes.extend(desc_changes)
     if ensure_canonical:
         html, c = _ensure_canonical(html, url)
         if c:
