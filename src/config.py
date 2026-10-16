@@ -29,7 +29,9 @@ GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
 # Stable, cost-efficient model for structured SEO recommendations. Override in Actions if desired.
 GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.5-flash-lite")
 # If the configured model is deprecated/404, we transparently retry with these newer ones.
-GEMINI_FALLBACK_MODELS = ["gemini-3.5-flash-lite", "gemini-2.5-flash"]
+# Keep only currently-available models here: a dead entry (e.g. gemini-2.5-flash, which now
+# returns HTTP 404 for newer projects) turns a transient rate-limit into a hard failure.
+GEMINI_FALLBACK_MODELS = ["gemini-3.5-flash-lite", "gemini-3.8-flash"]
 SITEMAP_URL = os.environ.get("SITEMAP_URL", "https://krishnbhakti.com/sitemap.xml")
 SITE_URL = os.environ.get("SITE_URL", "https://krishnbhakti.com")
 

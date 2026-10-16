@@ -109,7 +109,11 @@ in the rolling issue.
 - `src/fixes.py` (new): pure planning + applying of fixes. Minimal-diff, **exact-string**
   replacements only (anchor nahi mila to skip — blind rewrite kabhi nahi). Supports:
   - `TITLE` (AI treatment recommended title, validated 30–70 chars) + keeps `og:title` in sync
-  - `META_DESCRIPTION` (AI recommended, or deterministically derived when missing) + `og:description`
+  - `META_DESCRIPTION` (AI recommended, or deterministically derived when missing) + `og:description`.
+    Also **repairs a malformed leftover line**: a bulk edit once dropped the `<meta name="description" `
+    opening, leaving `content="…">` rendered as visible text. When present it is replaced with a proper
+    tag (no valid description yet) or deleted (a valid description already exists) — never a duplicate,
+    and idempotent so a reused auto-fix branch converges cleanly.
   - `CANONICAL` (deterministic; insert when absent)
   - `IMAGE_ALT` (deterministic; only content images under `/images/` that lack `alt`)
   - `INTERNAL_LINKS` ("Also read" block; **opt-in**, off by default via `AUTOFIX_INTERNAL_LINKS=1`;
@@ -126,7 +130,9 @@ in the rolling issue.
   `AUTOFIX_AUTO_REVERT=1` a clearly-worse fix gets a **draft revert PR** (merge commit reverted on a
   fresh branch). Pure classification is unit-tested; GSC fetch is injectable.
 - `main.py` — emits `reports/fix_plan.json` after the report (step 9); failure never breaks the report.
-- `config.py` — `AUTOFIX_INTERNAL_LINKS` flag.
+- `config.py` — `AUTOFIX_INTERNAL_LINKS` flag; `GEMINI_FALLBACK_MODELS` refreshed to live models
+  (`gemini-2.5-flash` now returns HTTP 404, which had turned transient free-tier rate-limits into hard
+  failures and forced deterministic fallbacks).
 - `.github/workflows/auto-fix.yml` (new) — triggers on completion of the weekly run
   (`workflow_run`) + manual. Steps: verify merged fixes → apply via PR → commit `fixes_history.json`.
 - `fixes_history.json` (new) — the log (starts `[]`).
@@ -184,9 +190,6 @@ Verify in CI: Actions → "SEO Dashboard" → Run workflow.
 
 ## Ideas / backlog (optional, not started)
 
-- **AI treatments are currently falling back** — the weekly log shows
-  `gemini-2.5-flash: HTTP 404 ... no longer available to new users`. Bump
-  `GEMINI_MODEL` (env/secret) to a current model so real AI titles/metas return.
 - Private-vs-public dashboard: Pages on a public repo is public (already-public
   `reports/*.md` data), publish elsewhere if that should change.
 - Per-page drill-down + historical GSC charts; Slack/email digest; more fix types.
