@@ -4,7 +4,7 @@
     "pr": 1,
     "url": "https://github.com/kshvchvr-gif/krishnbhakti-web/pull/1",
     "branch": "seo-autofix",
-    "status": "open",
+    "status": "merged",
     "pages": [
       "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-14-where-to-fix-the-mind-in-meditation-krishna-reveals-the-secret",
       "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-17-balance-in-eating-rest-work-sleep-ends-all-suffering",
@@ -164,6 +164,8 @@
         ]
       }
     ],
-    "direction": "pending"
+    "direction": "pending",
+    "merged_at": "2026-10-16T16:06:09Z",
+    "merge_commit_sha": "357de7bf9e65066c7210bba21f960a1d7f16c03e"
   }
 ]
