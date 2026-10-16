@@ -1,25 +1,56 @@
 {
   "fixes": [
     {
+      "url": "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-26-man-ko-shant-kaise-kare",
+      "file": "hindi-blogs/bhagavad-gita-6-26-man-ko-shant-kaise-kare.html",
+      "title": "Man Ko Shant Kaise Kare: Bhagavad Gita 6.26 Se Sikhein",
+      "meta_description": "Bhagavad Gita 6.26 ke anusaar man ko shant kaise karein jaanein. Asthir man ko niyantrit karne ke prabhavik aur aasan tarike Hindi mein.",
+      "image_alt": "Bhagavad Gita 6 26 shlok depicting ways to calm a restless mind",
+      "reason": "AI treatment (gemini:gemini-3.5-flash-lite)"
+    },
+    {
+      "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you",
+      "file": "english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you.html",
+      "title": "Bhagavad Gita 6.6 Meaning: The Mind That Controls You vs Saves You",
+      "meta_description": "Discover Bhagavad Gita 6.6 meaning. Learn how a controlled mind becomes your greatest friend and an uncontrolled mind becomes your greatest enemy.",
+      "image_alt": "Bhagavad Gita 6.6 verse calligraphy and illustration depicting the mind as friend or enemy",
+      "reason": "AI treatment (gemini:gemini-3.5-flash-lite)"
+    },
+    {
       "url": "https://krishnbhakti.com/hindi-blogs/gita-shloka-6-10-yogi-kaise-kare-abhyas",
       "file": "hindi-blogs/gita-shloka-6-10-yogi-kaise-kare-abhyas.html",
-      "image_alt": "Bhagavad Gita 6.10 in Hindi focusing on meditation preparation and yogi practice",
+      "image_alt": "भगवद गीता 6.10 in hindi - योगी द्वारा एकांत में ध्यान अभ्यास का चित्रण",
+      "reason": "AI treatment (gemini:gemini-3.5-flash-lite)"
+    },
+    {
+      "url": "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-38-mind-distraction",
+      "file": "hindi-blogs/bhagavad-gita-6-38-mind-distraction.html",
+      "title": "भगवद गीता 6.38: ध्यान में मन भटकना क्या असफलता है? जानिए",
+      "meta_description": "भगवद गीता 6.38 के अनुसार ध्यान में मन भटकना असफलता नहीं है। जानें कृष्ण ने अर्जुन के इस डर को कैसे दूर किया और आधुनिक जीवन में इसका क्या अर्थ है।",
+      "image_alt": "भगवद गीता 6.38 ध्यान में मन भटकना और कृष्ण का संदेश",
       "reason": "AI treatment (gemini:gemini-3.5-flash-lite)"
     },
     {
       "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-17-balance-in-eating-rest-work-sleep-ends-all-suffering",
       "file": "english-blogs/bhagavad-gita-6-17-balance-in-eating-rest-work-sleep-ends-all-suffering.html",
       "title": "Bhagavad Gita 6.17: Balance in Eating, Rest & Work Ends Suffering",
-      "meta_description": "Discover Bhagavad Gita 6.17 meaning on balance in food, sleep, work and rest. Krishna's formula for health, peace, and ending all suffering.",
-      "image_alt": "Bhagavad Gita 6.17 verse illustration showing balance in eating, rest, work, and sleep to end suffering.",
+      "meta_description": "Discover Bhagavad Gita 6.17 meaning on balance in eating, rest, work, and sleep. Learn Krishna's practical formula for health and ending suffering.",
+      "image_alt": "Bhagavad Gita 6.17 illustration of balanced eating, rest, work, and sleep for ending suffering",
+      "reason": "AI treatment (gemini:gemini-3.5-flash-lite)"
+    },
+    {
+      "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-14-where-to-fix-the-mind-in-meditation-krishna-reveals-the-secret",
+      "file": "english-blogs/bhagavad-gita-6-14-where-to-fix-the-mind-in-meditation-krishna-reveals-the-secret.html",
+      "meta_description": "Discover Bhagavad Gita 6.14 meaning. Krishna reveals the secret to fixing the mind in meditation, staying fearless, and making Him the supreme goal.",
+      "image_alt": "Bhagavad Gita 6.14 illustrating Krishna teaching Arjuna where to fix the mind in meditation",
       "reason": "AI treatment (gemini:gemini-3.5-flash-lite)"
     },
     {
       "url": "https://krishnbhakti.com/gita-gpt",
       "file": "gita-gpt.html",
-      "title": "Gita GPT — Ask Questions & Get Bhagavad Gita Answers",
-      "meta_description": "Use Gita GPT free online tool. Ask life questions in Hindi or English and get wisdom-based answers directly from Bhagavad Gita shlokas.",
-      "image_alt": "Gita GPT AI tool interface for Bhagavad Gita answers in Hindi and English",
+      "title": "Gita GPT — Ask Questions & Get Bhagavad Gita Answers Online",
+      "meta_description": "Use Gita GPT free online tool to ask life questions and receive wisdom-based answers from the Bhagavad Gita in Hindi and English. No signup required.",
+      "image_alt": "Gita GPT interactive AI tool interface for Bhagavad Gita answers in Hindi and English",
       "reason": "AI treatment (gemini:gemini-3.5-flash-lite)"
     },
     {
