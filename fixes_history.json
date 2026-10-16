@@ -85,6 +85,78 @@
         ]
       }
     ],
+    "direction": "pending",
+    "merged_at": null,
+    "merge_commit_sha": "d82bc2ad59959e91825b6de115c9ce214c9d78ba"
+  },
+  {
+    "date": "2026-10-16",
+    "pr": 1,
+    "url": "https://github.com/kshvchvr-gif/krishnbhakti-web/pull/1",
+    "branch": "seo-autofix",
+    "status": "open",
+    "pages": [
+      "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-17-balance-in-eating-rest-work-sleep-ends-all-suffering",
+      "https://krishnbhakti.com/gita-gpt"
+    ],
+    "files": [
+      "english-blogs/bhagavad-gita-6-17-balance-in-eating-rest-work-sleep-ends-all-suffering.html",
+      "gita-gpt.html"
+    ],
+    "fixes": [
+      {
+        "file": "english-blogs/bhagavad-gita-6-17-balance-in-eating-rest-work-sleep-ends-all-suffering.html",
+        "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-17-balance-in-eating-rest-work-sleep-ends-all-suffering",
+        "changes": [
+          {
+            "type": "TITLE",
+            "old": "Bhagavad Gita 6.17: Balance in Eating, Rest, Work &amp; Sleep",
+            "new": "Bhagavad Gita 6.17: Balance in Eating, Rest & Work Ends Suffering"
+          },
+          {
+            "type": "OG_TITLE",
+            "old": "Bhagavad Gita 6.17: Balance in Eating, Rest, Work &amp; Sleep",
+            "new": "Bhagavad Gita 6.17: Balance in Eating, Rest & Work Ends Suffering"
+          },
+          {
+            "type": "META_DESCRIPTION",
+            "old": "Discover Bhagavad Gita 6.17 on yukta ahara vihara. Learn Krishna's practical formula of balanced eating, rest, work, and sleep to end all suffering.",
+            "new": "Discover Bhagavad Gita 6.17 meaning on balance in food, sleep, work and rest. Krishna's formula for health, peace, and ending all suffering."
+          },
+          {
+            "type": "OG_DESCRIPTION",
+            "old": "Discover Bhagavad Gita 6.17 on yukta ahara vihara. Learn Krishna's practical formula of balanced eating, rest, work, and sleep to end all suffering.",
+            "new": "Discover Bhagavad Gita 6.17 meaning on balance in food, sleep, work and rest. Krishna's formula for health, peace, and ending all suffering."
+          }
+        ]
+      },
+      {
+        "file": "gita-gpt.html",
+        "url": "https://krishnbhakti.com/gita-gpt",
+        "changes": [
+          {
+            "type": "TITLE",
+            "old": "Gita GPT — Ask Any Question, Get Gita Answers | Krishna Bhakti",
+            "new": "Gita GPT — Ask Questions & Get Bhagavad Gita Answers"
+          },
+          {
+            "type": "OG_TITLE",
+            "old": "Gita GPT — Ask Any Question, Get Gita Answers | Krishna Bhakti",
+            "new": "Gita GPT — Ask Questions & Get Bhagavad Gita Answers"
+          },
+          {
+            "type": "META_DESCRIPTION",
+            "old": "Gita GPT free tool — ask any life question and get wisdom-based answers from Bhagavad Gita shlokas in Hindi and English. Krishna ki vaani, aapke sawaal.",
+            "new": "Use Gita GPT free online tool. Ask life questions in Hindi or English and get wisdom-based answers directly from Bhagavad Gita shlokas."
+          },
+          {
+            "type": "OG_DESCRIPTION",
+            "old": "जीवन के हर प्रश्न का उत्तर — गीता के ज्ञान से।",
+            "new": "Use Gita GPT free online tool. Ask life questions in Hindi or English and get wisdom-based answers directly from Bhagavad Gita shlokas."
+          }
+        ]
+      }
+    ],
     "direction": "pending"
   }
 ]
