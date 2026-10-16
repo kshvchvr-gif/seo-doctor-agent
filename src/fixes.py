@@ -159,7 +159,7 @@ def _append_internal_links(html: str, links: list):
 # --------------------------------------------------------------------------- #
 # high-level apply
 # --------------------------------------------------------------------------- #
-def apply_page_fixes(html, url, title=None, meta_description=None,
+def apply_page_fixes(html, url, title=None, meta_description=None, ensure_meta=False,
                      ensure_canonical=False, image_alt=None, internal_links=None):
     """Apply the requested fixes to one page's HTML. Returns (new_html, [changes])."""
     changes = []
@@ -172,6 +172,7 @@ def apply_page_fixes(html, url, title=None, meta_description=None,
             if c2:
                 changes.append(c2)
     if meta_description:
+        # AI/plan-provided text: replace an existing description, or insert one
         html, c = _replace_meta_description(html, meta_description)
         if c:
             changes.append(c)
@@ -184,6 +185,16 @@ def apply_page_fixes(html, url, title=None, meta_description=None,
             if c:
                 changes.append(c)
                 html, c2 = _mirror_og(html, "description", meta_description)
+                if c2:
+                    changes.append(c2)
+    elif ensure_meta:
+        # derived text: FILL ONLY. Never overwrite an existing description.
+        derived = _derive_meta_from_html(html)
+        if derived:
+            html, c = _insert_meta_description(html, derived)
+            if c:
+                changes.append(c)
+                html, c2 = _mirror_og(html, "description", derived)
                 if c2:
                     changes.append(c2)
     if ensure_canonical:
@@ -203,7 +214,7 @@ def apply_page_fixes(html, url, title=None, meta_description=None,
 def apply_plan(site_root: str, plan: dict, dry_run: bool = False):
     """
     Apply a fix plan to a checked-out site repo.
-    plan = {"fixes": [{"file","url","title","meta_description",
+    plan = {"fixes": [{"file","url","title","meta_description","ensure_meta",
                        "ensure_canonical","image_alt","internal_links","reason"}, ...]}
     Returns {"applied": [...], "skipped": [...], "files_changed": [...]}.
     """
@@ -220,6 +231,7 @@ def apply_plan(site_root: str, plan: dict, dry_run: bool = False):
             url=item.get("url", ""),
             title=item.get("title"),
             meta_description=item.get("meta_description"),
+            ensure_meta=item.get("ensure_meta", False),
             ensure_canonical=item.get("ensure_canonical", False),
             image_alt=item.get("image_alt"),
             internal_links=item.get("internal_links"),
@@ -241,14 +253,43 @@ def apply_plan(site_root: str, plan: dict, dry_run: bool = False):
 # --------------------------------------------------------------------------- #
 # plan building (from the SEO Doctor pipeline outputs)
 # --------------------------------------------------------------------------- #
-def _derive_meta_from_text(text: str, max_len: int = META_TARGET_MAX) -> str:
-    text = re.sub(r"\s+", " ", (text or "")).strip()
-    if not text:
+def _trim_meta(s: str, max_len: int = META_TARGET_MAX) -> str:
+    if len(s) <= max_len:
+        return s
+    cut = s[:max_len]
+    # prefer to end at a sentence boundary (Devanagari danda or latin) if far enough in
+    for sep in ("।", ".", "!", "?"):
+        idx = cut.rfind(sep)
+        if idx >= META_MIN // 2:
+            return cut[:idx + 1].strip()
+    sp = cut.rfind(" ")
+    return (cut[:sp] if sp > 0 else cut).strip()
+
+
+def _derive_meta_from_html(html: str) -> str:
+    """
+    Derive a plausible meta description from the page's own content paragraphs.
+
+    We start AFTER the <h1> so nav/footer/`<span class="date">` text (all before
+    the heading on this site) is excluded, and only use <p> elements — the crawler
+    text is too noisy to trust for this.
+    """
+    h1 = re.search(r"<h1\b", html, flags=re.I)
+    body = html[h1.start():] if h1 else html
+    picked = []
+    total = 0
+    for pm in re.finditer(r"<p\b[^>]*>(.*?)</p>", body, flags=re.I | re.S):
+        t = re.sub(r"<[^>]+>", " ", pm.group(1))
+        t = re.sub(r"\s+", " ", _html.unescape(t)).strip()
+        if len(t) < 40:  # skip breadcrumb / lead-in crumbs like "सोचो ज़रा —"
+            continue
+        picked.append(t)
+        total += len(t) + 1
+        if total >= META_MIN or len(picked) >= 4:
+            break
+    if not picked:
         return ""
-    # first sentence-ish chunk (handles Devanagari danda too)
-    first = re.split(r"(?<=[.!?।])\s", text)[0]
-    chunk = first if len(first) >= META_MIN else text
-    return chunk[:max_len].rstrip()
+    return _trim_meta(" ".join(picked))
 
 
 def build_fix_plan(priority_pages, treatments, pages, link_suggestions=None,
@@ -264,6 +305,7 @@ def build_fix_plan(priority_pages, treatments, pages, link_suggestions=None,
 
     by_file = {}
     order = []
+    ai_meta_urls = set()
 
     def add(url, reason, **kw):
         file = url_to_repo_path(url)
@@ -285,27 +327,33 @@ def build_fix_plan(priority_pages, treatments, pages, link_suggestions=None,
         treatment = treatments.get(url)
         if not treatment:
             continue
+        cur = page_by_url.get(url, {})
+        cur_title = (cur.get("title") or "").strip()
+        cur_meta = (cur.get("meta_description") or "").strip()
         kw = {}
         rt = (treatment.get("recommended_title") or "").strip()
-        if TITLE_MIN <= len(rt) <= TITLE_MAX:
+        # skip no-ops (the deterministic fallback returns the current title)
+        if rt and rt != cur_title and TITLE_MIN <= len(rt) <= TITLE_MAX:
             kw["title"] = rt
         rm = (treatment.get("recommended_meta_description") or "").strip()
-        if META_MIN <= len(rm) <= META_MAX:
+        if rm and rm != cur_meta and META_MIN <= len(rm) <= META_MAX:
             kw["meta_description"] = rm
         alt = (treatment.get("image_seo") or {}).get("alt_text")
         if alt:
             kw["image_alt"] = alt.strip()
         if kw:
+            if "meta_description" in kw:
+                ai_meta_urls.add(url)
             add(url, f"AI treatment ({treatment.get('_source', '')})", **kw)
 
-    # 2) deterministic: fill missing meta description from the page's own text
+    # 2) deterministic: pages with no meta description get one derived from their
+    #    own content paragraphs at apply time (see _derive_meta_from_html). We pass
+    #    a flag rather than text so the plan never carries noisy crawler text.
     for p in (pages or []):
         url = p.get("url")
-        if "MISSING_META" in p.get("technical_issues", []) and url not in treatments:
-            derived = _derive_meta_from_text(p.get("text", ""))
-            if len(derived) >= META_MIN:
-                add(url, "deterministic: derive missing meta description from page text",
-                    meta_description=derived)
+        if "MISSING_META" in p.get("technical_issues", []) and url not in ai_meta_urls:
+            add(url, "deterministic: derive missing meta description from page content",
+                ensure_meta=True)
 
     # 3) deterministic: ensure canonical exists
     for p in (pages or []):
