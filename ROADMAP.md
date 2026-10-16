@@ -135,7 +135,10 @@ in the rolling issue.
   failures and forced deterministic fallbacks).
 - `.github/workflows/auto-fix.yml` (new) — triggers on completion of the weekly run
   (`workflow_run`) + manual. Steps: verify merged fixes → apply via PR → commit `fixes_history.json`.
-- `fixes_history.json` (new) — the log (starts `[]`).
+- `fixes_history.json` (new) — the log (starts `[]`). Holds **one cumulative row per
+  rolling PR**: later runs merge into the existing row (union of pages/files, changes
+  deduped by file+type) instead of appending duplicates, and a reused PR's description is
+  refreshed from that row so it always matches the diff. Empty/corrupt history is tolerated.
 
 **Safety model:** PR-only (never `main`), one rolling draft PR, minimal diffs, skips on ambiguity,
 verification writes to history, optional revert. Nothing is auto-merged.
