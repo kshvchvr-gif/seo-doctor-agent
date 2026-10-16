@@ -404,28 +404,39 @@ def build_index(reports_dir: str, history_path: str, repo: str) -> dict:
 # --------------------------------------------------------------------------- #
 # rendering helpers
 # --------------------------------------------------------------------------- #
-def _delta_chip(value):
+def _chip(value_text, delta, lower_is_better=False):
+    """A colored chip. Arrow follows the number's sign; colour follows *good/bad*.
+
+    With ``lower_is_better`` (e.g. average position) a positive delta is bad.
+    """
+    cls, arrow = "flat", "•"
+    if isinstance(delta, (int, float)):
+        if delta > 0:
+            cls, arrow = "up", "▲"
+        elif delta < 0:
+            cls, arrow = "down", "▼"
+    if lower_is_better and cls != "flat":
+        cls = "down" if cls == "up" else "up"
+    return _Safe(f'<span class="chip {cls}">{arrow} {ESC(str(value_text))}</span>')
+
+
+def _delta_chip(value, lower_is_better=False):
     """Colored +/- chip for a numeric delta (None -> em dash)."""
     if value is None:
         return _Safe('<span class="muted">—</span>')
-    cls = "up" if value > 0 else ("down" if value < 0 else "flat")
     sign = "+" if value > 0 else ""
-    arrow = "▲" if value > 0 else ("▼" if value < 0 else "•")
-    return _Safe(f'<span class="chip {cls}">{arrow} {sign}{value}</span>')
+    return _chip(f"{sign}{value:g}", value, lower_is_better)
 
 
-def _trend_chip(change_text):
+def _trend_chip(change_text, lower_is_better=False):
     if not change_text:
         return _Safe('<span class="muted">—</span>')
     t = str(change_text).strip()
-    low = t.lower()
+    m = re.match(r"^[+-]?\d+(?:\.\d+)?", t)
+    delta = float(m.group(0)) if m else 0
     if t in ("±0%", "0", "+0", "-0"):
-        return _Safe(f'<span class="chip flat">• {ESC(t)}</span>')
-    if low.startswith("-"):
-        return _Safe(f'<span class="chip down">▼ {ESC(t)}</span>')
-    if low.startswith("+"):
-        return _Safe(f'<span class="chip up">▲ {ESC(t)}</span>')
-    return _Safe(f'<span class="muted">{ESC(t)}</span>')
+        delta = 0
+    return _chip(t, delta, lower_is_better)
 
 
 def _sparkline(values, color="#6366f1", width=150, height=36):
@@ -601,7 +612,7 @@ def _kpi_cards(index, latest, w28, w7):
                           _trend_chip((w28["metrics"].get("impressions") or {}).get("change")), "vs prior 28d"))
         pos = metric(w28, "avg position")
         cards.append(card("Avg position (28d)", f"{pos:g}" if pos is not None else "—",
-                          _trend_chip((w28["metrics"].get("avg position") or {}).get("change")), "lower is better"))
+                          _trend_chip((w28["metrics"].get("avg position") or {}).get("change"), lower_is_better=True), "lower is better"))
         sess = metric(w28, "ga4 sessions")
         if sess is not None:
             cards.append(card("GA4 sessions (28d)", f"{sess:g}",
@@ -785,10 +796,10 @@ def build_dashboard_html(index) -> str:
         decl = w28.get("declining_pages") or []
         if decl:
             parts.append(_table(
-                ["Page", "Clicks Δ", "Impressions Δ", "Position Δ", "Likely cause"],
+                ["Page", "Clicks Δ", "Impressions Δ", "Position Δ (lower is better)", "Likely cause"],
                 [[_linkify(d["page"], _short(d["page"], 46)), _delta_chip(d.get("clicks_delta")),
                   _delta_chip(d.get("impressions_delta")),
-                  (_Safe('<span class="chip flat">n/a</span>') if d.get("position_delta") is None else _delta_chip(d["position_delta"])),
+                  (_Safe('<span class="chip flat">n/a</span>') if d.get("position_delta") is None else _delta_chip(d["position_delta"], lower_is_better=True)),
                   _Safe(f'<span class="wrap">{ESC((d.get("cause") or "")[:110])}</span>')] for d in decl],
                 cls=""))
         else:
@@ -797,10 +808,10 @@ def build_dashboard_html(index) -> str:
         if ris:
             parts.append('<h3>Rising pages</h3>')
             parts.append(_table(
-                ["Page", "Clicks Δ", "Impressions Δ", "Position Δ"],
+                ["Page", "Clicks Δ", "Impressions Δ", "Position Δ (lower is better)"],
                 [[_linkify(r["page"], _short(r["page"], 46)), _delta_chip(r.get("clicks_delta")),
                   _delta_chip(r.get("impressions_delta")),
-                  (_Safe('<span class="chip flat">n/a</span>') if r.get("position_delta") is None else _delta_chip(r["position_delta"]))] for r in ris]))
+                  (_Safe('<span class="chip flat">n/a</span>') if r.get("position_delta") is None else _delta_chip(r["position_delta"], lower_is_better=True))] for r in ris]))
     else:
         parts.append('<p class="muted">No period-over-period data available.</p>')
     parts.append("</section>")
