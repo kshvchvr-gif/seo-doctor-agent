@@ -87,7 +87,7 @@
     ],
     "direction": "pending",
     "merged_at": null,
-    "merge_commit_sha": "d82bc2ad59959e91825b6de115c9ce214c9d78ba"
+    "merge_commit_sha": "9d1c755a0a1afd5d657e4410c6967d3a43e6f6ec"
   },
   {
     "date": "2026-10-16",
@@ -153,6 +153,35 @@
             "type": "OG_DESCRIPTION",
             "old": "जीवन के हर प्रश्न का उत्तर — गीता के ज्ञान से।",
             "new": "Use Gita GPT free online tool. Ask life questions in Hindi or English and get wisdom-based answers directly from Bhagavad Gita shlokas."
+          }
+        ]
+      }
+    ],
+    "direction": "pending",
+    "merged_at": null,
+    "merge_commit_sha": "9d1c755a0a1afd5d657e4410c6967d3a43e6f6ec"
+  },
+  {
+    "date": "2026-10-16",
+    "pr": 1,
+    "url": "https://github.com/kshvchvr-gif/krishnbhakti-web/pull/1",
+    "branch": "seo-autofix",
+    "status": "open",
+    "pages": [
+      "https://krishnbhakti.com/hindi-blogs/gita-shloka-5-13-nau-darwaze-ek-raja-kya-tum-apne-hi-ghar-mein-gulam-ho"
+    ],
+    "files": [
+      "hindi-blogs/gita-shloka-5-13-nau-darwaze-ek-raja-kya-tum-apne-hi-ghar-mein-gulam-ho.html"
+    ],
+    "fixes": [
+      {
+        "file": "hindi-blogs/gita-shloka-5-13-nau-darwaze-ek-raja-kya-tum-apne-hi-ghar-mein-gulam-ho.html",
+        "url": "https://krishnbhakti.com/hindi-blogs/gita-shloka-5-13-nau-darwaze-ek-raja-kya-tum-apne-hi-ghar-mein-gulam-ho",
+        "changes": [
+          {
+            "type": "BROKEN_META_REMOVED",
+            "old": "content=\"क्या तुम अपने ही शरीर रूपी नगर में राजा हो या गुलाम?\"वशी\" बनने का सच।\">",
+            "new": ""
           }
         ]
       }
