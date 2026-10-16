@@ -1,7 +1,7 @@
 # SEO Agent Roadmap & Resume Notes
 
 > **Last updated:** 2026-10-16
-> **Resume point:** ▶️ **Phase 3 — Safe auto-fix (PR-based)** (see below). Phases 0, 1 & 2 are DONE and live.
+> **Resume point:** ▶️ **Phase 4 — Dashboard** (see below). Phases 0, 1, 2 & 3 are DONE and live.
 
 This file is the single source of truth for where the project is and what to do next.
 When resuming, read this file top-to-bottom, then start at the **Resume point**.
@@ -25,6 +25,8 @@ Two separate repos:
 **Workflows**
 - `SEO Doctor Weekly` — `.github/workflows/seo-doctor.yml` — Sun 3:00 AM UTC.
 - `Website Health` — `.github/workflows/website-health.yml` — daily 2:00 AM UTC.
+- `SEO Auto-Fix` — `.github/workflows/auto-fix.yml` — runs right after the weekly report
+  (`workflow_run`); verifies merged fixes, then opens/updates a PR against the website repo.
 
 **Rolling issues (update in place, older ones auto-close):**
 - `SEO Doctor Report — Latest` (label `seo-report`)
@@ -34,6 +36,11 @@ Two separate repos:
 `GSC_SA_KEY`, `GSC_SITE_URL`, `GA4_PROPERTY_ID`, `GEMINI_API_KEY`, `SITEMAP_URL`
 (optional: `GEMINI_MODEL`, `AI_TREATMENT_MAX_PAGES`, `SITE_URL`).
 
+**Phase 3 extra secret (required for auto-fix):**
+`SITE_REPO_TOKEN` — a fine-grained PAT with `Contents: Read and write` +
+`Pull requests: Read and write` on **`krishnbhakti-web`** only. Without it the
+auto-fix workflow prints setup instructions and skips (it never fails the run).
+
 ## Status at a glance
 
 | Phase | What | Status |
@@ -41,8 +48,8 @@ Two separate repos:
 | 0 | Notification hygiene + grouped/ranked technical issues | ✅ Done |
 | 1 | Daily website health monitor | ✅ Done |
 | 2 | Traffic decline diagnosis (evidence-based) | ✅ Done |
-| 3 | Safe auto-fix via PR + verify + rollback | ⬜ **NEXT** |
-| 4 | Dashboard | ⬜ Todo |
+| 3 | Safe auto-fix via PR + verify + rollback | ✅ Done |
+| 4 | Dashboard | ⬜ **NEXT** |
 
 ---
 
@@ -89,19 +96,51 @@ in the rolling issue.
 
 ---
 
-## ⬜ Phase 3 — Safe auto-fix (PR-based) + verify + rollback
+## ✅ Phase 3 — Safe auto-fix (PR-based) + verify + rollback (DONE)
 
-**Resume here.**
+**Goal:** monitoring ke baad, low-risk on-page fixes ko **PR ke through** apply karo — kabhi
+`krishnbhakti-web` ke `main` pe seedha push nahi. Merge ke baad verify; worse nikle to revert.
 
-- New workflow in `seo-doctor-agent` (or a module triggered by it) that opens a **PR against
-  `krishnbhakti-web`** (never push to main directly).
-- Reuse the site repo pattern `modules/github_client.py` (GitHub Contents API) / or
-  `peter-evans/create-pull-request`.
-- Scope only low-risk fixes: title/meta length, image alt text, missing canonical, internal links.
-- After merge+deploy, re-run health/SEO checks to **verify**; if worse, **revert** (close PR / revert commit).
-- Keep a `fixes_history.json` log.
+**Built:**
+- `src/fixes.py` (new): pure planning + applying of fixes. Minimal-diff, **exact-string**
+  replacements only (anchor nahi mila to skip — blind rewrite kabhi nahi). Supports:
+  - `TITLE` (AI treatment recommended title, validated 30–70 chars) + keeps `og:title` in sync
+  - `META_DESCRIPTION` (AI recommended, or deterministically derived when missing) + `og:description`
+  - `CANONICAL` (deterministic; insert when absent)
+  - `IMAGE_ALT` (deterministic; only content images under `/images/` that lack `alt`)
+  - `INTERNAL_LINKS` ("Also read" block; **opt-in**, off by default via `AUTOFIX_INTERNAL_LINKS=1`;
+    skips any `.blog-content` with nested `<div>`s to stay safe)
+  - `url_to_repo_path()` maps `https://krishnbhakti.com/<path>` → `<path>.html` (Firebase cleanUrls).
+  - Wrong/renamed URL (e.g. slugs consolidated to 301) → file not found → **skipped**, never guessed.
+- `src/auto_fix.py` (new): clones the website repo (shallow), applies the plan on a stable rolling
+  branch `seo-autofix`, commits, pushes, and opens/updates **one** draft PR (label `seo-autofix`).
+  Plain push first (fast-forward), `--force-with-lease` only as fallback. Missing `SITE_REPO_TOKEN`
+  → prints setup steps and exits 0. Records every change in `fixes_history.json`.
+- `src/verify_fixes.py` (new): refreshes each PR's status (open→merged/closed), then for merged
+  fixes old enough (default 14d after merge) compares the affected pages' GSC clicks/impressions
+  *before* vs *after* (`classify()` = improved / worse / flat, clicks decide). With
+  `AUTOFIX_AUTO_REVERT=1` a clearly-worse fix gets a **draft revert PR** (merge commit reverted on a
+  fresh branch). Pure classification is unit-tested; GSC fetch is injectable.
+- `main.py` — emits `reports/fix_plan.json` after the report (step 9); failure never breaks the report.
+- `config.py` — `AUTOFIX_INTERNAL_LINKS` flag.
+- `.github/workflows/auto-fix.yml` (new) — triggers on completion of the weekly run
+  (`workflow_run`) + manual. Steps: verify merged fixes → apply via PR → commit `fixes_history.json`.
+- `fixes_history.json` (new) — the log (starts `[]`).
+
+**Safety model:** PR-only (never `main`), one rolling draft PR, minimal diffs, skips on ambiguity,
+verification writes to history, optional revert. Nothing is auto-merged.
+
+**Acceptance:** ✅ code + workflow live; offline tests pass (plan/apply on real site HTML, PR-status
+& classification logic). Live PR requires the `SITE_REPO_TOKEN` secret (see above).
+
+Verify locally: `SITE_REPO_TOKEN=<pat> python -m src.auto_fix --dry-run`.
+Verify in CI: Actions → "SEO Auto-Fix" → Run workflow.
+
+---
 
 ## ⬜ Phase 4 — Dashboard
+
+**Resume here.**
 
 - Static HTML generated from `reports/*.md` + a small JSON index, published via GitHub Pages.
 - Show: health status, priority pages, content gaps, technical issue trends, decline list, fix history.
@@ -117,4 +156,4 @@ in the rolling issue.
 
 ## One-line resume prompt for next session
 
-> "seo-doctor-agent me ROADMAP.md padho aur **Phase 3 (Safe auto-fix PR-based)** se continue karo."
+> "seo-doctor-agent me ROADMAP.md padho aur **Phase 4 (Dashboard)** se continue karo."

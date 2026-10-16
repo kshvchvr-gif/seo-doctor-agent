@@ -34,6 +34,12 @@ prioritized report as a GitHub Issue.
 12. **Traffic decline diagnosis** — compares the current period against the previous one
     (last 28d vs prior 28d, and last 7d vs prior 7d) and, for every notable drop, answers:
     what changed, which pages/queries, likely cause, evidence, and next action. Read-only.
+13. **Safe auto-fix via PR** — low-risk on-page fixes (title, meta description, canonical,
+    image alt) are applied on a rolling branch and opened as **one draft PR against the
+    website repo** (`krishnbhakti-web`) for human review. It never pushes to the site's
+    `main`. Merged fixes are verified against Search Console a couple of weeks later
+    (improved / worse / flat) and logged in `fixes_history.json`; a clearly-worse fix can
+    be auto-reverted via another draft PR (`AUTOFIX_AUTO_REVERT=1`).
 
 ## One-time setup (~20 minutes)
 
@@ -70,6 +76,7 @@ Repo → Settings → Secrets and variables → Actions → New repository secre
 | `SITEMAP_URL` | `https://krishnbhakti.com/sitemap.xml` |
 | `GEMINI_MODEL` | optional; defaults to `gemini-2.5-flash-lite` |
 | `AI_TREATMENT_MAX_PAGES` | optional; defaults to `8` |
+| `SITE_REPO_TOKEN` | **Phase 3 (auto-fix).** A fine-grained PAT with `Contents: Read and write` + `Pull requests: Read and write` on the **website** repo only. Without it, auto-fix skips cleanly. |
 
 ### 5. Push this code to that repo
 
@@ -85,7 +92,9 @@ git push -u origin main
 
 Repo → Actions tab → enable workflows. It's set to run **every Sunday 3 AM
 UTC** (~8:30 AM IST). You can also trigger it manually anytime: Actions →
-"SEO Doctor Weekly" → Run workflow.
+"SEO Doctor Weekly" → Run workflow. The **"SEO Auto-Fix"** workflow runs
+automatically after each weekly report (and can be run manually), but only does
+anything once `SITE_REPO_TOKEN` is set.
 
 ## Cost
 
@@ -105,9 +114,14 @@ src/
   health.py             # Phase 1: daily website health monitor
   rag_linking.py        # internal link suggestions
   report_generator.py   # builds the markdown report
+  fixes.py               # Phase 3: plan + apply minimal-diff on-page fixes
+  auto_fix.py            # Phase 3: open/update a reviewable PR against the site repo
+  verify_fixes.py        # Phase 3: verify merged fixes + optional revert PR
   main.py                # orchestrates everything
+fixes_history.json                    # Phase 3: log of applied fixes + outcomes
 .github/workflows/seo-doctor.yml     # the weekly cron schedule
 .github/workflows/website-health.yml # the daily health cron schedule
+.github/workflows/auto-fix.yml       # Phase 3: verify + open the auto-fix PR
 ```
 
 ## Local testing (optional, before automating)

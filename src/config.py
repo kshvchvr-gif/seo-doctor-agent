@@ -45,3 +45,7 @@ TOP_N_PRIORITY_PAGES = 15
 TOP_N_LINK_SUGGESTIONS_PER_PAGE = 5
 
 AI_TREATMENT_MAX_PAGES = int(os.environ.get("AI_TREATMENT_MAX_PAGES", "8"))
+
+# ── Phase 3: safe auto-fix (PR-based) ──
+# Internal-link insertion changes page layout, so it is opt-in and off by default.
+AUTOFIX_INTERNAL_LINKS = os.environ.get("AUTOFIX_INTERNAL_LINKS", "0") not in ("0", "false", "False", "")

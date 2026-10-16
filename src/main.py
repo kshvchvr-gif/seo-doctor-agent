@@ -20,6 +20,7 @@ from . import rag_linking
 from . import report_generator
 from . import ai_treatment
 from . import trends
+from . import fixes
 
 CACHE_DIR = os.path.join(os.path.dirname(__file__), "..", "cache")
 REPORTS_DIR = os.path.join(os.path.dirname(__file__), "..", "reports")
@@ -159,6 +160,21 @@ def run():
     # also write a "latest.md" so the GitHub Action can easily read it for the issue body
     with open(os.path.join(REPORTS_DIR, "latest.md"), "w") as f:
         f.write(report)
+
+    # Phase 3: emit a machine-readable fix plan for the auto-fix workflow.
+    try:
+        fix_plan = fixes.build_fix_plan(
+            priority_pages=priority_pages,
+            treatments=treatments,
+            pages=pages,
+            link_suggestions=link_suggestions,
+            include_internal_links=config.AUTOFIX_INTERNAL_LINKS,
+        )
+        with open(os.path.join(REPORTS_DIR, "fix_plan.json"), "w", encoding="utf-8") as f:
+            json.dump(fix_plan, f, indent=2, ensure_ascii=False)
+        print(f"   fix plan: {len(fix_plan['fixes'])} candidate fix group(s) written")
+    except Exception as e:  # never let Phase 3 planning break the weekly report
+        print(f"   fix plan generation failed, continuing: {e}")
 
     print(f"\nReport saved to {report_path}")
     print(report[:2000])

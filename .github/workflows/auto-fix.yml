@@ -1,0 +1,60 @@
+name: SEO Auto-Fix
+
+# Runs right after the weekly report (which writes reports/fix_plan.json),
+# verifies previously-merged fixes, then opens/updates a reviewable PR against
+# the website repo. It NEVER pushes to the website's main branch.
+on:
+  workflow_run:
+    workflows: ["SEO Doctor Weekly"]
+    types: [completed]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  autofix:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # 1) Verify previously-merged fixes (refresh PR status + before/after GSC).
+      - name: Verify merged fixes
+        env:
+          SITE_REPO_TOKEN: ${{ secrets.SITE_REPO_TOKEN }}
+          GSC_SA_KEY: ${{ secrets.GSC_SA_KEY }}
+          GSC_SITE_URL: ${{ secrets.GSC_SITE_URL }}
+        run: python -m src.verify_fixes
+        continue-on-error: true
+
+      # 2) Open / update the rolling auto-fix PR against the website repo.
+      - name: Apply safe fixes via PR
+        env:
+          SITE_REPO_TOKEN: ${{ secrets.SITE_REPO_TOKEN }}
+          SITE_REPO: ${{ vars.SITE_REPO || 'kshvchvr-gif/krishnbhakti-web' }}
+        run: python -m src.auto_fix
+
+      - name: Commit verification history
+        run: |
+          git config user.name "seo-doctor-bot"
+          git config user.email "actions@github.com"
+          git add fixes_history.json
+          if git diff --cached --quiet; then
+            echo "No history changes"
+          else
+            git commit -m "SEO auto-fix history $(date +%F)"
+            git pull --rebase origin main || true
+            git push
+          fi
