@@ -193,6 +193,18 @@ Verify in CI: Actions → "SEO Dashboard" → Run workflow.
 
 ## Ideas / backlog (optional, not started)
 
+- **Swap `SITE_REPO_TOKEN` for a fine-grained PAT** (security hygiene, no urgency —
+  everything works today). It is currently a `gho_` OAuth token with `repo` + `workflow`
+  scope, i.e. a master key for *every* repo. Replace with a fine-grained PAT scoped to
+  **`krishnbhakti-web` only**, permissions **Contents: R/W + Pull requests: R/W**
+  (optionally Issues: R/W so the `seo-autofix` label applies; it is best-effort, so it is
+  safe to omit). Steps: <https://github.com/settings/personal-access-tokens/new> →
+  Only select repositories → `krishnbhakti-web` → generate, copy the `github_pat_…` string
+  once, then update the `SITE_REPO_TOKEN` secret in the agent repo. Verify with an "SEO
+  Auto-Fix" run (an invalid/expired token makes that workflow red, never silently). Why it
+  matters: the token is only exposed to the two steps that need it (not `pip install`), but a
+  compromised PyPI dependency could still read it at Python startup — with the narrow PAT
+  that blast radius shrinks from "all repos + workflows" to "one repo, two actions".
 - Private-vs-public dashboard: Pages on a public repo is public (already-public
   `reports/*.md` data), publish elsewhere if that should change.
 - Per-page drill-down + historical GSC charts; Slack/email digest; more fix types.
