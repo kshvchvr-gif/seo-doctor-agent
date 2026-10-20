@@ -1,9 +1,9 @@
-# 🏥 Website Health Report — 2026-10-19
+# 🏥 Website Health Report — 2026-10-20
 
 ## Status
 - Overall: **🟢 OK**
 - Pages checked: **80**
-- SSL certificate: **47 days** left
+- SSL certificate: **46 days** left
 
 ## Availability (critical URLs)
 | URL | Status |
@@ -19,7 +19,7 @@
 ## robots.txt & sitemap.xml
 - robots.txt: **200**
 - sitemap declared in robots.txt: **True**
-- sitemap.xml: **200**, URLs listed: **275**
+- sitemap.xml: **200**, URLs listed: **277**
 
 ## Broken internal links
 - None found ✅
