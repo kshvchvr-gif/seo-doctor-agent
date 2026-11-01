@@ -28,6 +28,7 @@ import os
 import re
 import smtplib
 import ssl
+import sys
 from email.message import EmailMessage
 
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -267,6 +268,12 @@ def main() -> int:
     plan = _json(PLAN_PATH)
     history = _json(HISTORY_PATH) or []
     subject, text, html_body = build_digest(md, plan, history, status)
+
+    # --print: emit the text digest only (used to post it as an issue comment,
+    # which is what makes GitHub email the watchers). Never sends mail.
+    if "--print" in sys.argv[1:]:
+        print(text)
+        return 0
 
     cfg = smtp_config()
     if not cfg["configured"]:

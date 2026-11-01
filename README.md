@@ -132,7 +132,13 @@ rejected.
 
 Behaviour:
 
-- **No SMTP secrets** → prints a hint and exits `0` (workflow stays green).
+- **No SMTP secrets** → the weekly run posts the digest as a **comment on the
+  rolling `seo-report` issue** instead. GitHub emails watchers for new comments
+  (it does *not* email for issue body edits, which is why the Sunday mail stopped
+  when the report moved to one rolling issue). So you still get a Sunday email —
+  just a GitHub-style one.
+- **SMTP secrets set** → the comment is skipped and the clean digest email is
+  sent instead (still exactly one mail per run).
 - **Secrets set but send fails** → exits `1` on purpose, so a broken notifier
   is visible in the run instead of silently disappearing.
 

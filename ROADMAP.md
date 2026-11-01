@@ -209,6 +209,11 @@ Verify in CI: Actions → "SEO Dashboard" → Run workflow.
 - `.github/workflows/seo-doctor.yml` — final step **"Email weekly digest"** with
   `if: always()`, `JOB_STATUS: ${{ job.status }}`. It runs **after** the report is
   committed and the rolling issue updated, so the mail reflects the run that just finished.
+- **GitHub-comment fallback:** GitHub only emails watchers for new issues/comments,
+  never for issue body edits. Since Phase 0 moved the report into one rolling issue, the
+  Sunday mail silently stopped. So while SMTP is unset, the run posts the digest as a
+  comment on the rolling `seo-report` issue (that is what triggers the GitHub email).
+  Once the SMTP secrets exist, the comment step is skipped and only the clean email goes out.
 - Sent from the **weekly** workflow (not auto-fix) on purpose: auto-fix only runs when the
   weekly run succeeds, so a failure there would otherwise be silent. Failure is exactly
   when the heartbeat matters most.

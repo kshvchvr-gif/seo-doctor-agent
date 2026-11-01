@@ -89,6 +89,48 @@ jobs:
               console.log(`Closed stale report issue #${issue.number} (${issue.title})`);
             }
 
+      # GitHub only emails watchers for NEW issues/comments, not for body edits.
+      # Since the report lives in one rolling issue (dedup), a weekly comment is
+      # what keeps the Sunday email alive. It is a fallback: once the SMTP
+      # secrets are set, the cleaner digest email takes over and this is skipped.
+      - name: Build weekly digest
+        id: digest
+        env:
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          MAIL_TO: ${{ secrets.MAIL_TO }}
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          python -m src.notify --print > digest.txt
+          if [ -n "$SMTP_HOST" ] && [ -n "$SMTP_USER" ] && [ -n "$SMTP_PASS" ] && [ -n "$MAIL_TO" ]; then
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Post digest comment (GitHub email notification)
+        if: steps.digest.outputs.configured != 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const { owner, repo } = context.repo;
+            const text = fs.readFileSync('digest.txt', 'utf8').trim();
+            const body = `### Weekly digest\n\n\`\`\`\n${text}\n\`\`\``;
+            const open = await github.paginate(github.rest.issues.listForRepo, {
+              owner, repo, state: 'open', labels: 'seo-report', per_page: 100,
+            });
+            const rolling = open.find(i => !i.pull_request && i.title === 'SEO Doctor Report — Latest');
+            if (!rolling) {
+              console.log('Rolling report issue not found — skipping digest comment.');
+              return;
+            }
+            const { data } = await github.rest.issues.createComment({
+              owner, repo, issue_number: rolling.number, body,
+            });
+            console.log(`Posted digest comment: ${data.html_url}`);
+
       # Heartbeat: one email per weekly run (success *or* failure). If this mail
       # stops arriving on Sunday, the pipeline is broken — that is the signal.
       # Stays green (and prints a hint) until the SMTP secrets are configured.
