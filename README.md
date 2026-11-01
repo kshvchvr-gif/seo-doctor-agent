@@ -83,6 +83,12 @@ Repo → Settings → Secrets and variables → Actions → New repository secre
 | `GEMINI_MODEL` | optional; defaults to `gemini-2.5-flash-lite` |
 | `AI_TREATMENT_MAX_PAGES` | optional; defaults to `8` |
 | `SITE_REPO_TOKEN` | **Phase 3 (auto-fix).** A fine-grained PAT with `Contents: Read and write` + `Pull requests: Read and write` on the **website** repo only. Without it, auto-fix skips cleanly. |
+| `SMTP_HOST` | **Optional (email heartbeat).** e.g. `smtp.gmail.com`. Leave unset to skip email entirely — the workflow stays green. |
+| `SMTP_PORT` | optional; `465` (implicit TLS, default) or `587` (STARTTLS) |
+| `SMTP_USER` | SMTP login, usually the sending address (e.g. `you@gmail.com`) |
+| `SMTP_PASS` | SMTP password / app password (Gmail needs a 16-char **App Password**, not the account password) |
+| `MAIL_TO` | recipient(s), comma-separated (e.g. `you@gmail.com`) |
+| `MAIL_FROM` | optional From header; defaults to `SMTP_USER` |
 
 ### 5. Push this code to that repo
 
@@ -110,6 +116,29 @@ every weekly/health run. It is served at
 `https://<owner>.github.io/<repo>/`. Note: on a **public** repo Pages is public,
 so the dashboard (like `reports/*.md` itself) is world-readable.
 
+### 8. Optional: email heartbeat
+
+The weekly workflow ends with an **"Email weekly digest"** step (`if: always()`),
+so exactly one short email arrives after **every** weekly run — success *or*
+failure. That is the point: if Sunday's email does not arrive, the pipeline
+itself is broken. The digest contains traffic (28d vs previous 28d), fix-plan
+size, open/merged PRs with verification direction, top technical flags, and
+links to the dashboard, Actions, and the site PRs.
+
+Setup: add the six `SMTP_*` / `MAIL_*` secrets above. Gmail example
+(`smtp.gmail.com`, port `465`) needs an **App Password** from
+<https://myaccount.google.com/apppasswords> — regular account passwords are
+rejected.
+
+Behaviour:
+
+- **No SMTP secrets** → prints a hint and exits `0` (workflow stays green).
+- **Secrets set but send fails** → exits `1` on purpose, so a broken notifier
+  is visible in the run instead of silently disappearing.
+
+The email is sent *before* the Auto-Fix workflow runs, so PR numbers in it
+reflect the state at the start of the run (the previous week's PR).
+
 ## Cost
 
 ₹0. Search Console API, GA4 API, GitHub Actions (public repo), and Gemini
@@ -132,6 +161,7 @@ src/
   auto_fix.py            # Phase 3: open/update a reviewable PR against the site repo
   verify_fixes.py        # Phase 3: verify merged fixes + optional revert PR
   dashboard.py           # Phase 4: build the static dashboard + JSON index
+  notify.py              # Phase 5: weekly email digest (stdlib smtplib, optional)
   main.py                # orchestrates everything
 fixes_history.json                    # Phase 3: log of applied fixes + outcomes
 .github/workflows/seo-doctor.yml     # the weekly cron schedule

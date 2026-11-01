@@ -45,6 +45,10 @@ It is **set** as of 2026-10-16; it is currently the account's `gh` OAuth token
 (broad `repo`+`workflow` scope) — replace it with a scoped fine-grained PAT when
 convenient (no code change needed; CI just reads the secret).
 
+**Phase 5 extra secrets (optional, email heartbeat):**
+`SMTP_HOST`, `SMTP_PORT` (default 465), `SMTP_USER`, `SMTP_PASS`, `MAIL_TO`,
+and optional `MAIL_FROM`. Unset → the digest step prints a hint and stays green.
+
 ## Status at a glance
 
 | Phase | What | Status |
@@ -54,6 +58,7 @@ convenient (no code change needed; CI just reads the secret).
 | 2 | Traffic decline diagnosis (evidence-based) | ✅ Done |
 | 3 | Safe auto-fix via PR + verify + rollback | ✅ Done |
 | 4 | Dashboard | ✅ Done |
+| 5 | Email heartbeat (weekly digest) | ✅ Done |
 
 ---
 
@@ -188,6 +193,35 @@ empty/malformed input, full build output). Pages deploys green.
 
 Verify locally: `python -m src.dashboard --out docs` then open `docs/index.html`.
 Verify in CI: Actions → "SEO Dashboard" → Run workflow.
+
+---
+
+## ✅ Phase 5 — Email heartbeat (DONE)
+
+**Goal:** "pipeline zinda hai?" ka jawab inbox me — bina GitHub kholne.
+
+**Built:**
+- `src/notify.py` (new): stdlib-only (`smtplib` + `email`) digest builder + sender.
+  Reads `reports/latest.md`, `reports/fix_plan.json`, `fixes_history.json` and emits
+  text **and** HTML: traffic (28d vs previous 28d), fix-plan size, open/merged PRs with
+  verification direction, top technical flags (bold stripped, singular/plural handled),
+  and links to dashboard / Actions / rolling report issue / site PRs.
+- `.github/workflows/seo-doctor.yml` — final step **"Email weekly digest"** with
+  `if: always()`, `JOB_STATUS: ${{ job.status }}`. It runs **after** the report is
+  committed and the rolling issue updated, so the mail reflects the run that just finished.
+- Sent from the **weekly** workflow (not auto-fix) on purpose: auto-fix only runs when the
+  weekly run succeeds, so a failure there would otherwise be silent. Failure is exactly
+  when the heartbeat matters most.
+- Failure semantics: no SMTP secrets → prints a hint, exits `0` (stays green); secrets
+  present but SMTP fails → exits `1` so a broken notifier is loud.
+
+**Acceptance:** ✅ offline suite (real report digest, empty/missing report, missing
+plan/history, failure status, HTML escaping/XSS, SMTP config defaults + bad port, both
+465/TLS and 587/STARTTLS paths with mocked `smtplib`, success/failure exit codes).
+
+Verify locally: `python -m src.notify` (prints the digest; exits 0 when unconfigured).
+Verify in CI: add the `SMTP_*` / `MAIL_*` secrets, then Actions → "SEO Doctor Weekly" →
+Run workflow; exactly one mail should arrive.
 
 ---
 

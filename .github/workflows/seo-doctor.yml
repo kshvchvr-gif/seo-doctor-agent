@@ -88,3 +88,18 @@ jobs:
               });
               console.log(`Closed stale report issue #${issue.number} (${issue.title})`);
             }
+
+      # Heartbeat: one email per weekly run (success *or* failure). If this mail
+      # stops arriving on Sunday, the pipeline is broken — that is the signal.
+      # Stays green (and prints a hint) until the SMTP secrets are configured.
+      - name: Email weekly digest
+        if: always()
+        env:
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          MAIL_TO: ${{ secrets.MAIL_TO }}
+          MAIL_FROM: ${{ secrets.MAIL_FROM }}
+          JOB_STATUS: ${{ job.status }}
+        run: python -m src.notify
