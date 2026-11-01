@@ -187,7 +187,7 @@
     "pr": 2,
     "url": "https://github.com/kshvchvr-gif/krishnbhakti-web/pull/2",
     "branch": "seo-autofix",
-    "status": "open",
+    "status": "merged",
     "pages": [
       "https://krishnbhakti.com/",
       "https://krishnbhakti.com/english-blogs/bhagavad-gita-5-27-when-mind-wont-stop-gita-says-do-this",
@@ -352,6 +352,8 @@
         ]
       }
     ],
-    "direction": "pending"
+    "direction": "pending",
+    "merged_at": "2026-11-01T17:45:32Z",
+    "merge_commit_sha": "3d8baebab12616a0831625f0121e8283ba3defc3"
   }
 ]
