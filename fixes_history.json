@@ -164,17 +164,32 @@
         ]
       }
     ],
-    "direction": "pending",
+    "direction": "improved",
     "merged_at": "2026-10-16T16:06:09Z",
-    "merge_commit_sha": "357de7bf9e65066c7210bba21f960a1d7f16c03e"
+    "merge_commit_sha": "357de7bf9e65066c7210bba21f960a1d7f16c03e",
+    "verification": {
+      "direction": "improved",
+      "before": {
+        "clicks": 6.0,
+        "impressions": 481.0
+      },
+      "before_days": 28,
+      "after": {
+        "clicks": 4.0,
+        "impressions": 234.0
+      },
+      "after_days": 12,
+      "checked_on": "2026-11-01"
+    }
   },
   {
-    "date": "2026-10-25",
+    "date": "2026-11-01",
     "pr": 2,
     "url": "https://github.com/kshvchvr-gif/krishnbhakti-web/pull/2",
     "branch": "seo-autofix",
     "status": "open",
     "pages": [
+      "https://krishnbhakti.com/",
       "https://krishnbhakti.com/english-blogs/bhagavad-gita-5-27-when-mind-wont-stop-gita-says-do-this",
       "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins",
       "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you",
@@ -186,7 +201,8 @@
       "english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins.html",
       "english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you.html",
       "gita-gpt.html",
-      "hindi-blogs/bhagavad-gita-6-38-mind-distraction.html"
+      "hindi-blogs/bhagavad-gita-6-38-mind-distraction.html",
+      "index.html"
     ],
     "fixes": [
       {
@@ -211,23 +227,23 @@
         "changes": [
           {
             "type": "TITLE",
-            "old": "Bhagavad Gita 6.12 — Sit Down, Focus the Mind — This Is Exactly How Meditation Begins | Krishna Bhakti",
-            "new": "Bhagavad Gita 6.12: How to Begin Meditation and Focus the Mind"
+            "old": "Bhagavad Gita 6.12: How to Begin Meditation and Focus the Mind",
+            "new": "Bhagavad Gita 6.12 — How to Focus the Mind and Begin Meditation"
           },
           {
             "type": "OG_TITLE",
-            "old": "Bhagavad Gita 6.12 — Sit Down, Focus the Mind — This Is Exactly How Meditation Begins",
-            "new": "Bhagavad Gita 6.12: How to Begin Meditation and Focus the Mind"
+            "old": "Bhagavad Gita 6.12: How to Begin Meditation and Focus the Mind",
+            "new": "Bhagavad Gita 6.12 — How to Focus the Mind and Begin Meditation"
           },
           {
             "type": "META_DESCRIPTION",
-            "old": "Read Bhagavad Gita 6.12 translation and commentary. Learn Krishna's direct instructions on how to sit, focus the mind, and practice meditation.",
-            "new": "Learn Bhagavad Gita 6.12 instruction on meditation. Discover how to sit, make the mind one-pointed, control senses, and practice self-purification."
+            "old": "Learn Bhagavad Gita 6.12 instruction on meditation. Discover how to sit, make the mind one-pointed, control senses, and practice self-purification.",
+            "new": "Read Bhagavad Gita 6.12 commentary. Learn Krishna's direct instructions to sit down, focus the mind, control senses, and practice yoga for self-purification."
           },
           {
             "type": "OG_DESCRIPTION",
-            "old": "Read Bhagavad Gita 6.12 translation and commentary. Learn Krishna's direct instructions on how to sit, focus the mind, and practice meditation.",
-            "new": "Learn Bhagavad Gita 6.12 instruction on meditation. Discover how to sit, make the mind one-pointed, control senses, and practice self-purification."
+            "old": "Learn Bhagavad Gita 6.12 instruction on meditation. Discover how to sit, make the mind one-pointed, control senses, and practice self-purification.",
+            "new": "Read Bhagavad Gita 6.12 commentary. Learn Krishna's direct instructions to sit down, focus the mind, control senses, and practice yoga for self-purification."
           }
         ]
       },
@@ -237,13 +253,13 @@
         "changes": [
           {
             "type": "TITLE",
-            "old": "Bhagavad Gita 6.6 Meaning: The Mind You Control Saves You",
-            "new": "Bhagavad Gita 6.6 Meaning: The Mind You Control vs Saves You"
+            "old": "Bhagavad Gita 6.6 Meaning: The Mind You Control vs Saves You",
+            "new": "Bhagavad Gita 6.6 Meaning: The Mind That Saves You"
           },
           {
             "type": "OG_TITLE",
-            "old": "Bhagavad Gita 6.6 Meaning: The Mind You Control Saves You",
-            "new": "Bhagavad Gita 6.6 Meaning: The Mind You Control vs Saves You"
+            "old": "Bhagavad Gita 6.6 Meaning: The Mind You Control vs Saves You",
+            "new": "Bhagavad Gita 6.6 Meaning: The Mind That Saves You"
           },
           {
             "type": "META_DESCRIPTION",
@@ -263,23 +279,23 @@
         "changes": [
           {
             "type": "TITLE",
-            "old": "Gita GPT — Ask Questions &amp; Get Bhagavad Gita Answers",
-            "new": "गीता GPT — भगवद् गीता के ज्ञान से अपने जीवन के प्रश्नों के उत्तर पाएं"
+            "old": "गीता GPT — भगवद् गीता के ज्ञान से अपने जीवन के प्रश्नों के उत्तर पाएं",
+            "new": "गीता GPT — भगवद् गीता के ज्ञान से अपने प्रश्नों के उत्तर पाएँ"
           },
           {
             "type": "OG_TITLE",
-            "old": "Gita GPT — Ask Questions &amp; Get Bhagavad Gita Answers",
-            "new": "गीता GPT — भगवद् गीता के ज्ञान से अपने जीवन के प्रश्नों के उत्तर पाएं"
+            "old": "गीता GPT — भगवद् गीता के ज्ञान से अपने जीवन के प्रश्नों के उत्तर पाएं",
+            "new": "गीता GPT — भगवद् गीता के ज्ञान से अपने प्रश्नों के उत्तर पाएँ"
           },
           {
             "type": "META_DESCRIPTION",
-            "old": "Use Gita GPT free online tool to ask life questions and receive wisdom-based answers from the Bhagavad Gita in Hindi and English. No signup required.",
-            "new": "गीता GPT फ्री ऑनलाइन टूल से हिंदी और इंग्लिश में भगवद् गीता के आधार पर अपने जीवन के प्रश्नों के उत्तर पाएं। बिना साइनअप के तुरंत समाधान प्राप्त करें।"
+            "old": "गीता GPT फ्री ऑनलाइन टूल से हिंदी और इंग्लिश में भगवद् गीता के आधार पर अपने जीवन के प्रश्नों के उत्तर पाएं। बिना साइनअप के तुरंत समाधान प्राप्त करें।",
+            "new": "गीता GPT ऑनलाइन टूल का उपयोग करें और हिंदी व इंग्लिश में भगवद् गीता के श्लोकों के आधार पर जीवन के सवालों के सही समाधान पाएँ। कोई साइनअप नहीं।"
           },
           {
             "type": "OG_DESCRIPTION",
-            "old": "Use Gita GPT free online tool to ask life questions and receive wisdom-based answers from the Bhagavad Gita in Hindi and English. No signup required.",
-            "new": "गीता GPT फ्री ऑनलाइन टूल से हिंदी और इंग्लिश में भगवद् गीता के आधार पर अपने जीवन के प्रश्नों के उत्तर पाएं। बिना साइनअप के तुरंत समाधान प्राप्त करें।"
+            "old": "गीता GPT फ्री ऑनलाइन टूल से हिंदी और इंग्लिश में भगवद् गीता के आधार पर अपने जीवन के प्रश्नों के उत्तर पाएं। बिना साइनअप के तुरंत समाधान प्राप्त करें।",
+            "new": "गीता GPT ऑनलाइन टूल का उपयोग करें और हिंदी व इंग्लिश में भगवद् गीता के श्लोकों के आधार पर जीवन के सवालों के सही समाधान पाएँ। कोई साइनअप नहीं।"
           }
         ]
       },
@@ -289,23 +305,49 @@
         "changes": [
           {
             "type": "TITLE",
-            "old": "भगवद गीता 6.38: ध्यान में मन भटकना क्या असफलता है? जानिए",
-            "new": "भगवद गीता 6.38: ध्यान में मन भटकना क्या असफलता है?"
+            "old": "भगवद गीता 6.38: ध्यान में मन भटकना क्या असफलता है?",
+            "new": "भगवद गीता 6.38: क्या ध्यान में मन भटकना असफलता है? जानिए"
           },
           {
             "type": "OG_TITLE",
-            "old": "भगवद गीता 6.38: ध्यान में मन भटकना क्या असफलता है? जानिए",
-            "new": "भगवद गीता 6.38: ध्यान में मन भटकना क्या असफलता है?"
+            "old": "भगवद गीता 6.38: ध्यान में मन भटकना क्या असफलता है?",
+            "new": "भगवद गीता 6.38: क्या ध्यान में मन भटकना असफलता है? जानिए"
           },
           {
             "type": "META_DESCRIPTION",
-            "old": "भगवद गीता 6.38 के अनुसार ध्यान में मन भटकना असफलता नहीं है। जानें कृष्ण ने अर्जुन के इस डर को कैसे दूर किया और आधुनिक जीवन में इसका क्या अर्थ है।",
-            "new": "भगवद गीता 6.38 के अनुसार ध्यान में मन भटकना असफलता नहीं है। जानें कृष्ण ने अर्जुन के इस डर को कैसे दूर किया और इसका आधुनिक जीवन में क्या अर्थ है।"
+            "old": "भगवद गीता 6.38 के अनुसार ध्यान में मन भटकना असफलता नहीं है। जानें कृष्ण ने अर्जुन के इस डर को कैसे दूर किया और इसका आधुनिक जीवन में क्या अर्थ है।",
+            "new": "भगवद गीता 6.38 के अनुसार ध्यान में मन भटकना असफलता नहीं है। जानें कृष्ण ने अर्जुन के डर को कैसे दूर किया और आधुनिक जीवन में इसका क्या अर्थ है।"
           },
           {
             "type": "OG_DESCRIPTION",
-            "old": "भगवद गीता 6.38 के अनुसार ध्यान में मन भटकना असफलता नहीं है। जानें कृष्ण ने अर्जुन के इस डर को कैसे दूर किया और आधुनिक जीवन में इसका क्या अर्थ है।",
-            "new": "भगवद गीता 6.38 के अनुसार ध्यान में मन भटकना असफलता नहीं है। जानें कृष्ण ने अर्जुन के इस डर को कैसे दूर किया और इसका आधुनिक जीवन में क्या अर्थ है।"
+            "old": "भगवद गीता 6.38 के अनुसार ध्यान में मन भटकना असफलता नहीं है। जानें कृष्ण ने अर्जुन के इस डर को कैसे दूर किया और इसका आधुनिक जीवन में क्या अर्थ है।",
+            "new": "भगवद गीता 6.38 के अनुसार ध्यान में मन भटकना असफलता नहीं है। जानें कृष्ण ने अर्जुन के डर को कैसे दूर किया और आधुनिक जीवन में इसका क्या अर्थ है।"
+          }
+        ]
+      },
+      {
+        "file": "index.html",
+        "url": "https://krishnbhakti.com/",
+        "changes": [
+          {
+            "type": "TITLE",
+            "old": "Krishna Bhakti | वासुदेवः सर्वम्",
+            "new": "Bhagavad Gita Wisdom & Daily Krishna Teachings | Krishna Bhakti"
+          },
+          {
+            "type": "OG_TITLE",
+            "old": "Krishna Bhakti | वासुदेवः सर्वम्",
+            "new": "Bhagavad Gita Wisdom & Daily Krishna Teachings | Krishna Bhakti"
+          },
+          {
+            "type": "META_DESCRIPTION",
+            "old": "भगवान श्री कृष्ण के दिव्य वचनों और श्रीमद्भगवद्गीता के अनमोल ज्ञान में डूबें।",
+            "new": "Explore daily Bhagavad Gita shlokas in Hindi and English, divine Krishna teachings, and spiritual wisdom to transform your daily life."
+          },
+          {
+            "type": "OG_DESCRIPTION",
+            "old": "आज का दिव्य श्लोक और उसका अर्थ पढ़ें। जय श्री कृष्ण! 🙏",
+            "new": "Explore daily Bhagavad Gita shlokas in Hindi and English, divine Krishna teachings, and spiritual wisdom to transform your daily life."
           }
         ]
       }
