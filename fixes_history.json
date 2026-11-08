@@ -1,495 +1,721 @@
 [
-  {
-    "date": "2026-10-16",
-    "pr": 1,
-    "url": "https://github.com/kshvchvr-gif/krishnbhakti-web/pull/1",
-    "branch": "seo-autofix",
-    "status": "merged",
-    "pages": [
-      "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-14-where-to-fix-the-mind-in-meditation-krishna-reveals-the-secret",
-      "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-17-balance-in-eating-rest-work-sleep-ends-all-suffering",
-      "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you",
-      "https://krishnbhakti.com/gita-gpt",
-      "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-38-mind-distraction",
-      "https://krishnbhakti.com/hindi-blogs/gita-shloka-5-13-nau-darwaze-ek-raja-kya-tum-apne-hi-ghar-mein-gulam-ho"
-    ],
-    "files": [
-      "english-blogs/bhagavad-gita-6-14-where-to-fix-the-mind-in-meditation-krishna-reveals-the-secret.html",
-      "english-blogs/bhagavad-gita-6-17-balance-in-eating-rest-work-sleep-ends-all-suffering.html",
-      "english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you.html",
-      "gita-gpt.html",
-      "hindi-blogs/bhagavad-gita-6-38-mind-distraction.html",
-      "hindi-blogs/gita-shloka-5-13-nau-darwaze-ek-raja-kya-tum-apne-hi-ghar-mein-gulam-ho.html"
-    ],
-    "fixes": [
-      {
-        "file": "english-blogs/bhagavad-gita-6-14-where-to-fix-the-mind-in-meditation-krishna-reveals-the-secret.html",
-        "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-14-where-to-fix-the-mind-in-meditation-krishna-reveals-the-secret",
-        "changes": [
-          {
-            "type": "META_DESCRIPTION",
-            "old": "Bhagavad Gita 6.14 — Krishna reveals the one secret to staying focused in meditation. Learn where to fix the mind, how to stay calm and fearless, and more.",
-            "new": "Discover Bhagavad Gita 6.14 meaning. Krishna reveals the secret to fixing the mind in meditation, staying fearless, and making Him the supreme goal."
-          },
-          {
-            "type": "OG_DESCRIPTION",
-            "old": "Bhagavad Gita 6.14 — Krishna reveals the one secret to staying focused in meditation. Learn where to fix the mind, how to stay calm and fearless, and more.",
-            "new": "Discover Bhagavad Gita 6.14 meaning. Krishna reveals the secret to fixing the mind in meditation, staying fearless, and making Him the supreme goal."
-          }
-        ]
-      },
-      {
-        "file": "english-blogs/bhagavad-gita-6-17-balance-in-eating-rest-work-sleep-ends-all-suffering.html",
-        "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-17-balance-in-eating-rest-work-sleep-ends-all-suffering",
-        "changes": [
-          {
-            "type": "TITLE",
-            "old": "Bhagavad Gita 6.17: Balance in Eating, Rest &amp; Work Ends Suffering",
-            "new": "Bhagavad Gita 6.17: Balance in Eating, Rest & Work Ends Suffering"
-          },
-          {
-            "type": "OG_TITLE",
-            "old": "Bhagavad Gita 6.17: Balance in Eating, Rest &amp; Work Ends Suffering",
-            "new": "Bhagavad Gita 6.17: Balance in Eating, Rest & Work Ends Suffering"
-          },
-          {
-            "type": "META_DESCRIPTION",
-            "old": "Discover Bhagavad Gita 6.17 meaning on balance in food, sleep, work and rest. Krishna's formula for health, peace, and ending all suffering.",
-            "new": "Discover Bhagavad Gita 6.17 meaning on balance in eating, rest, work, and sleep. Learn Krishna's practical formula for health and ending suffering."
-          },
-          {
-            "type": "OG_DESCRIPTION",
-            "old": "Discover Bhagavad Gita 6.17 meaning on balance in food, sleep, work and rest. Krishna's formula for health, peace, and ending all suffering.",
-            "new": "Discover Bhagavad Gita 6.17 meaning on balance in eating, rest, work, and sleep. Learn Krishna's practical formula for health and ending suffering."
-          }
-        ]
-      },
-      {
-        "file": "english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you.html",
-        "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you",
-        "changes": [
-          {
-            "type": "TITLE",
-            "old": "Bhagavad Gita 6.6: The Mind That Saves You vs Controls You",
-            "new": "Bhagavad Gita 6.6 Meaning: The Mind That Controls You vs Saves You"
-          },
-          {
-            "type": "OG_TITLE",
-            "old": "Bhagavad Gita 6.6: The Mind That Saves You vs Controls You",
-            "new": "Bhagavad Gita 6.6 Meaning: The Mind That Controls You vs Saves You"
-          },
-          {
-            "type": "META_DESCRIPTION",
-            "old": "Explore Bhagavad Gita 6.6 meaning on how a controlled mind becomes your best friend and an uncontrolled mind becomes your enemy. Read clear insights.",
-            "new": "Discover Bhagavad Gita 6.6 meaning. Learn how a controlled mind becomes your greatest friend and an uncontrolled mind becomes your greatest enemy."
-          },
-          {
-            "type": "OG_DESCRIPTION",
-            "old": "Explore Bhagavad Gita 6.6 meaning on how a controlled mind becomes your best friend and an uncontrolled mind becomes your enemy. Read clear insights.",
-            "new": "Discover Bhagavad Gita 6.6 meaning. Learn how a controlled mind becomes your greatest friend and an uncontrolled mind becomes your greatest enemy."
-          }
-        ]
-      },
-      {
-        "file": "gita-gpt.html",
-        "url": "https://krishnbhakti.com/gita-gpt",
-        "changes": [
-          {
-            "type": "TITLE",
-            "old": "Gita GPT — Ask Questions &amp; Get Bhagavad Gita Answers",
-            "new": "Gita GPT — Ask Questions & Get Bhagavad Gita Answers Online"
-          },
-          {
-            "type": "OG_TITLE",
-            "old": "Gita GPT — Ask Questions &amp; Get Bhagavad Gita Answers",
-            "new": "Gita GPT — Ask Questions & Get Bhagavad Gita Answers Online"
-          },
-          {
-            "type": "META_DESCRIPTION",
-            "old": "Use Gita GPT free online tool. Ask life questions in Hindi or English and get wisdom-based answers directly from Bhagavad Gita shlokas.",
-            "new": "Use Gita GPT free online tool to ask life questions and receive wisdom-based answers from the Bhagavad Gita in Hindi and English. No signup required."
-          },
-          {
-            "type": "OG_DESCRIPTION",
-            "old": "Use Gita GPT free online tool. Ask life questions in Hindi or English and get wisdom-based answers directly from Bhagavad Gita shlokas.",
-            "new": "Use Gita GPT free online tool to ask life questions and receive wisdom-based answers from the Bhagavad Gita in Hindi and English. No signup required."
-          }
-        ]
-      },
-      {
-        "file": "hindi-blogs/bhagavad-gita-6-38-mind-distraction.html",
-        "url": "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-38-mind-distraction",
-        "changes": [
-          {
-            "type": "TITLE",
-            "old": "भगवद गीता 6.38: क्या ध्यान में मन भटकना असफलता है?",
-            "new": "भगवद गीता 6.38: ध्यान में मन भटकना क्या असफलता है? जानिए"
-          },
-          {
-            "type": "OG_TITLE",
-            "old": "भगवद गीता 6.38: क्या ध्यान में मन भटकना असफलता है?",
-            "new": "भगवद गीता 6.38: ध्यान में मन भटकना क्या असफलता है? जानिए"
-          },
-          {
-            "type": "META_DESCRIPTION",
-            "old": "क्या ध्यान में मन भटकना असफलता है? भगवद गीता के छठे अध्याय के 38वें श्लोक में कृष्ण अर्जुन के डर को कैसे दूर करते हैं, जानें विस्तार से।",
-            "new": "भगवद गीता 6.38 के अनुसार ध्यान में मन भटकना असफलता नहीं है। जानें कृष्ण ने अर्जुन के इस डर को कैसे दूर किया और आधुनिक जीवन में इसका क्या अर्थ है।"
-          },
-          {
-            "type": "OG_DESCRIPTION",
-            "old": "क्या ध्यान में मन भटकना असफलता है? भगवद गीता के छठे अध्याय के 38वें श्लोक में कृष्ण अर्जुन के डर को कैसे दूर करते हैं, जानें विस्तार से।",
-            "new": "भगवद गीता 6.38 के अनुसार ध्यान में मन भटकना असफलता नहीं है। जानें कृष्ण ने अर्जुन के इस डर को कैसे दूर किया और आधुनिक जीवन में इसका क्या अर्थ है।"
-          }
-        ]
-      },
-      {
-        "file": "hindi-blogs/gita-shloka-5-13-nau-darwaze-ek-raja-kya-tum-apne-hi-ghar-mein-gulam-ho.html",
-        "url": "https://krishnbhakti.com/hindi-blogs/gita-shloka-5-13-nau-darwaze-ek-raja-kya-tum-apne-hi-ghar-mein-gulam-ho",
-        "changes": [
-          {
-            "type": "META_DESCRIPTION",
-            "old": "",
-            "new": "नौ दरवाज़ों वाले शरीर और आत्मा के बंधन पर गीता 5.13 का सरल भाव, जो रोज़ की ज़िंदगी में सच्ची आज़ादी और शांति की राह दिखाता है।"
-          },
-          {
-            "type": "OG_DESCRIPTION",
-            "old": "क्या तुम अपने ही शरीर रूपी नगर में राजा हो या गुलाम? भगवद गीता अध्याय 5, श्लोक 13 में श्रीकृष्ण बताते हैं — नौ द्वारों से भीतर आने वाली दुनिया को control करना ही असली स्वतंत्रता है। प्रभुपाद, स्वामी मुकुन्दानन्द और गीता प्रेस की व्याख्या के साथ जानो वशी बनने का सच।",
-            "new": "नौ दरवाज़ों वाले शरीर और आत्मा के बंधन पर गीता 5.13 का सरल भाव, जो रोज़ की ज़िंदगी में सच्ची आज़ादी और शांति की राह दिखाता है।"
-          },
-          {
-            "type": "BROKEN_META_REMOVED",
-            "old": "content=\"क्या तुम अपने ही शरीर रूपी नगर में राजा हो या गुलाम?\"वशी\" बनने का सच।\">",
-            "new": ""
-          }
-        ]
-      }
-    ],
-    "direction": "improved",
-    "merged_at": "2026-10-16T16:06:09Z",
-    "merge_commit_sha": "357de7bf9e65066c7210bba21f960a1d7f16c03e",
-    "verification": {
-      "direction": "improved",
-      "before": {
-        "clicks": 6.0,
-        "impressions": 481.0
-      },
-      "before_days": 28,
-      "after": {
-        "clicks": 4.0,
-        "impressions": 234.0
-      },
-      "after_days": 12,
-      "checked_on": "2026-11-01"
-    }
-  },
-  {
-    "date": "2026-11-01",
-    "pr": 2,
-    "url": "https://github.com/kshvchvr-gif/krishnbhakti-web/pull/2",
-    "branch": "seo-autofix",
-    "status": "merged",
-    "pages": [
-      "https://krishnbhakti.com/",
-      "https://krishnbhakti.com/english-blogs/bhagavad-gita-5-27-when-mind-wont-stop-gita-says-do-this",
-      "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins",
-      "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you",
-      "https://krishnbhakti.com/gita-gpt",
-      "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-38-mind-distraction"
-    ],
-    "files": [
-      "english-blogs/bhagavad-gita-5-27-when-mind-wont-stop-gita-says-do-this.html",
-      "english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins.html",
-      "english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you.html",
-      "gita-gpt.html",
-      "hindi-blogs/bhagavad-gita-6-38-mind-distraction.html",
-      "index.html"
-    ],
-    "fixes": [
-      {
-        "file": "english-blogs/bhagavad-gita-5-27-when-mind-wont-stop-gita-says-do-this.html",
-        "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-5-27-when-mind-wont-stop-gita-says-do-this",
-        "changes": [
-          {
-            "type": "META_DESCRIPTION",
-            "old": "Discover Bhagavad Gita 5.27. Learn Krishna's practical meditation technique on breath control and inner focus to quiet an overactive, restless mind today.",
-            "new": "Discover Bhagavad Gita 5.27. Learn Krishna's practical meditation steps on breath and senses to silence a restless mind and find deep inner peace today."
-          },
-          {
-            "type": "OG_DESCRIPTION",
-            "old": "Discover Bhagavad Gita 5.27. Learn Krishna's practical meditation technique on breath control and inner focus to quiet an overactive, restless mind today.",
-            "new": "Discover Bhagavad Gita 5.27. Learn Krishna's practical meditation steps on breath and senses to silence a restless mind and find deep inner peace today."
-          }
-        ]
-      },
-      {
-        "file": "english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins.html",
-        "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins",
-        "changes": [
-          {
-            "type": "TITLE",
-            "old": "Bhagavad Gita 6.12 — Sit Down, Focus the Mind for Meditation",
-            "new": "Bhagavad Gita 6.12: How to Sit and Focus the Mind for Meditation"
-          },
-          {
-            "type": "OG_TITLE",
-            "old": "Bhagavad Gita 6.12 — Sit Down, Focus the Mind for Meditation",
-            "new": "Bhagavad Gita 6.12: How to Sit and Focus the Mind for Meditation"
-          },
-          {
-            "type": "META_DESCRIPTION",
-            "old": "Read Bhagavad Gita 6.12 commentary. Learn how to sit, make the mind one-pointed, control senses, and practice yoga for self-purification.",
-            "new": "Read Bhagavad Gita 6.12 meaning. Learn how to sit, make the mind one-pointed, and control senses for inner purification through simple meditation."
-          },
-          {
-            "type": "OG_DESCRIPTION",
-            "old": "Read Bhagavad Gita 6.12 commentary. Learn how to sit, make the mind one-pointed, control senses, and practice yoga for self-purification.",
-            "new": "Read Bhagavad Gita 6.12 meaning. Learn how to sit, make the mind one-pointed, and control senses for inner purification through simple meditation."
-          }
-        ]
-      },
-      {
-        "file": "english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you.html",
-        "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you",
-        "changes": [
-          {
-            "type": "TITLE",
-            "old": "Bhagavad Gita 6.6 Meaning: The Mind You Control vs Saves You",
-            "new": "Bhagavad Gita 6.6 Meaning: The Mind That Saves You"
-          },
-          {
-            "type": "OG_TITLE",
-            "old": "Bhagavad Gita 6.6 Meaning: The Mind You Control vs Saves You",
-            "new": "Bhagavad Gita 6.6 Meaning: The Mind That Saves You"
-          },
-          {
-            "type": "META_DESCRIPTION",
-            "old": "Discover Bhagavad Gita 6.6 meaning and Atmana Sargo Jitah translation. Learn how a controlled mind becomes your greatest friend and saves you.",
-            "new": "Discover Bhagavad Gita 6.6 meaning and atmana sargo jitah meaning in hindi. Learn how a controlled mind becomes your greatest friend and savior."
-          },
-          {
-            "type": "OG_DESCRIPTION",
-            "old": "Discover Bhagavad Gita 6.6 meaning and Atmana Sargo Jitah translation. Learn how a controlled mind becomes your greatest friend and saves you.",
-            "new": "Discover Bhagavad Gita 6.6 meaning and atmana sargo jitah meaning in hindi. Learn how a controlled mind becomes your greatest friend and savior."
-          }
-        ]
-      },
-      {
-        "file": "gita-gpt.html",
-        "url": "https://krishnbhakti.com/gita-gpt",
-        "changes": [
-          {
-            "type": "TITLE",
-            "old": "गीता GPT — भगवद् गीता के ज्ञान से अपने प्रश्नों के उत्तर पाएँ",
-            "new": "Gita GPT: Ask Questions & Get Bhagavad Gita Answers Online"
-          },
-          {
-            "type": "OG_TITLE",
-            "old": "गीता GPT — भगवद् गीता के ज्ञान से अपने प्रश्नों के उत्तर पाएँ",
-            "new": "Gita GPT: Ask Questions & Get Bhagavad Gita Answers Online"
-          },
-          {
-            "type": "META_DESCRIPTION",
-            "old": "गीता GPT ऑनलाइन टूल का उपयोग करें और हिंदी व इंग्लिश में भगवद् गीता के श्लोकों के आधार पर जीवन के सवालों के सही समाधान पाएँ। कोई साइनअप नहीं।",
-            "new": "Use free Gita GPT online to ask life questions and receive wisdom-based answers from the Bhagavad Gita in Hindi and English. No signup required."
-          },
-          {
-            "type": "OG_DESCRIPTION",
-            "old": "गीता GPT ऑनलाइन टूल का उपयोग करें और हिंदी व इंग्लिश में भगवद् गीता के श्लोकों के आधार पर जीवन के सवालों के सही समाधान पाएँ। कोई साइनअप नहीं।",
-            "new": "Use free Gita GPT online to ask life questions and receive wisdom-based answers from the Bhagavad Gita in Hindi and English. No signup required."
-          }
-        ]
-      },
-      {
-        "file": "hindi-blogs/bhagavad-gita-6-38-mind-distraction.html",
-        "url": "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-38-mind-distraction",
-        "changes": [
-          {
-            "type": "TITLE",
-            "old": "भगवद गीता 6.38: ध्यान में मन भटकना क्या असफलता है?",
-            "new": "भगवद गीता 6.38: क्या ध्यान में मन भटकना असफलता है? जानिए"
-          },
-          {
-            "type": "OG_TITLE",
-            "old": "भगवद गीता 6.38: ध्यान में मन भटकना क्या असफलता है?",
-            "new": "भगवद गीता 6.38: क्या ध्यान में मन भटकना असफलता है? जानिए"
-          },
-          {
-            "type": "META_DESCRIPTION",
-            "old": "भगवद गीता 6.38 के अनुसार ध्यान में मन भटकना असफलता नहीं है। जानें कृष्ण ने अर्जुन के इस डर को कैसे दूर किया और इसका आधुनिक जीवन में क्या अर्थ है।",
-            "new": "भगवद गीता 6.38 के अनुसार ध्यान में मन भटकना असफलता नहीं है। जानें कृष्ण ने अर्जुन के डर को कैसे दूर किया और आधुनिक जीवन में इसका क्या अर्थ है।"
-          },
-          {
-            "type": "OG_DESCRIPTION",
-            "old": "भगवद गीता 6.38 के अनुसार ध्यान में मन भटकना असफलता नहीं है। जानें कृष्ण ने अर्जुन के इस डर को कैसे दूर किया और इसका आधुनिक जीवन में क्या अर्थ है।",
-            "new": "भगवद गीता 6.38 के अनुसार ध्यान में मन भटकना असफलता नहीं है। जानें कृष्ण ने अर्जुन के डर को कैसे दूर किया और आधुनिक जीवन में इसका क्या अर्थ है।"
-          }
-        ]
-      },
-      {
-        "file": "index.html",
-        "url": "https://krishnbhakti.com/",
-        "changes": [
-          {
-            "type": "TITLE",
-            "old": "Bhagavad Gita Teachings &amp; Daily Shloka | Krishna Bhakti",
-            "new": "Bhagavad Gita Teachings & Daily Shlokas in Hindi | Krishna Bhakti"
-          },
-          {
-            "type": "OG_TITLE",
-            "old": "Bhagavad Gita Teachings &amp; Daily Shloka | Krishna Bhakti",
-            "new": "Bhagavad Gita Teachings & Daily Shlokas in Hindi | Krishna Bhakti"
-          },
-          {
-            "type": "META_DESCRIPTION",
-            "old": "Explore daily Bhagavad Gita shlokas with Hindi meaning, Shri Krishna teachings, and spiritual wisdom to transform your daily life.",
-            "new": "भगवान श्री कृष्ण के दिव्य वचनों और श्रीमद्भगवद्गीता के अनमोल ज्ञान, दैनिक श्लोक और हिंदी भावार्थ के साथ अपने जीवन को बदलें।"
-          },
-          {
-            "type": "OG_DESCRIPTION",
-            "old": "Explore daily Bhagavad Gita shlokas with Hindi meaning, Shri Krishna teachings, and spiritual wisdom to transform your daily life.",
-            "new": "भगवान श्री कृष्ण के दिव्य वचनों और श्रीमद्भगवद्गीता के अनमोल ज्ञान, दैनिक श्लोक और हिंदी भावार्थ के साथ अपने जीवन को बदलें।"
-          }
-        ]
-      }
-    ],
-    "direction": "pending",
-    "merged_at": "2026-11-01T17:45:32Z",
-    "merge_commit_sha": "3d8baebab12616a0831625f0121e8283ba3defc3"
-  },
-  {
-    "date": "2026-11-08",
-    "pr": 5,
-    "url": "https://github.com/kshvchvr-gif/krishnbhakti-web/pull/5",
-    "branch": "seo-autofix",
-    "status": "merged",
-    "pages": [
-      "https://krishnbhakti.com/",
-      "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins",
-      "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you",
-      "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-38-mind-distraction",
-      "https://krishnbhakti.com/hindi-blogs/gita-shloka-6-26-man-bhage-to-wapas-lao"
-    ],
-    "files": [
-      "english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins.html",
-      "english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you.html",
-      "hindi-blogs/bhagavad-gita-6-38-mind-distraction.html",
-      "index.html",
-      "hindi-blogs/gita-shloka-6-26-man-bhage-to-wapas-lao.html"
-    ],
-    "fixes": [
-      {
-        "file": "english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins.html",
-        "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins",
-        "changes": [
-          {
-            "type": "TITLE",
-            "old": "Bhagavad Gita 6.12: How to Sit and Focus the Mind for Meditation",
-            "new": "Bhagavad Gita 6.12: How to Focus the Mind in Meditation"
-          },
-          {
-            "type": "OG_TITLE",
-            "old": "Bhagavad Gita 6.12: How to Sit and Focus the Mind for Meditation",
-            "new": "Bhagavad Gita 6.12: How to Focus the Mind in Meditation"
-          }
-        ]
-      },
-      {
-        "file": "english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you.html",
-        "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you",
-        "changes": [
-          {
-            "type": "META_DESCRIPTION",
-            "old": "Discover Bhagavad Gita 6.6 meaning and atmana sargo jitah meaning in hindi. Learn how a controlled mind becomes your greatest friend and savior.",
-            "new": "Discover Bhagavad Gita 6.6 meaning & atmana sargo jitah meaning in hindi. Learn how a controlled mind becomes your greatest friend and savior."
-          },
-          {
-            "type": "OG_DESCRIPTION",
-            "old": "Discover Bhagavad Gita 6.6 meaning and atmana sargo jitah meaning in hindi. Learn how a controlled mind becomes your greatest friend and savior.",
-            "new": "Discover Bhagavad Gita 6.6 meaning & atmana sargo jitah meaning in hindi. Learn how a controlled mind becomes your greatest friend and savior."
-          }
-        ]
-      },
-      {
-        "file": "hindi-blogs/bhagavad-gita-6-38-mind-distraction.html",
-        "url": "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-38-mind-distraction",
-        "changes": [
-          {
-            "type": "TITLE",
-            "old": "भगवद गीता 6.38: क्या ध्यान में मन भटकना असफलता है? जानिए",
-            "new": "भगवद गीता 6.38: ध्यान में मन भटकना क्या असफलता है? जानिए"
-          },
-          {
-            "type": "OG_TITLE",
-            "old": "भगवद गीता 6.38: क्या ध्यान में मन भटकना असफलता है? जानिए",
-            "new": "भगवद गीता 6.38: ध्यान में मन भटकना क्या असफलता है? जानिए"
-          },
-          {
-            "type": "META_DESCRIPTION",
-            "old": "भगवद गीता 6.38 के अनुसार ध्यान में मन भटकना असफलता नहीं है। जानें कृष्ण ने अर्जुन के डर को कैसे दूर किया और आधुनिक जीवन में इसका क्या अर्थ है।",
-            "new": "भगवद गीता 6.38 के अनुसार ध्यान में मन भटकना असफलता नहीं है। जानें कृष्ण ने अर्जुन के डर को कैसे दूर किया और इसका आधुनिक जीवन में क्या अर्थ है।"
-          },
-          {
-            "type": "OG_DESCRIPTION",
-            "old": "भगवद गीता 6.38 के अनुसार ध्यान में मन भटकना असफलता नहीं है। जानें कृष्ण ने अर्जुन के डर को कैसे दूर किया और आधुनिक जीवन में इसका क्या अर्थ है।",
-            "new": "भगवद गीता 6.38 के अनुसार ध्यान में मन भटकना असफलता नहीं है। जानें कृष्ण ने अर्जुन के डर को कैसे दूर किया और इसका आधुनिक जीवन में क्या अर्थ है।"
-          }
-        ]
-      },
-      {
-        "file": "index.html",
-        "url": "https://krishnbhakti.com/",
-        "changes": [
-          {
-            "type": "TITLE",
-            "old": "Bhagavad Gita Teachings &amp; Daily Shlokas in Hindi | Krishna Bhakti",
-            "new": "Bhagavad Gita Daily Shlokas in Hindi | Krishna Bhakti"
-          },
-          {
-            "type": "OG_TITLE",
-            "old": "Bhagavad Gita Teachings &amp; Daily Shlokas in Hindi | Krishna Bhakti",
-            "new": "Bhagavad Gita Daily Shlokas in Hindi | Krishna Bhakti"
-          },
-          {
-            "type": "META_DESCRIPTION",
-            "old": "भगवान श्री कृष्ण के दिव्य वचनों और श्रीमद्भगवद्गीता के अनमोल ज्ञान, दैनिक श्लोक और हिंदी भावार्थ के साथ अपने जीवन को बदलें।",
-            "new": "भगवद गीता के दैनिक श्लोक हिंदी अर्थ सहित और श्री कृष्ण की दिव्य शिक्षाएँ। Daily Gita shlokas in Hindi."
-          },
-          {
-            "type": "OG_DESCRIPTION",
-            "old": "भगवान श्री कृष्ण के दिव्य वचनों और श्रीमद्भगवद्गीता के अनमोल ज्ञान, दैनिक श्लोक और हिंदी भावार्थ के साथ अपने जीवन को बदलें।",
-            "new": "भगवद गीता के दैनिक श्लोक हिंदी अर्थ सहित और श्री कृष्ण की दिव्य शिक्षाएँ। Daily Gita shlokas in Hindi."
-          }
-        ]
-      },
-      {
-        "file": "hindi-blogs/gita-shloka-6-26-man-bhage-to-wapas-lao.html",
-        "url": "https://krishnbhakti.com/hindi-blogs/gita-shloka-6-26-man-bhage-to-wapas-lao",
-        "changes": [
-          {
-            "type": "TITLE",
-            "old": "भगवद गीता 6.26 — मन जहाँ-जहाँ भागे, वहाँ-वहाँ से वापस लाओ — यही ध्यान है | Krishna Bhakti",
-            "new": "Man Ko Shant Kaise Kare Bhagwat Geeta | Gita 6.26"
-          },
-          {
-            "type": "OG_TITLE",
-            "old": "भगवद गीता 6.26 — मन जहाँ-जहाँ भागे, वहाँ-वहाँ से वापस लाओ — यही ध्यान है",
-            "new": "Man Ko Shant Kaise Kare Bhagwat Geeta | Gita 6.26"
-          },
-          {
-            "type": "META_DESCRIPTION",
-            "old": "भगवद गीता 6.26 — यह चंचल अस्थिर मन जहाँ-जहाँ भटके, वहाँ-वहाँ से रोककर वापस आत्मा में लाओ। साधक-संजीवनी, प्रभुपाद और स्वामी मुकुन्दानंद जी की व्याख्या।",
-            "new": "Man ko shant kaise kare bhagwat geeta ke anusaar? जानिए भगवद्गीता अध्याय 6 श्लोक 26 के द्वारा चंचल मन को वश में करने और शांति पाने का सरल उपाय।"
-          },
-          {
-            "type": "OG_DESCRIPTION",
-            "old": "भगवद गीता 6.26 — यह चंचल अस्थिर मन जहाँ-जहाँ भटके, वहाँ-वहाँ से रोककर वापस आत्मा में लाओ। साधक-संजीवनी, प्रभुपाद और स्वामी मुकुन्दानंद जी की व्याख्या।",
-            "new": "Man ko shant kaise kare bhagwat geeta ke anusaar? जानिए भगवद्गीता अध्याय 6 श्लोक 26 के द्वारा चंचल मन को वश में करने और शांति पाने का सरल उपाय।"
-          }
-        ]
-      }
-    ],
-    "direction": "pending",
-    "merged_at": "2026-11-08T15:29:54Z",
-    "merge_commit_sha": "229497974141b7028801360a20dc003b0ddbee2c"
+ {
+  "date": "2026-10-16",
+  "pr": 1,
+  "url": "https://github.com/kshvchvr-gif/krishnbhakti-web/pull/1",
+  "branch": "seo-autofix",
+  "status": "merged",
+  "pages": [
+   "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-14-where-to-fix-the-mind-in-meditation-krishna-reveals-the-secret",
+   "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-17-balance-in-eating-rest-work-sleep-ends-all-suffering",
+   "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you",
+   "https://krishnbhakti.com/gita-gpt",
+   "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-38-mind-distraction",
+   "https://krishnbhakti.com/hindi-blogs/gita-shloka-5-13-nau-darwaze-ek-raja-kya-tum-apne-hi-ghar-mein-gulam-ho"
+  ],
+  "files": [
+   "english-blogs/bhagavad-gita-6-14-where-to-fix-the-mind-in-meditation-krishna-reveals-the-secret.html",
+   "english-blogs/bhagavad-gita-6-17-balance-in-eating-rest-work-sleep-ends-all-suffering.html",
+   "english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you.html",
+   "gita-gpt.html",
+   "hindi-blogs/bhagavad-gita-6-38-mind-distraction.html",
+   "hindi-blogs/gita-shloka-5-13-nau-darwaze-ek-raja-kya-tum-apne-hi-ghar-mein-gulam-ho.html"
+  ],
+  "fixes": [
+   {
+    "file": "english-blogs/bhagavad-gita-6-14-where-to-fix-the-mind-in-meditation-krishna-reveals-the-secret.html",
+    "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-14-where-to-fix-the-mind-in-meditation-krishna-reveals-the-secret",
+    "changes": [
+     {
+      "type": "META_DESCRIPTION",
+      "old": "Bhagavad Gita 6.14 — Krishna reveals the one secret to staying focused in meditation. Learn where to fix the mind, how to stay calm and fearless, and more.",
+      "new": "Discover Bhagavad Gita 6.14 meaning. Krishna reveals the secret to fixing the mind in meditation, staying fearless, and making Him the supreme goal."
+     },
+     {
+      "type": "OG_DESCRIPTION",
+      "old": "Bhagavad Gita 6.14 — Krishna reveals the one secret to staying focused in meditation. Learn where to fix the mind, how to stay calm and fearless, and more.",
+      "new": "Discover Bhagavad Gita 6.14 meaning. Krishna reveals the secret to fixing the mind in meditation, staying fearless, and making Him the supreme goal."
+     }
+    ]
+   },
+   {
+    "file": "english-blogs/bhagavad-gita-6-17-balance-in-eating-rest-work-sleep-ends-all-suffering.html",
+    "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-17-balance-in-eating-rest-work-sleep-ends-all-suffering",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "Bhagavad Gita 6.17: Balance in Eating, Rest &amp; Work Ends Suffering",
+      "new": "Bhagavad Gita 6.17: Balance in Eating, Rest & Work Ends Suffering"
+     },
+     {
+      "type": "OG_TITLE",
+      "old": "Bhagavad Gita 6.17: Balance in Eating, Rest &amp; Work Ends Suffering",
+      "new": "Bhagavad Gita 6.17: Balance in Eating, Rest & Work Ends Suffering"
+     },
+     {
+      "type": "META_DESCRIPTION",
+      "old": "Discover Bhagavad Gita 6.17 meaning on balance in food, sleep, work and rest. Krishna's formula for health, peace, and ending all suffering.",
+      "new": "Discover Bhagavad Gita 6.17 meaning on balance in eating, rest, work, and sleep. Learn Krishna's practical formula for health and ending suffering."
+     },
+     {
+      "type": "OG_DESCRIPTION",
+      "old": "Discover Bhagavad Gita 6.17 meaning on balance in food, sleep, work and rest. Krishna's formula for health, peace, and ending all suffering.",
+      "new": "Discover Bhagavad Gita 6.17 meaning on balance in eating, rest, work, and sleep. Learn Krishna's practical formula for health and ending suffering."
+     }
+    ]
+   },
+   {
+    "file": "english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you.html",
+    "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "Bhagavad Gita 6.6: The Mind That Saves You vs Controls You",
+      "new": "Bhagavad Gita 6.6 Meaning: The Mind That Controls You vs Saves You"
+     },
+     {
+      "type": "OG_TITLE",
+      "old": "Bhagavad Gita 6.6: The Mind That Saves You vs Controls You",
+      "new": "Bhagavad Gita 6.6 Meaning: The Mind That Controls You vs Saves You"
+     },
+     {
+      "type": "META_DESCRIPTION",
+      "old": "Explore Bhagavad Gita 6.6 meaning on how a controlled mind becomes your best friend and an uncontrolled mind becomes your enemy. Read clear insights.",
+      "new": "Discover Bhagavad Gita 6.6 meaning. Learn how a controlled mind becomes your greatest friend and an uncontrolled mind becomes your greatest enemy."
+     },
+     {
+      "type": "OG_DESCRIPTION",
+      "old": "Explore Bhagavad Gita 6.6 meaning on how a controlled mind becomes your best friend and an uncontrolled mind becomes your enemy. Read clear insights.",
+      "new": "Discover Bhagavad Gita 6.6 meaning. Learn how a controlled mind becomes your greatest friend and an uncontrolled mind becomes your greatest enemy."
+     }
+    ]
+   },
+   {
+    "file": "gita-gpt.html",
+    "url": "https://krishnbhakti.com/gita-gpt",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "Gita GPT — Ask Questions &amp; Get Bhagavad Gita Answers",
+      "new": "Gita GPT — Ask Questions & Get Bhagavad Gita Answers Online"
+     },
+     {
+      "type": "OG_TITLE",
+      "old": "Gita GPT — Ask Questions &amp; Get Bhagavad Gita Answers",
+      "new": "Gita GPT — Ask Questions & Get Bhagavad Gita Answers Online"
+     },
+     {
+      "type": "META_DESCRIPTION",
+      "old": "Use Gita GPT free online tool. Ask life questions in Hindi or English and get wisdom-based answers directly from Bhagavad Gita shlokas.",
+      "new": "Use Gita GPT free online tool to ask life questions and receive wisdom-based answers from the Bhagavad Gita in Hindi and English. No signup required."
+     },
+     {
+      "type": "OG_DESCRIPTION",
+      "old": "Use Gita GPT free online tool. Ask life questions in Hindi or English and get wisdom-based answers directly from Bhagavad Gita shlokas.",
+      "new": "Use Gita GPT free online tool to ask life questions and receive wisdom-based answers from the Bhagavad Gita in Hindi and English. No signup required."
+     }
+    ]
+   },
+   {
+    "file": "hindi-blogs/bhagavad-gita-6-38-mind-distraction.html",
+    "url": "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-38-mind-distraction",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "भगवद गीता 6.38: क्या ध्यान में मन भटकना असफलता है?",
+      "new": "भगवद गीता 6.38: ध्यान में मन भटकना क्या असफलता है? जानिए"
+     },
+     {
+      "type": "OG_TITLE",
+      "old": "भगवद गीता 6.38: क्या ध्यान में मन भटकना असफलता है?",
+      "new": "भगवद गीता 6.38: ध्यान में मन भटकना क्या असफलता है? जानिए"
+     },
+     {
+      "type": "META_DESCRIPTION",
+      "old": "क्या ध्यान में मन भटकना असफलता है? भगवद गीता के छठे अध्याय के 38वें श्लोक में कृष्ण अर्जुन के डर को कैसे दूर करते हैं, जानें विस्तार से।",
+      "new": "भगवद गीता 6.38 के अनुसार ध्यान में मन भटकना असफलता नहीं है। जानें कृष्ण ने अर्जुन के इस डर को कैसे दूर किया और आधुनिक जीवन में इसका क्या अर्थ है।"
+     },
+     {
+      "type": "OG_DESCRIPTION",
+      "old": "क्या ध्यान में मन भटकना असफलता है? भगवद गीता के छठे अध्याय के 38वें श्लोक में कृष्ण अर्जुन के डर को कैसे दूर करते हैं, जानें विस्तार से।",
+      "new": "भगवद गीता 6.38 के अनुसार ध्यान में मन भटकना असफलता नहीं है। जानें कृष्ण ने अर्जुन के इस डर को कैसे दूर किया और आधुनिक जीवन में इसका क्या अर्थ है।"
+     }
+    ]
+   },
+   {
+    "file": "hindi-blogs/gita-shloka-5-13-nau-darwaze-ek-raja-kya-tum-apne-hi-ghar-mein-gulam-ho.html",
+    "url": "https://krishnbhakti.com/hindi-blogs/gita-shloka-5-13-nau-darwaze-ek-raja-kya-tum-apne-hi-ghar-mein-gulam-ho",
+    "changes": [
+     {
+      "type": "META_DESCRIPTION",
+      "old": "",
+      "new": "नौ दरवाज़ों वाले शरीर और आत्मा के बंधन पर गीता 5.13 का सरल भाव, जो रोज़ की ज़िंदगी में सच्ची आज़ादी और शांति की राह दिखाता है।"
+     },
+     {
+      "type": "OG_DESCRIPTION",
+      "old": "क्या तुम अपने ही शरीर रूपी नगर में राजा हो या गुलाम? भगवद गीता अध्याय 5, श्लोक 13 में श्रीकृष्ण बताते हैं — नौ द्वारों से भीतर आने वाली दुनिया को control करना ही असली स्वतंत्रता है। प्रभुपाद, स्वामी मुकुन्दानन्द और गीता प्रेस की व्याख्या के साथ जानो वशी बनने का सच।",
+      "new": "नौ दरवाज़ों वाले शरीर और आत्मा के बंधन पर गीता 5.13 का सरल भाव, जो रोज़ की ज़िंदगी में सच्ची आज़ादी और शांति की राह दिखाता है।"
+     },
+     {
+      "type": "BROKEN_META_REMOVED",
+      "old": "content=\"क्या तुम अपने ही शरीर रूपी नगर में राजा हो या गुलाम?\"वशी\" बनने का सच।\">",
+      "new": ""
+     }
+    ]
+   }
+  ],
+  "direction": "improved",
+  "merged_at": "2026-10-16T16:06:09Z",
+  "merge_commit_sha": "357de7bf9e65066c7210bba21f960a1d7f16c03e",
+  "verification": {
+   "direction": "improved",
+   "before": {
+    "clicks": 6.0,
+    "impressions": 481.0
+   },
+   "before_days": 28,
+   "after": {
+    "clicks": 4.0,
+    "impressions": 234.0
+   },
+   "after_days": 12,
+   "checked_on": "2026-11-01"
   }
+ },
+ {
+  "date": "2026-11-01",
+  "pr": 2,
+  "url": "https://github.com/kshvchvr-gif/krishnbhakti-web/pull/2",
+  "branch": "seo-autofix",
+  "status": "merged",
+  "pages": [
+   "https://krishnbhakti.com/",
+   "https://krishnbhakti.com/english-blogs/bhagavad-gita-5-27-when-mind-wont-stop-gita-says-do-this",
+   "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins",
+   "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you",
+   "https://krishnbhakti.com/gita-gpt",
+   "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-38-mind-distraction"
+  ],
+  "files": [
+   "english-blogs/bhagavad-gita-5-27-when-mind-wont-stop-gita-says-do-this.html",
+   "english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins.html",
+   "english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you.html",
+   "gita-gpt.html",
+   "hindi-blogs/bhagavad-gita-6-38-mind-distraction.html",
+   "index.html"
+  ],
+  "fixes": [
+   {
+    "file": "english-blogs/bhagavad-gita-5-27-when-mind-wont-stop-gita-says-do-this.html",
+    "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-5-27-when-mind-wont-stop-gita-says-do-this",
+    "changes": [
+     {
+      "type": "META_DESCRIPTION",
+      "old": "Discover Bhagavad Gita 5.27. Learn Krishna's practical meditation technique on breath control and inner focus to quiet an overactive, restless mind today.",
+      "new": "Discover Bhagavad Gita 5.27. Learn Krishna's practical meditation steps on breath and senses to silence a restless mind and find deep inner peace today."
+     },
+     {
+      "type": "OG_DESCRIPTION",
+      "old": "Discover Bhagavad Gita 5.27. Learn Krishna's practical meditation technique on breath control and inner focus to quiet an overactive, restless mind today.",
+      "new": "Discover Bhagavad Gita 5.27. Learn Krishna's practical meditation steps on breath and senses to silence a restless mind and find deep inner peace today."
+     }
+    ]
+   },
+   {
+    "file": "english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins.html",
+    "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "Bhagavad Gita 6.12 — Sit Down, Focus the Mind for Meditation",
+      "new": "Bhagavad Gita 6.12: How to Sit and Focus the Mind for Meditation"
+     },
+     {
+      "type": "OG_TITLE",
+      "old": "Bhagavad Gita 6.12 — Sit Down, Focus the Mind for Meditation",
+      "new": "Bhagavad Gita 6.12: How to Sit and Focus the Mind for Meditation"
+     },
+     {
+      "type": "META_DESCRIPTION",
+      "old": "Read Bhagavad Gita 6.12 commentary. Learn how to sit, make the mind one-pointed, control senses, and practice yoga for self-purification.",
+      "new": "Read Bhagavad Gita 6.12 meaning. Learn how to sit, make the mind one-pointed, and control senses for inner purification through simple meditation."
+     },
+     {
+      "type": "OG_DESCRIPTION",
+      "old": "Read Bhagavad Gita 6.12 commentary. Learn how to sit, make the mind one-pointed, control senses, and practice yoga for self-purification.",
+      "new": "Read Bhagavad Gita 6.12 meaning. Learn how to sit, make the mind one-pointed, and control senses for inner purification through simple meditation."
+     }
+    ]
+   },
+   {
+    "file": "english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you.html",
+    "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "Bhagavad Gita 6.6 Meaning: The Mind You Control vs Saves You",
+      "new": "Bhagavad Gita 6.6 Meaning: The Mind That Saves You"
+     },
+     {
+      "type": "OG_TITLE",
+      "old": "Bhagavad Gita 6.6 Meaning: The Mind You Control vs Saves You",
+      "new": "Bhagavad Gita 6.6 Meaning: The Mind That Saves You"
+     },
+     {
+      "type": "META_DESCRIPTION",
+      "old": "Discover Bhagavad Gita 6.6 meaning and Atmana Sargo Jitah translation. Learn how a controlled mind becomes your greatest friend and saves you.",
+      "new": "Discover Bhagavad Gita 6.6 meaning and atmana sargo jitah meaning in hindi. Learn how a controlled mind becomes your greatest friend and savior."
+     },
+     {
+      "type": "OG_DESCRIPTION",
+      "old": "Discover Bhagavad Gita 6.6 meaning and Atmana Sargo Jitah translation. Learn how a controlled mind becomes your greatest friend and saves you.",
+      "new": "Discover Bhagavad Gita 6.6 meaning and atmana sargo jitah meaning in hindi. Learn how a controlled mind becomes your greatest friend and savior."
+     }
+    ]
+   },
+   {
+    "file": "gita-gpt.html",
+    "url": "https://krishnbhakti.com/gita-gpt",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "गीता GPT — भगवद् गीता के ज्ञान से अपने प्रश्नों के उत्तर पाएँ",
+      "new": "Gita GPT: Ask Questions & Get Bhagavad Gita Answers Online"
+     },
+     {
+      "type": "OG_TITLE",
+      "old": "गीता GPT — भगवद् गीता के ज्ञान से अपने प्रश्नों के उत्तर पाएँ",
+      "new": "Gita GPT: Ask Questions & Get Bhagavad Gita Answers Online"
+     },
+     {
+      "type": "META_DESCRIPTION",
+      "old": "गीता GPT ऑनलाइन टूल का उपयोग करें और हिंदी व इंग्लिश में भगवद् गीता के श्लोकों के आधार पर जीवन के सवालों के सही समाधान पाएँ। कोई साइनअप नहीं।",
+      "new": "Use free Gita GPT online to ask life questions and receive wisdom-based answers from the Bhagavad Gita in Hindi and English. No signup required."
+     },
+     {
+      "type": "OG_DESCRIPTION",
+      "old": "गीता GPT ऑनलाइन टूल का उपयोग करें और हिंदी व इंग्लिश में भगवद् गीता के श्लोकों के आधार पर जीवन के सवालों के सही समाधान पाएँ। कोई साइनअप नहीं।",
+      "new": "Use free Gita GPT online to ask life questions and receive wisdom-based answers from the Bhagavad Gita in Hindi and English. No signup required."
+     }
+    ]
+   },
+   {
+    "file": "hindi-blogs/bhagavad-gita-6-38-mind-distraction.html",
+    "url": "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-38-mind-distraction",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "भगवद गीता 6.38: ध्यान में मन भटकना क्या असफलता है?",
+      "new": "भगवद गीता 6.38: क्या ध्यान में मन भटकना असफलता है? जानिए"
+     },
+     {
+      "type": "OG_TITLE",
+      "old": "भगवद गीता 6.38: ध्यान में मन भटकना क्या असफलता है?",
+      "new": "भगवद गीता 6.38: क्या ध्यान में मन भटकना असफलता है? जानिए"
+     },
+     {
+      "type": "META_DESCRIPTION",
+      "old": "भगवद गीता 6.38 के अनुसार ध्यान में मन भटकना असफलता नहीं है। जानें कृष्ण ने अर्जुन के इस डर को कैसे दूर किया और इसका आधुनिक जीवन में क्या अर्थ है।",
+      "new": "भगवद गीता 6.38 के अनुसार ध्यान में मन भटकना असफलता नहीं है। जानें कृष्ण ने अर्जुन के डर को कैसे दूर किया और आधुनिक जीवन में इसका क्या अर्थ है।"
+     },
+     {
+      "type": "OG_DESCRIPTION",
+      "old": "भगवद गीता 6.38 के अनुसार ध्यान में मन भटकना असफलता नहीं है। जानें कृष्ण ने अर्जुन के इस डर को कैसे दूर किया और इसका आधुनिक जीवन में क्या अर्थ है।",
+      "new": "भगवद गीता 6.38 के अनुसार ध्यान में मन भटकना असफलता नहीं है। जानें कृष्ण ने अर्जुन के डर को कैसे दूर किया और आधुनिक जीवन में इसका क्या अर्थ है।"
+     }
+    ]
+   },
+   {
+    "file": "index.html",
+    "url": "https://krishnbhakti.com/",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "Bhagavad Gita Teachings &amp; Daily Shloka | Krishna Bhakti",
+      "new": "Bhagavad Gita Teachings & Daily Shlokas in Hindi | Krishna Bhakti"
+     },
+     {
+      "type": "OG_TITLE",
+      "old": "Bhagavad Gita Teachings &amp; Daily Shloka | Krishna Bhakti",
+      "new": "Bhagavad Gita Teachings & Daily Shlokas in Hindi | Krishna Bhakti"
+     },
+     {
+      "type": "META_DESCRIPTION",
+      "old": "Explore daily Bhagavad Gita shlokas with Hindi meaning, Shri Krishna teachings, and spiritual wisdom to transform your daily life.",
+      "new": "भगवान श्री कृष्ण के दिव्य वचनों और श्रीमद्भगवद्गीता के अनमोल ज्ञान, दैनिक श्लोक और हिंदी भावार्थ के साथ अपने जीवन को बदलें।"
+     },
+     {
+      "type": "OG_DESCRIPTION",
+      "old": "Explore daily Bhagavad Gita shlokas with Hindi meaning, Shri Krishna teachings, and spiritual wisdom to transform your daily life.",
+      "new": "भगवान श्री कृष्ण के दिव्य वचनों और श्रीमद्भगवद्गीता के अनमोल ज्ञान, दैनिक श्लोक और हिंदी भावार्थ के साथ अपने जीवन को बदलें।"
+     }
+    ]
+   }
+  ],
+  "direction": "pending",
+  "merged_at": "2026-11-01T17:45:32Z",
+  "merge_commit_sha": "3d8baebab12616a0831625f0121e8283ba3defc3"
+ },
+ {
+  "date": "2026-11-08",
+  "pr": 5,
+  "url": "https://github.com/kshvchvr-gif/krishnbhakti-web/pull/5",
+  "branch": "seo-autofix",
+  "status": "merged",
+  "pages": [
+   "https://krishnbhakti.com/",
+   "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins",
+   "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you",
+   "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-38-mind-distraction",
+   "https://krishnbhakti.com/hindi-blogs/gita-shloka-6-26-man-bhage-to-wapas-lao"
+  ],
+  "files": [
+   "english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins.html",
+   "english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you.html",
+   "hindi-blogs/bhagavad-gita-6-38-mind-distraction.html",
+   "index.html",
+   "hindi-blogs/gita-shloka-6-26-man-bhage-to-wapas-lao.html"
+  ],
+  "fixes": [
+   {
+    "file": "english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins.html",
+    "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "Bhagavad Gita 6.12: How to Sit and Focus the Mind for Meditation",
+      "new": "Bhagavad Gita 6.12: How to Focus the Mind in Meditation"
+     },
+     {
+      "type": "OG_TITLE",
+      "old": "Bhagavad Gita 6.12: How to Sit and Focus the Mind for Meditation",
+      "new": "Bhagavad Gita 6.12: How to Focus the Mind in Meditation"
+     }
+    ]
+   },
+   {
+    "file": "english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you.html",
+    "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you",
+    "changes": [
+     {
+      "type": "META_DESCRIPTION",
+      "old": "Discover Bhagavad Gita 6.6 meaning and atmana sargo jitah meaning in hindi. Learn how a controlled mind becomes your greatest friend and savior.",
+      "new": "Discover Bhagavad Gita 6.6 meaning & atmana sargo jitah meaning in hindi. Learn how a controlled mind becomes your greatest friend and savior."
+     },
+     {
+      "type": "OG_DESCRIPTION",
+      "old": "Discover Bhagavad Gita 6.6 meaning and atmana sargo jitah meaning in hindi. Learn how a controlled mind becomes your greatest friend and savior.",
+      "new": "Discover Bhagavad Gita 6.6 meaning & atmana sargo jitah meaning in hindi. Learn how a controlled mind becomes your greatest friend and savior."
+     }
+    ]
+   },
+   {
+    "file": "hindi-blogs/bhagavad-gita-6-38-mind-distraction.html",
+    "url": "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-38-mind-distraction",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "भगवद गीता 6.38: क्या ध्यान में मन भटकना असफलता है? जानिए",
+      "new": "भगवद गीता 6.38: ध्यान में मन भटकना क्या असफलता है? जानिए"
+     },
+     {
+      "type": "OG_TITLE",
+      "old": "भगवद गीता 6.38: क्या ध्यान में मन भटकना असफलता है? जानिए",
+      "new": "भगवद गीता 6.38: ध्यान में मन भटकना क्या असफलता है? जानिए"
+     },
+     {
+      "type": "META_DESCRIPTION",
+      "old": "भगवद गीता 6.38 के अनुसार ध्यान में मन भटकना असफलता नहीं है। जानें कृष्ण ने अर्जुन के डर को कैसे दूर किया और आधुनिक जीवन में इसका क्या अर्थ है।",
+      "new": "भगवद गीता 6.38 के अनुसार ध्यान में मन भटकना असफलता नहीं है। जानें कृष्ण ने अर्जुन के डर को कैसे दूर किया और इसका आधुनिक जीवन में क्या अर्थ है।"
+     },
+     {
+      "type": "OG_DESCRIPTION",
+      "old": "भगवद गीता 6.38 के अनुसार ध्यान में मन भटकना असफलता नहीं है। जानें कृष्ण ने अर्जुन के डर को कैसे दूर किया और आधुनिक जीवन में इसका क्या अर्थ है।",
+      "new": "भगवद गीता 6.38 के अनुसार ध्यान में मन भटकना असफलता नहीं है। जानें कृष्ण ने अर्जुन के डर को कैसे दूर किया और इसका आधुनिक जीवन में क्या अर्थ है।"
+     }
+    ]
+   },
+   {
+    "file": "index.html",
+    "url": "https://krishnbhakti.com/",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "Bhagavad Gita Teachings &amp; Daily Shlokas in Hindi | Krishna Bhakti",
+      "new": "Bhagavad Gita Daily Shlokas in Hindi | Krishna Bhakti"
+     },
+     {
+      "type": "OG_TITLE",
+      "old": "Bhagavad Gita Teachings &amp; Daily Shlokas in Hindi | Krishna Bhakti",
+      "new": "Bhagavad Gita Daily Shlokas in Hindi | Krishna Bhakti"
+     },
+     {
+      "type": "META_DESCRIPTION",
+      "old": "भगवान श्री कृष्ण के दिव्य वचनों और श्रीमद्भगवद्गीता के अनमोल ज्ञान, दैनिक श्लोक और हिंदी भावार्थ के साथ अपने जीवन को बदलें।",
+      "new": "भगवद गीता के दैनिक श्लोक हिंदी अर्थ सहित और श्री कृष्ण की दिव्य शिक्षाएँ। Daily Gita shlokas in Hindi."
+     },
+     {
+      "type": "OG_DESCRIPTION",
+      "old": "भगवान श्री कृष्ण के दिव्य वचनों और श्रीमद्भगवद्गीता के अनमोल ज्ञान, दैनिक श्लोक और हिंदी भावार्थ के साथ अपने जीवन को बदलें।",
+      "new": "भगवद गीता के दैनिक श्लोक हिंदी अर्थ सहित और श्री कृष्ण की दिव्य शिक्षाएँ। Daily Gita shlokas in Hindi."
+     }
+    ]
+   },
+   {
+    "file": "hindi-blogs/gita-shloka-6-26-man-bhage-to-wapas-lao.html",
+    "url": "https://krishnbhakti.com/hindi-blogs/gita-shloka-6-26-man-bhage-to-wapas-lao",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "भगवद गीता 6.26 — मन जहाँ-जहाँ भागे, वहाँ-वहाँ से वापस लाओ — यही ध्यान है | Krishna Bhakti",
+      "new": "Man Ko Shant Kaise Kare Bhagwat Geeta | Gita 6.26"
+     },
+     {
+      "type": "OG_TITLE",
+      "old": "भगवद गीता 6.26 — मन जहाँ-जहाँ भागे, वहाँ-वहाँ से वापस लाओ — यही ध्यान है",
+      "new": "Man Ko Shant Kaise Kare Bhagwat Geeta | Gita 6.26"
+     },
+     {
+      "type": "META_DESCRIPTION",
+      "old": "भगवद गीता 6.26 — यह चंचल अस्थिर मन जहाँ-जहाँ भटके, वहाँ-वहाँ से रोककर वापस आत्मा में लाओ। साधक-संजीवनी, प्रभुपाद और स्वामी मुकुन्दानंद जी की व्याख्या।",
+      "new": "Man ko shant kaise kare bhagwat geeta ke anusaar? जानिए भगवद्गीता अध्याय 6 श्लोक 26 के द्वारा चंचल मन को वश में करने और शांति पाने का सरल उपाय।"
+     },
+     {
+      "type": "OG_DESCRIPTION",
+      "old": "भगवद गीता 6.26 — यह चंचल अस्थिर मन जहाँ-जहाँ भटके, वहाँ-वहाँ से रोककर वापस आत्मा में लाओ। साधक-संजीवनी, प्रभुपाद और स्वामी मुकुन्दानंद जी की व्याख्या।",
+      "new": "Man ko shant kaise kare bhagwat geeta ke anusaar? जानिए भगवद्गीता अध्याय 6 श्लोक 26 के द्वारा चंचल मन को वश में करने और शांति पाने का सरल उपाय।"
+     }
+    ]
+   }
+  ],
+  "direction": "pending",
+  "merged_at": "2026-11-08T15:29:54Z",
+  "merge_commit_sha": "229497974141b7028801360a20dc003b0ddbee2c"
+ },
+ {
+  "date": "2026-11-08",
+  "pr": 6,
+  "url": "https://github.com/kshvchvr-gif/krishnbhakti-web/pull/6",
+  "branch": "seo-content-nov8",
+  "status": "merged",
+  "pages": [
+   "https://krishnbhakti.com/",
+   "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins",
+   "https://krishnbhakti.com/hindi-blogs/gita-shloka-6-26-man-bhage-to-wapas-lao",
+   "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-38-mind-distraction"
+  ],
+  "files": [
+   "index.html",
+   "english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins.html",
+   "hindi-blogs/gita-shloka-6-26-man-bhage-to-wapas-lao.html",
+   "hindi-blogs/bhagavad-gita-6-38-mind-distraction.html"
+  ],
+  "fixes": [
+   {
+    "file": "index.html",
+    "url": "https://krishnbhakti.com/",
+    "changes": [
+     {
+      "type": "STATIC_FALLBACK",
+      "old": "Loading shloka... / Loading meaning...",
+      "new": "BG 2.47 Sanskrit + Hindi meaning rendered statically"
+     },
+     {
+      "type": "CONTENT_DEPTH",
+      "old": "~700 words (thin)",
+      "new": "~400 words static guide section 'Bhagavad Gita in Hindi — Daily Shlokas & Teachings' with internal links"
+     },
+     {
+      "type": "SCHEMA",
+      "old": "WebPage only",
+      "new": "WebPage + FAQPage (4 Q&A)"
+     }
+    ]
+   },
+   {
+    "file": "english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins.html",
+    "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins",
+    "changes": [
+     {
+      "type": "CONTENT_DEPTH",
+      "old": "No top meaning summary",
+      "new": "Top 'Bhagavad Gita 6.12 meaning' answer box (sit, focus, restrain, purify)"
+     },
+     {
+      "type": "SCHEMA",
+      "old": "Article only",
+      "new": "Article + FAQPage (5 Q&A)"
+     }
+    ]
+   },
+   {
+    "file": "hindi-blogs/gita-shloka-6-26-man-bhage-to-wapas-lao.html",
+    "url": "https://krishnbhakti.com/hindi-blogs/gita-shloka-6-26-man-bhage-to-wapas-lao",
+    "changes": [
+     {
+      "type": "CONTENT_DEPTH",
+      "old": "No practical steps list",
+      "new": "'मन को शांत करने के 5 सरल कदम' list based on Gita 6.26"
+     },
+     {
+      "type": "SCHEMA",
+      "old": "Article only",
+      "new": "Article + FAQPage (5 Q&A)"
+     }
+    ]
+   },
+   {
+    "file": "hindi-blogs/bhagavad-gita-6-38-mind-distraction.html",
+    "url": "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-38-mind-distraction",
+    "changes": [
+     {
+      "type": "CONTENT_DEPTH",
+      "old": "No top summary box",
+      "new": "Top 'भगवद गीता 6.38 का सार' answer box for long-tail query"
+     }
+    ]
+   }
+  ],
+  "direction": "pending",
+  "merged_at": "2026-11-08T15:42:32Z",
+  "merge_commit_sha": "d11921aa0fd9461e3c3795d2dd93769f4b754832"
+ },
+ {
+  "date": "2026-11-08",
+  "pr": 7,
+  "url": "https://github.com/kshvchvr-gif/krishnbhakti-web/pull/7",
+  "branch": "seo-h1-fix-nov8",
+  "status": "merged",
+  "pages": [
+   "https://krishnbhakti.com/about",
+   "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-15-stability-in-duality-english",
+   "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-17-soul-immortality-english",
+   "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-24-english-blog",
+   "https://krishnbhakti.com/english-blogs/reincarnation-the-cosmic-theater-of-life",
+   "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-2-15-sukh-dukh-sthirata-hindi",
+   "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-2-17-atma-amarta-hindi",
+   "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-2-24-hindi-blog",
+   "https://krishnbhakti.com/hindi-blogs/punarjanm-ek-naya-kirdar"
+  ],
+  "files": [
+   "about.html",
+   "english-blogs/bhagavad-gita-2-15-stability-in-duality-english.html",
+   "english-blogs/bhagavad-gita-2-17-soul-immortality-english.html",
+   "english-blogs/bhagavad-gita-2-24-english-blog.html",
+   "english-blogs/reincarnation-the-cosmic-theater-of-life.html",
+   "hindi-blogs/bhagavad-gita-2-15-sukh-dukh-sthirata-hindi.html",
+   "hindi-blogs/bhagavad-gita-2-17-atma-amarta-hindi.html",
+   "hindi-blogs/bhagavad-gita-2-24-hindi-blog.html",
+   "hindi-blogs/punarjanm-ek-naya-kirdar.html"
+  ],
+  "fixes": [
+   {
+    "file": "about.html",
+    "url": "https://krishnbhakti.com/about",
+    "changes": [
+     {
+      "type": "META_DESCRIPTION",
+      "old": "Learn about the mission of Krishna Bhakti.",
+      "new": "Krishna Bhakti Mission brings the wisdom of Shrimad Bhagavad Gita into everyday life — daily shlokas, simple meanings, stories and practical guidance for peace."
+     },
+     {
+      "type": "OG_DESCRIPTION",
+      "old": "Bringing the wisdom of Gita closer to everyday life.",
+      "new": "Bringing the wisdom of Shrimad Bhagavad Gita into everyday life — daily shlokas, simple meanings, stories and practical spiritual guidance."
+     }
+    ]
+   },
+   {
+    "file": "english-blogs/bhagavad-gita-2-15-stability-in-duality-english.html",
+    "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-15-stability-in-duality-english",
+    "changes": [
+     {
+      "type": "MULTIPLE_H1",
+      "old": "Second <h1> at top of .blog-content",
+      "new": "Demoted to <h2> with identical inline styles (visual unchanged)"
+     }
+    ]
+   },
+   {
+    "file": "english-blogs/bhagavad-gita-2-17-soul-immortality-english.html",
+    "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-17-soul-immortality-english",
+    "changes": [
+     {
+      "type": "MULTIPLE_H1",
+      "old": "Second <h1> at top of .blog-content",
+      "new": "Demoted to <h2> with identical inline styles (visual unchanged)"
+     }
+    ]
+   },
+   {
+    "file": "english-blogs/bhagavad-gita-2-24-english-blog.html",
+    "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-24-english-blog",
+    "changes": [
+     {
+      "type": "MULTIPLE_H1",
+      "old": "Second <h1> at top of .blog-content",
+      "new": "Demoted to <h2> with identical inline styles (visual unchanged)"
+     }
+    ]
+   },
+   {
+    "file": "english-blogs/reincarnation-the-cosmic-theater-of-life.html",
+    "url": "https://krishnbhakti.com/english-blogs/reincarnation-the-cosmic-theater-of-life",
+    "changes": [
+     {
+      "type": "MULTIPLE_H1",
+      "old": "Second <h1> at top of .blog-content",
+      "new": "Demoted to <h2> with identical inline styles (visual unchanged)"
+     }
+    ]
+   },
+   {
+    "file": "hindi-blogs/bhagavad-gita-2-15-sukh-dukh-sthirata-hindi.html",
+    "url": "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-2-15-sukh-dukh-sthirata-hindi",
+    "changes": [
+     {
+      "type": "MULTIPLE_H1",
+      "old": "Second <h1> at top of .blog-content",
+      "new": "Demoted to <h2> with identical inline styles (visual unchanged)"
+     }
+    ]
+   },
+   {
+    "file": "hindi-blogs/bhagavad-gita-2-17-atma-amarta-hindi.html",
+    "url": "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-2-17-atma-amarta-hindi",
+    "changes": [
+     {
+      "type": "MULTIPLE_H1",
+      "old": "Second <h1> at top of .blog-content",
+      "new": "Demoted to <h2> with identical inline styles (visual unchanged)"
+     }
+    ]
+   },
+   {
+    "file": "hindi-blogs/bhagavad-gita-2-24-hindi-blog.html",
+    "url": "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-2-24-hindi-blog",
+    "changes": [
+     {
+      "type": "MULTIPLE_H1",
+      "old": "Second <h1> at top of .blog-content",
+      "new": "Demoted to <h2> with identical inline styles (visual unchanged)"
+     }
+    ]
+   },
+   {
+    "file": "hindi-blogs/punarjanm-ek-naya-kirdar.html",
+    "url": "https://krishnbhakti.com/hindi-blogs/punarjanm-ek-naya-kirdar",
+    "changes": [
+     {
+      "type": "MULTIPLE_H1",
+      "old": "Second <h1> at top of .blog-content",
+      "new": "Demoted to <h2> with identical inline styles (visual unchanged)"
+     }
+    ]
+   }
+  ],
+  "direction": "pending",
+  "merged_at": "2026-11-08T15:46:11Z",
+  "merge_commit_sha": "d28b53742e60b60e6c01d1263aa942d7220b49a2"
+ }
 ]
