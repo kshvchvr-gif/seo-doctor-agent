@@ -717,5 +717,239 @@
   "direction": "pending",
   "merged_at": "2026-11-08T15:46:11Z",
   "merge_commit_sha": "d28b53742e60b60e6c01d1263aa942d7220b49a2"
+ },
+ {
+  "date": "2026-11-08",
+  "pr": 8,
+  "url": "https://github.com/kshvchvr-gif/krishnbhakti-web/pull/8",
+  "branch": "seo-titles-batch1",
+  "status": "merged",
+  "pages": [
+   "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-20-immortality-of-soul-english",
+   "https://krishnbhakti.com/english-blogs/bhagavad-gita-5-25-who-truly-finds-inner-peace",
+   "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-13-how-to-hold-your-body-in-meditation-krishnas-exact-posture",
+   "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-19-still-as-a-flame-in-windless-place-stable-mind",
+   "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-20-where-mind-stops-and-soul-sees-itself-the-deepest-meditation",
+   "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-21-the-happiness-senses-cannot-give-only-pure-intellect-can-reach",
+   "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-23-disconnection-from-suffering-is-yoga-practice-with-firm-resolve",
+   "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-24-abandon-all-desires-completely-restrain-senses-from-all-sides",
+   "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-25-not-overnight-slowly-with-patience-and-intellect",
+   "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-26-wherever-the-mind-wanders-bring-it-back-that-is-meditation",
+   "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-4-how-to-know-you-have-truly-arrived-in-yoga",
+   "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-7-when-mind-is-mastered-heat-cold-praise-insult-all-become-equal",
+   "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-8-mud-stone-gold-all-equal-signs-of-true-yogi",
+   "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-9-friend-enemy-saint-sinner-see-them-all-the-same",
+   "https://krishnbhakti.com/english-blogs/bhagavad-gita-chapter-2-verse-18-english",
+   "https://krishnbhakti.com/english-blogs/gita-shloka-5-12-detachment-from-results-true-peace"
+  ],
+  "files": [
+   "english-blogs/bhagavad-gita-2-20-immortality-of-soul-english.html",
+   "english-blogs/bhagavad-gita-5-25-who-truly-finds-inner-peace.html",
+   "english-blogs/bhagavad-gita-6-13-how-to-hold-your-body-in-meditation-krishnas-exact-posture.html",
+   "english-blogs/bhagavad-gita-6-19-still-as-a-flame-in-windless-place-stable-mind.html",
+   "english-blogs/bhagavad-gita-6-20-where-mind-stops-and-soul-sees-itself-the-deepest-meditation.html",
+   "english-blogs/bhagavad-gita-6-21-the-happiness-senses-cannot-give-only-pure-intellect-can-reach.html",
+   "english-blogs/bhagavad-gita-6-23-disconnection-from-suffering-is-yoga-practice-with-firm-resolve.html",
+   "english-blogs/bhagavad-gita-6-24-abandon-all-desires-completely-restrain-senses-from-all-sides.html",
+   "english-blogs/bhagavad-gita-6-25-not-overnight-slowly-with-patience-and-intellect.html",
+   "english-blogs/bhagavad-gita-6-26-wherever-the-mind-wanders-bring-it-back-that-is-meditation.html",
+   "english-blogs/bhagavad-gita-6-4-how-to-know-you-have-truly-arrived-in-yoga.html",
+   "english-blogs/bhagavad-gita-6-7-when-mind-is-mastered-heat-cold-praise-insult-all-become-equal.html",
+   "english-blogs/bhagavad-gita-6-8-mud-stone-gold-all-equal-signs-of-true-yogi.html",
+   "english-blogs/bhagavad-gita-6-9-friend-enemy-saint-sinner-see-them-all-the-same.html",
+   "english-blogs/bhagavad-gita-chapter-2-verse-18-english.html",
+   "english-blogs/gita-shloka-5-12-detachment-from-results-true-peace.html"
+  ],
+  "fixes": [
+   {
+    "file": "english-blogs/bhagavad-gita-2-20-immortality-of-soul-english.html",
+    "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-20-immortality-of-soul-english",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "When Your World Falls Apart, Remember This Gita Verse",
+      "new": "Bhagavad Gita 2.20: The Soul Is Immortal, You Never Die"
+     }
+    ]
+   },
+   {
+    "file": "english-blogs/bhagavad-gita-5-25-who-truly-finds-inner-peace.html",
+    "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-5-25-who-truly-finds-inner-peace",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "Bhagavad Gita 5.25 — Who Truly Finds Inner Peace? The Secret of Brahma-Nirvana | Krishna Bhakti",
+      "new": "Bhagavad Gita 5.25: Who Truly Finds Inner Peace?"
+     },
+     {
+      "type": "META_DESCRIPTION",
+      "old": "Bhagavad Gita 5.25 reveals who attains Brahma-nirvana — supreme inner peace.",
+      "new": "Bhagavad Gita 5.25 reveals who attains Brahma-nirvana — the supreme inner peace that comes from seeing the Self in all beings and all beings in the Self."
+     }
+    ]
+   },
+   {
+    "file": "english-blogs/bhagavad-gita-6-13-how-to-hold-your-body-in-meditation-krishnas-exact-posture.html",
+    "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-13-how-to-hold-your-body-in-meditation-krishnas-exact-posture",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "Bhagavad Gita 6.13 — How to Hold Your Body in Meditation: Krishna's Exact Posture Instructions | Krishna Bhakti",
+      "new": "Bhagavad Gita 6.13: Krishna's Exact Meditation Posture"
+     }
+    ]
+   },
+   {
+    "file": "english-blogs/bhagavad-gita-6-19-still-as-a-flame-in-windless-place-stable-mind.html",
+    "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-19-still-as-a-flame-in-windless-place-stable-mind",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "Bhagavad Gita 6.19 — Still as a Flame in a Windless Place, This Is What a Mastered Mind Looks Like | Krishna Bhakti",
+      "new": "Bhagavad Gita 6.19: Still as a Flame in a Windless Place"
+     }
+    ]
+   },
+   {
+    "file": "english-blogs/bhagavad-gita-6-20-where-mind-stops-and-soul-sees-itself-the-deepest-meditation.html",
+    "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-20-where-mind-stops-and-soul-sees-itself-the-deepest-meditation",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "Bhagavad Gita 6.20 — Where the Mind Stops and the Soul Sees Itself — This Is the Deepest Meditation | Krishna Bhakti",
+      "new": "Bhagavad Gita 6.20: Where the Mind Stops, the Soul Sees Itself"
+     }
+    ]
+   },
+   {
+    "file": "english-blogs/bhagavad-gita-6-21-the-happiness-senses-cannot-give-only-pure-intellect-can-reach.html",
+    "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-21-the-happiness-senses-cannot-give-only-pure-intellect-can-reach",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "Bhagavad Gita 6.21 — The Happiness the Senses Cannot Give — Only Pure Intellect Can Reach It | Krishna Bhakti",
+      "new": "Bhagavad Gita 6.21: Happiness the Senses Cannot Give"
+     }
+    ]
+   },
+   {
+    "file": "english-blogs/bhagavad-gita-6-23-disconnection-from-suffering-is-yoga-practice-with-firm-resolve.html",
+    "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-23-disconnection-from-suffering-is-yoga-practice-with-firm-resolve",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "Bhagavad Gita 6.23 — Disconnection From Suffering Is Yoga — Practice It With Firm Resolve and Without Despair | Krishna Bhakti",
+      "new": "Bhagavad Gita 6.23: Disconnection From Suffering Is Yoga"
+     }
+    ]
+   },
+   {
+    "file": "english-blogs/bhagavad-gita-6-24-abandon-all-desires-completely-restrain-senses-from-all-sides.html",
+    "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-24-abandon-all-desires-completely-restrain-senses-from-all-sides",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "Bhagavad Gita 6.24 — Abandon All Desires Completely and Restrain the Senses From Every Direction | Krishna Bhakti",
+      "new": "Bhagavad Gita 6.24: Abandon All Desires Completely"
+     }
+    ]
+   },
+   {
+    "file": "english-blogs/bhagavad-gita-6-25-not-overnight-slowly-with-patience-and-intellect.html",
+    "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-25-not-overnight-slowly-with-patience-and-intellect",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "Bhagavad Gita 6.25 — Not Overnight, Slowly, With Patience and Intellect — How Real Change Happens | Krishna Bhakti",
+      "new": "Bhagavad Gita 6.25: Slowly, With Patience and Intellect"
+     }
+    ]
+   },
+   {
+    "file": "english-blogs/bhagavad-gita-6-26-wherever-the-mind-wanders-bring-it-back-that-is-meditation.html",
+    "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-26-wherever-the-mind-wanders-bring-it-back-that-is-meditation",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "Bhagavad Gita 6.26 — Wherever the Mind Wanders, Bring It Back — That Is What Meditation Actually Is | Krishna Bhakti",
+      "new": "Bhagavad Gita 6.26: Wherever the Mind Wanders, Bring It Back"
+     }
+    ]
+   },
+   {
+    "file": "english-blogs/bhagavad-gita-6-4-how-to-know-you-have-truly-arrived-in-yoga.html",
+    "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-4-how-to-know-you-have-truly-arrived-in-yoga",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "Bhagavad Gita 6.4 — How Do You Know You Have Truly Arrived in Yoga? Krishna Gives the Answer | Krishna Bhakti",
+      "new": "Bhagavad Gita 6.4: How Do You Know You've Arrived in Yoga?"
+     }
+    ]
+   },
+   {
+    "file": "english-blogs/bhagavad-gita-6-7-when-mind-is-mastered-heat-cold-praise-insult-all-become-equal.html",
+    "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-7-when-mind-is-mastered-heat-cold-praise-insult-all-become-equal",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "Bhagavad Gita 6.7 — When the Mind Is Mastered, Heat and Cold, Praise and Insult All Feel the Same | Krishna Bhakti",
+      "new": "Bhagavad Gita 6.7: When the Mind Is Mastered"
+     },
+     {
+      "type": "META_DESCRIPTION",
+      "old": "Bhagavad Gita 6.7 — for one who has mastered the mind and is at peace, God is always present.",
+      "new": "Bhagavad Gita 6.7 — for one who has mastered the mind and is at peace, God is always present. Heat and cold, praise and insult no longer disturb such a yogi."
+     }
+    ]
+   },
+   {
+    "file": "english-blogs/bhagavad-gita-6-8-mud-stone-gold-all-equal-signs-of-true-yogi.html",
+    "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-8-mud-stone-gold-all-equal-signs-of-true-yogi",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "Bhagavad Gita 6.8 — When Mud, Stone and Gold All Look the Same to You — That Is the Sign of a True Yogi | Krishna Bhakti",
+      "new": "Bhagavad Gita 6.8: Mud, Stone and Gold All Look the Same"
+     }
+    ]
+   },
+   {
+    "file": "english-blogs/bhagavad-gita-6-9-friend-enemy-saint-sinner-see-them-all-the-same.html",
+    "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-9-friend-enemy-saint-sinner-see-them-all-the-same",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "Bhagavad Gita 6.9 — Friend or Enemy, Saint or Sinner — The Greatest Yogi Sees Them All the Same | Krishna Bhakti",
+      "new": "Bhagavad Gita 6.9: Friend, Enemy, Saint, Sinner — All Equal"
+     }
+    ]
+   },
+   {
+    "file": "english-blogs/bhagavad-gita-chapter-2-verse-18-english.html",
+    "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-chapter-2-verse-18-english",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "When Your World Falls Apart, Remember This Gita Verse",
+      "new": "Bhagavad Gita 2.18: The Body Ends, the Soul Never Does"
+     }
+    ]
+   },
+   {
+    "file": "english-blogs/gita-shloka-5-12-detachment-from-results-true-peace.html",
+    "url": "https://krishnbhakti.com/english-blogs/gita-shloka-5-12-detachment-from-results-true-peace",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "Stop Chasing Results, Start Finding Peace — What Gita 5:12 Really Means for Your Generation | Krishna Bhakti",
+      "new": "Gita 5:12: Stop Chasing Results, Start Finding Peace"
+     }
+    ]
+   }
+  ],
+  "direction": "pending",
+  "merged_at": "2026-11-08T15:52:59Z",
+  "merge_commit_sha": "36678712bfb96d2fb59c8b90ab035a4f6c259f93"
  }
 ]
