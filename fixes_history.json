@@ -355,5 +355,111 @@
     "direction": "pending",
     "merged_at": "2026-11-01T17:45:32Z",
     "merge_commit_sha": "3d8baebab12616a0831625f0121e8283ba3defc3"
+  },
+  {
+    "date": "2026-11-08",
+    "pr": 5,
+    "url": "https://github.com/kshvchvr-gif/krishnbhakti-web/pull/5",
+    "branch": "seo-autofix",
+    "status": "open",
+    "pages": [
+      "https://krishnbhakti.com/",
+      "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins",
+      "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you",
+      "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-38-mind-distraction"
+    ],
+    "files": [
+      "english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins.html",
+      "english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you.html",
+      "hindi-blogs/bhagavad-gita-6-38-mind-distraction.html",
+      "index.html"
+    ],
+    "fixes": [
+      {
+        "file": "english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins.html",
+        "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins",
+        "changes": [
+          {
+            "type": "TITLE",
+            "old": "Bhagavad Gita 6.12: How to Sit and Focus the Mind for Meditation",
+            "new": "Bhagavad Gita 6.12: How to Sit and Focus Mind for Meditation"
+          },
+          {
+            "type": "OG_TITLE",
+            "old": "Bhagavad Gita 6.12: How to Sit and Focus the Mind for Meditation",
+            "new": "Bhagavad Gita 6.12: How to Sit and Focus Mind for Meditation"
+          }
+        ]
+      },
+      {
+        "file": "english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you.html",
+        "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you",
+        "changes": [
+          {
+            "type": "META_DESCRIPTION",
+            "old": "Discover Bhagavad Gita 6.6 meaning and atmana sargo jitah meaning in hindi. Learn how a controlled mind becomes your greatest friend and savior.",
+            "new": "Discover Bhagavad Gita 6.6 meaning & atmana sargo jitah meaning in hindi. Learn how a controlled mind becomes your greatest friend and savior."
+          },
+          {
+            "type": "OG_DESCRIPTION",
+            "old": "Discover Bhagavad Gita 6.6 meaning and atmana sargo jitah meaning in hindi. Learn how a controlled mind becomes your greatest friend and savior.",
+            "new": "Discover Bhagavad Gita 6.6 meaning & atmana sargo jitah meaning in hindi. Learn how a controlled mind becomes your greatest friend and savior."
+          }
+        ]
+      },
+      {
+        "file": "hindi-blogs/bhagavad-gita-6-38-mind-distraction.html",
+        "url": "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-38-mind-distraction",
+        "changes": [
+          {
+            "type": "TITLE",
+            "old": "भगवद गीता 6.38: क्या ध्यान में मन भटकना असफलता है? जानिए",
+            "new": "भगवद गीता 6.38: ध्यान में मन भटकना क्या असफलता है? जानिए"
+          },
+          {
+            "type": "OG_TITLE",
+            "old": "भगवद गीता 6.38: क्या ध्यान में मन भटकना असफलता है? जानिए",
+            "new": "भगवद गीता 6.38: ध्यान में मन भटकना क्या असफलता है? जानिए"
+          },
+          {
+            "type": "META_DESCRIPTION",
+            "old": "भगवद गीता 6.38 के अनुसार ध्यान में मन भटकना असफलता नहीं है। जानें कृष्ण ने अर्जुन के डर को कैसे दूर किया और आधुनिक जीवन में इसका क्या अर्थ है।",
+            "new": "भगवद गीता 6.38 के अनुसार ध्यान में मन भटकना असफलता नहीं है। जानें कृष्ण ने अर्जुन के डर को कैसे दूर किया और इसका आधुनिक जीवन में क्या अर्थ है।"
+          },
+          {
+            "type": "OG_DESCRIPTION",
+            "old": "भगवद गीता 6.38 के अनुसार ध्यान में मन भटकना असफलता नहीं है। जानें कृष्ण ने अर्जुन के डर को कैसे दूर किया और आधुनिक जीवन में इसका क्या अर्थ है।",
+            "new": "भगवद गीता 6.38 के अनुसार ध्यान में मन भटकना असफलता नहीं है। जानें कृष्ण ने अर्जुन के डर को कैसे दूर किया और इसका आधुनिक जीवन में क्या अर्थ है।"
+          }
+        ]
+      },
+      {
+        "file": "index.html",
+        "url": "https://krishnbhakti.com/",
+        "changes": [
+          {
+            "type": "TITLE",
+            "old": "Bhagavad Gita Teachings &amp; Daily Shlokas in Hindi | Krishna Bhakti",
+            "new": "Bhagavad Gita Daily Shlokas in Hindi & Teachings | Krishna"
+          },
+          {
+            "type": "OG_TITLE",
+            "old": "Bhagavad Gita Teachings &amp; Daily Shlokas in Hindi | Krishna Bhakti",
+            "new": "Bhagavad Gita Daily Shlokas in Hindi & Teachings | Krishna"
+          },
+          {
+            "type": "META_DESCRIPTION",
+            "old": "भगवान श्री कृष्ण के दिव्य वचनों और श्रीमद्भगवद्गीता के अनमोल ज्ञान, दैनिक श्लोक और हिंदी भावार्थ के साथ अपने जीवन को बदलें।",
+            "new": "Explore daily Bhagavad Gita shlokas with Hindi meanings and divine Krishna teachings. Transform your life with timeless spiritual wisdom."
+          },
+          {
+            "type": "OG_DESCRIPTION",
+            "old": "भगवान श्री कृष्ण के दिव्य वचनों और श्रीमद्भगवद्गीता के अनमोल ज्ञान, दैनिक श्लोक और हिंदी भावार्थ के साथ अपने जीवन को बदलें।",
+            "new": "Explore daily Bhagavad Gita shlokas with Hindi meanings and divine Krishna teachings. Transform your life with timeless spiritual wisdom."
+          }
+        ]
+      }
+    ],
+    "direction": "pending"
   }
 ]
