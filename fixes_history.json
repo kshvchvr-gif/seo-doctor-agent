@@ -361,18 +361,20 @@
     "pr": 5,
     "url": "https://github.com/kshvchvr-gif/krishnbhakti-web/pull/5",
     "branch": "seo-autofix",
-    "status": "open",
+    "status": "merged",
     "pages": [
       "https://krishnbhakti.com/",
       "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins",
       "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you",
-      "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-38-mind-distraction"
+      "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-38-mind-distraction",
+      "https://krishnbhakti.com/hindi-blogs/gita-shloka-6-26-man-bhage-to-wapas-lao"
     ],
     "files": [
       "english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins.html",
       "english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you.html",
       "hindi-blogs/bhagavad-gita-6-38-mind-distraction.html",
-      "index.html"
+      "index.html",
+      "hindi-blogs/gita-shloka-6-26-man-bhage-to-wapas-lao.html"
     ],
     "fixes": [
       {
@@ -382,12 +384,12 @@
           {
             "type": "TITLE",
             "old": "Bhagavad Gita 6.12: How to Sit and Focus the Mind for Meditation",
-            "new": "Bhagavad Gita 6.12: How to Sit and Focus Mind for Meditation"
+            "new": "Bhagavad Gita 6.12: How to Focus the Mind in Meditation"
           },
           {
             "type": "OG_TITLE",
             "old": "Bhagavad Gita 6.12: How to Sit and Focus the Mind for Meditation",
-            "new": "Bhagavad Gita 6.12: How to Sit and Focus Mind for Meditation"
+            "new": "Bhagavad Gita 6.12: How to Focus the Mind in Meditation"
           }
         ]
       },
@@ -440,26 +442,54 @@
           {
             "type": "TITLE",
             "old": "Bhagavad Gita Teachings &amp; Daily Shlokas in Hindi | Krishna Bhakti",
-            "new": "Bhagavad Gita Daily Shlokas in Hindi & Teachings | Krishna"
+            "new": "Bhagavad Gita Daily Shlokas in Hindi | Krishna Bhakti"
           },
           {
             "type": "OG_TITLE",
             "old": "Bhagavad Gita Teachings &amp; Daily Shlokas in Hindi | Krishna Bhakti",
-            "new": "Bhagavad Gita Daily Shlokas in Hindi & Teachings | Krishna"
+            "new": "Bhagavad Gita Daily Shlokas in Hindi | Krishna Bhakti"
           },
           {
             "type": "META_DESCRIPTION",
             "old": "भगवान श्री कृष्ण के दिव्य वचनों और श्रीमद्भगवद्गीता के अनमोल ज्ञान, दैनिक श्लोक और हिंदी भावार्थ के साथ अपने जीवन को बदलें।",
-            "new": "Explore daily Bhagavad Gita shlokas with Hindi meanings and divine Krishna teachings. Transform your life with timeless spiritual wisdom."
+            "new": "भगवद गीता के दैनिक श्लोक हिंदी अर्थ सहित और श्री कृष्ण की दिव्य शिक्षाएँ। Daily Gita shlokas in Hindi."
           },
           {
             "type": "OG_DESCRIPTION",
             "old": "भगवान श्री कृष्ण के दिव्य वचनों और श्रीमद्भगवद्गीता के अनमोल ज्ञान, दैनिक श्लोक और हिंदी भावार्थ के साथ अपने जीवन को बदलें।",
-            "new": "Explore daily Bhagavad Gita shlokas with Hindi meanings and divine Krishna teachings. Transform your life with timeless spiritual wisdom."
+            "new": "भगवद गीता के दैनिक श्लोक हिंदी अर्थ सहित और श्री कृष्ण की दिव्य शिक्षाएँ। Daily Gita shlokas in Hindi."
+          }
+        ]
+      },
+      {
+        "file": "hindi-blogs/gita-shloka-6-26-man-bhage-to-wapas-lao.html",
+        "url": "https://krishnbhakti.com/hindi-blogs/gita-shloka-6-26-man-bhage-to-wapas-lao",
+        "changes": [
+          {
+            "type": "TITLE",
+            "old": "भगवद गीता 6.26 — मन जहाँ-जहाँ भागे, वहाँ-वहाँ से वापस लाओ — यही ध्यान है | Krishna Bhakti",
+            "new": "Man Ko Shant Kaise Kare Bhagwat Geeta | Gita 6.26"
+          },
+          {
+            "type": "OG_TITLE",
+            "old": "भगवद गीता 6.26 — मन जहाँ-जहाँ भागे, वहाँ-वहाँ से वापस लाओ — यही ध्यान है",
+            "new": "Man Ko Shant Kaise Kare Bhagwat Geeta | Gita 6.26"
+          },
+          {
+            "type": "META_DESCRIPTION",
+            "old": "भगवद गीता 6.26 — यह चंचल अस्थिर मन जहाँ-जहाँ भटके, वहाँ-वहाँ से रोककर वापस आत्मा में लाओ। साधक-संजीवनी, प्रभुपाद और स्वामी मुकुन्दानंद जी की व्याख्या।",
+            "new": "Man ko shant kaise kare bhagwat geeta ke anusaar? जानिए भगवद्गीता अध्याय 6 श्लोक 26 के द्वारा चंचल मन को वश में करने और शांति पाने का सरल उपाय।"
+          },
+          {
+            "type": "OG_DESCRIPTION",
+            "old": "भगवद गीता 6.26 — यह चंचल अस्थिर मन जहाँ-जहाँ भटके, वहाँ-वहाँ से रोककर वापस आत्मा में लाओ। साधक-संजीवनी, प्रभुपाद और स्वामी मुकुन्दानंद जी की व्याख्या।",
+            "new": "Man ko shant kaise kare bhagwat geeta ke anusaar? जानिए भगवद्गीता अध्याय 6 श्लोक 26 के द्वारा चंचल मन को वश में करने और शांति पाने का सरल उपाय।"
           }
         ]
       }
     ],
-    "direction": "pending"
+    "direction": "pending",
+    "merged_at": "2026-11-08T15:29:54Z",
+    "merge_commit_sha": "229497974141b7028801360a20dc003b0ddbee2c"
   }
 ]
