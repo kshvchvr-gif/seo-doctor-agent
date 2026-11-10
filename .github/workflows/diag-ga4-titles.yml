@@ -1,0 +1,78 @@
+name: GA4 Page Title Diagnostic
+
+# Read-only: track a page-title row over time (e.g. old homepage title).
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install deps
+        run: pip install google-analytics-data==0.18.16 google-auth==2.35.0
+      - name: Pull GA4 page-title detail
+        env:
+          GSC_SA_KEY: ${{ secrets.GSC_SA_KEY }}
+          GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
+        run: |
+          python - <<'PY'
+          import os, json
+          from google.oauth2 import service_account
+          from google.analytics.data_v1beta import BetaAnalyticsDataClient
+          from google.analytics.data_v1beta.types import (
+              DateRange, Dimension, Metric, RunReportRequest, OrderBy,
+          )
+          key = json.loads(os.environ["GSC_SA_KEY"])
+          ga = BetaAnalyticsDataClient(credentials=service_account.Credentials.from_service_account_info(
+              key, scopes=["https://www.googleapis.com/auth/analytics.readonly"]))
+          P = f"properties/{os.environ['GA4_PROPERTY_ID']}"
+
+          print("=== TOP PAGE TITLES Oct 20 - Nov 10 (views, sessions, users) ===")
+          req = RunReportRequest(
+              property=P,
+              dimensions=[Dimension(name="pageTitle")],
+              metrics=[Metric(name="screenPageViews"), Metric(name="sessions"), Metric(name="totalUsers")],
+              date_ranges=[DateRange(start_date="2026-10-20", end_date="2026-11-10")],
+              order_bys=[OrderBy(metric=OrderBy.MetricOrderBy(metric_name="screenPageViews"), desc=True)],
+              limit=60,
+          )
+          for row in ga.run_report(req).rows:
+              print(repr(row.dimension_values[0].value), *[m.value for m in row.metric_values])
+
+          print("=== DAILY pageTitle for homepage path '/' ===")
+          from google.analytics.data_v1beta.types import FilterExpression, Filter
+          req2 = RunReportRequest(
+              property=P,
+              dimensions=[Dimension(name="date"), Dimension(name="pageTitle"), Dimension(name="pagePath")],
+              metrics=[Metric(name="screenPageViews"), Metric(name="sessions")],
+              date_ranges=[DateRange(start_date="2026-10-20", end_date="2026-11-10")],
+              dimension_filter=FilterExpression(filter=Filter(
+                  field_name="pagePath", string_filter=Filter.StringFilter(value="/"))),
+              order_bys=[OrderBy(dimension=OrderBy.DimensionOrderBy(dimension_name="date"))],
+              limit=200,
+          )
+          for row in ga.run_report(req2).rows:
+              print(row.dimension_values[0].value, repr(row.dimension_values[1].value), row.dimension_values[2].value,
+                    *[m.value for m in row.metric_values])
+
+          print("=== ANY row matching 'Krishna Bhakti' or 'Vasudev' in title (daily) ===")
+          req3 = RunReportRequest(
+              property=P,
+              dimensions=[Dimension(name="date"), Dimension(name="pageTitle")],
+              metrics=[Metric(name="screenPageViews")],
+              date_ranges=[DateRange(start_date="2026-10-20", end_date="2026-11-10")],
+              order_bys=[OrderBy(dimension=OrderBy.DimensionOrderBy(dimension_name="date"))],
+              limit=500,
+          )
+          for row in ga.run_report(req3).rows:
+              t = row.dimension_values[1].value
+              if "Vasudev" in t or "वासुदेव" in t or "Krishna Bhakti" in t:
+                  print(row.dimension_values[0].value, repr(t), row.metric_values[0].value)
+          PY
