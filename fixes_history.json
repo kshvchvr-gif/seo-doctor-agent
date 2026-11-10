@@ -951,5 +951,474 @@
   "direction": "pending",
   "merged_at": "2026-11-08T15:52:59Z",
   "merge_commit_sha": "36678712bfb96d2fb59c8b90ab035a4f6c259f93"
+ },
+ {
+  "date": "2026-11-10",
+  "pr": 9,
+  "url": "https://github.com/kshvchvr-gif/krishnbhakti-web/pull/9",
+  "branch": "seo-titles-batch2",
+  "status": "merged",
+  "pages": [
+   "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-17-balance-in-eating-rest-work-sleep-ends-all-suffering",
+   "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-7-24-nirakar-sakar-bramh",
+   "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you",
+   "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-7-28-man-ki-shanti-ka-marg",
+   "https://krishnbhakti.com/english-blogs/bhagavad-gita-chapter-2-verse-11-english",
+   "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-2-19-hindi-blog",
+   "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-chapter-6-verse-34-hindi",
+   "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-21-english",
+   "https://krishnbhakti.com/english-blogs/bhagavad-gita-chapter-6-verse-34-english",
+   "https://krishnbhakti.com/hindi-blogs/gita-shloka-6-13-body-posture-dhyan-mein",
+   "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-22-english",
+   "https://krishnbhakti.com/hindi-blogs/gita-shloka-6-23-dukh-se-viyog-hi-yog-hai",
+   "https://krishnbhakti.com/vrat",
+   "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-27-english",
+   "https://krishnbhakti.com/english-blogs/bhagavad-gita-chapter-2-verse-14-dealing-with-ups-and-downs",
+   "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-2-23-atman-immortality-hindi"
+  ],
+  "files": [
+   "english-blogs/bhagavad-gita-6-17-balance-in-eating-rest-work-sleep-ends-all-suffering.html",
+   "hindi-blogs/bhagavad-gita-7-24-nirakar-sakar-bramh.html",
+   "english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you.html",
+   "hindi-blogs/bhagavad-gita-7-28-man-ki-shanti-ka-marg.html",
+   "english-blogs/bhagavad-gita-chapter-2-verse-11-english.html",
+   "hindi-blogs/bhagavad-gita-2-19-hindi-blog.html",
+   "hindi-blogs/bhagavad-gita-chapter-6-verse-34-hindi.html",
+   "english-blogs/bhagavad-gita-2-21-english.html",
+   "english-blogs/bhagavad-gita-chapter-6-verse-34-english.html",
+   "hindi-blogs/gita-shloka-6-13-body-posture-dhyan-mein.html",
+   "english-blogs/bhagavad-gita-2-22-english.html",
+   "hindi-blogs/gita-shloka-6-23-dukh-se-viyog-hi-yog-hai.html",
+   "vrat/index.html",
+   "english-blogs/bhagavad-gita-2-27-english.html",
+   "english-blogs/bhagavad-gita-chapter-2-verse-14-dealing-with-ups-and-downs.html",
+   "hindi-blogs/bhagavad-gita-2-23-atman-immortality-hindi.html"
+  ],
+  "fixes": [
+   {
+    "file": "english-blogs/bhagavad-gita-6-17-balance-in-eating-rest-work-sleep-ends-all-suffering.html",
+    "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-17-balance-in-eating-rest-work-sleep-ends-all-suffering",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "Bhagavad Gita 6.17: Balance in Eating, Rest & Work Ends Suffering",
+      "new": "Bhagavad Gita 6.17: Yuktahara Viharasya — End All Suffering"
+     },
+     {
+      "type": "META_DESCRIPTION",
+      "old": "Discover Bhagavad Gita 6.17 meaning on balance in eating, rest, work, and sleep. Learn Krishna's practical formula for health and ending suffering.",
+      "new": "What does yuktahara viharasya mean? Gita 6.17 explains Krishna's simple formula — balanced eating, rest, work and sleep end all suffering."
+     },
+     {
+      "type": "OG_TITLE",
+      "old": "Bhagavad Gita 6.17: Balance in Eating, Rest & Work Ends Suffering",
+      "new": "Bhagavad Gita 6.17: Yuktahara Viharasya — End All Suffering"
+     },
+     {
+      "type": "OG_DESCRIPTION",
+      "old": "Discover Bhagavad Gita 6.17 meaning on balance in eating, rest, work, and sleep. Learn Krishna's practical formula for health and ending suffering.",
+      "new": "What does yuktahara viharasya mean? Gita 6.17 explains Krishna's simple formula — balanced eating, rest, work and sleep end all suffering."
+     }
+    ]
+   },
+   {
+    "file": "hindi-blogs/bhagavad-gita-7-24-nirakar-sakar-bramh.html",
+    "url": "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-7-24-nirakar-sakar-bramh",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "भगवद गीता 7.24: भगवान निराकार हैं या साकार? जानिए रहस्य",
+      "new": "भगवद गीता 7.24: भगवान साकार या निराकार? निरंकार का अर्थ"
+     },
+     {
+      "type": "META_DESCRIPTION",
+      "old": "भगवद गीता 7.24 का विस्तृत विश्लेषण। क्या भगवान निराकार हैं? कृष्ण के असली स्वरूप को समझें और अपने भ्रम को दूर करें।",
+      "new": "भगवान साकार हैं या निराकार? गीता 7.24 में कृष्ण बताते हैं कि वे भक्तों के लिए साकार कैसे हो जाते हैं। निराकार ब्रह्म का सच जानें।"
+     },
+     {
+      "type": "OG_TITLE",
+      "old": "भगवद गीता 7.24: भगवान निराकार हैं या साकार? जानिए रहस्य",
+      "new": "भगवद गीता 7.24: भगवान साकार या निराकार? निरंकार का अर्थ"
+     },
+     {
+      "type": "OG_DESCRIPTION",
+      "old": "भगवद गीता 7.24 का विस्तृत विश्लेषण। क्या भगवान निराकार हैं? कृष्ण के असली स्वरूप को समझें और अपने भ्रम को दूर करें।",
+      "new": "भगवान साकार हैं या निराकार? गीता 7.24 में कृष्ण बताते हैं कि वे भक्तों के लिए साकार कैसे हो जाते हैं। निराकार ब्रह्म का सच जानें।"
+     }
+    ]
+   },
+   {
+    "file": "english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you.html",
+    "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "Bhagavad Gita 6.6 Meaning: The Mind That Saves You",
+      "new": "Bhagavad Gita 6.6: Atmana Sargo Jitah — Mind Is Your Friend"
+     },
+     {
+      "type": "META_DESCRIPTION",
+      "old": "Discover Bhagavad Gita 6.6 meaning & atmana sargo jitah meaning in hindi. Learn how a controlled mind becomes your greatest friend and savior.",
+      "new": "Atmana sargo jitah meaning: for one who has conquered the mind, the mind is the best friend; for one who hasn't, it is the enemy. Gita 6.6 explained."
+     },
+     {
+      "type": "OG_TITLE",
+      "old": "Bhagavad Gita 6.6 Meaning: The Mind That Saves You",
+      "new": "Bhagavad Gita 6.6: Atmana Sargo Jitah — Mind Is Your Friend"
+     },
+     {
+      "type": "OG_DESCRIPTION",
+      "old": "Discover Bhagavad Gita 6.6 meaning & atmana sargo jitah meaning in hindi. Learn how a controlled mind becomes your greatest friend and savior.",
+      "new": "Atmana sargo jitah meaning: for one who has conquered the mind, the mind is the best friend; for one who hasn't, it is the enemy. Gita 6.6 explained."
+     }
+    ]
+   },
+   {
+    "file": "hindi-blogs/bhagavad-gita-7-28-man-ki-shanti-ka-marg.html",
+    "url": "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-7-28-man-ki-shanti-ka-marg",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "भगवद गीता 7.28: पाप का अंत कैसे करें और भक्ति में कैसे जुड़ें?",
+      "new": "गीता 7.28: पापों से मुक्ति और भक्ति का मार्ग कैसे मिले?"
+     },
+     {
+      "type": "META_DESCRIPTION",
+      "old": "क्या आप अतीत की गलतियों से परेशान हैं? भगवद गीता 7.28 से सीखें कैसे पापों से मुक्त होकर दृढ़ निश्चय के साथ भक्ति के मार्ग पर चलें।",
+      "new": "पुराने पाप और अतीत की गलतियाँ भक्ति के रास्ते में रुकावट हैं। गीता 7.28 बताता है कि पापों का अंत कैसे हो और दृढ़ निश्चय से भक्ति कैसे पाएँ।"
+     },
+     {
+      "type": "OG_TITLE",
+      "old": "भगवद गीता 7.28: पाप का अंत कैसे करें और भक्ति में कैसे जुड़ें?",
+      "new": "गीता 7.28: पापों से मुक्ति और भक्ति का मार्ग कैसे मिले?"
+     },
+     {
+      "type": "OG_DESCRIPTION",
+      "old": "क्या आप अतीत की गलतियों से परेशान हैं? भगवद गीता 7.28 से सीखें कैसे पापों से मुक्त होकर दृढ़ निश्चय के साथ भक्ति के मार्ग पर चलें।",
+      "new": "पुराने पाप और अतीत की गलतियाँ भक्ति के रास्ते में रुकावट हैं। गीता 7.28 बताता है कि पापों का अंत कैसे हो और दृढ़ निश्चय से भक्ति कैसे पाएँ।"
+     }
+    ]
+   },
+   {
+    "file": "english-blogs/bhagavad-gita-chapter-2-verse-11-english.html",
+    "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-chapter-2-verse-11-english",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "Bhagavad Gita 2.11: The Art of Letting Go of Grief",
+      "new": "Bhagavad Gita 2.11: Why We Grieve — and How to Let Go"
+     },
+     {
+      "type": "META_DESCRIPTION",
+      "old": "Understand the profound wisdom of Krishna in Bhagavad Gita Chapter 2 Verse 11 for dealing with life's challenges.",
+      "new": "In Gita 2.11 Krishna tells Arjuna why grief is misplaced. Understand the difference between the body and the eternal soul — and how to let go of sorrow."
+     },
+     {
+      "type": "OG_TITLE",
+      "old": "Bhagavad Gita 2.11: The Art of Letting Go of Grief",
+      "new": "Bhagavad Gita 2.11: Why We Grieve — and How to Let Go"
+     },
+     {
+      "type": "OG_DESCRIPTION",
+      "old": "Understand the profound wisdom of Krishna in Bhagavad Gita Chapter 2 Verse 11 for dealing with life's challenges.",
+      "new": "In Gita 2.11 Krishna tells Arjuna why grief is misplaced. Understand the difference between the body and the eternal soul — and how to let go of sorrow."
+     }
+    ]
+   },
+   {
+    "file": "hindi-blogs/bhagavad-gita-2-19-hindi-blog.html",
+    "url": "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-2-19-hindi-blog",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "जब आत्मा को कोई काट नहीं सकता, तो डर कैसा? गीता 2.19",
+      "new": "गीता 2.19: आत्मा अमर है, फिर डर कैसा? अमरता का ज्ञान"
+     },
+     {
+      "type": "META_DESCRIPTION",
+      "old": "भगवद गीता अध्याय 2 श्लोक 19 की विस्तृत व्याख्या। जानिए कैसे आत्मा की अमरता का ज्ञान आपके जीवन के हर डर, तनाव और दुख को हमेशा के लिए मिटा सकता है।",
+      "new": "भगवद गीता 2.19: आत्मा को न शस्त्र काट सकते हैं, न आग जला सकती है। जानिए आत्मा की अमरता का ज्ञान आपके डर, तनाव और दुख को कैसे मिटाता है।"
+     },
+     {
+      "type": "OG_TITLE",
+      "old": "जब आत्मा को कोई काट नहीं सकता, तो डर कैसा? गीता 2.19",
+      "new": "गीता 2.19: आत्मा अमर है, फिर डर कैसा? अमरता का ज्ञान"
+     },
+     {
+      "type": "OG_DESCRIPTION",
+      "old": "भगवद गीता अध्याय 2 श्लोक 19 की विस्तृत व्याख्या। जानिए कैसे आत्मा की अमरता का ज्ञान आपके जीवन के हर डर, तनाव और दुख को हमेशा के लिए मिटा सकता है।",
+      "new": "भगवद गीता 2.19: आत्मा को न शस्त्र काट सकते हैं, न आग जला सकती है। जानिए आत्मा की अमरता का ज्ञान आपके डर, तनाव और दुख को कैसे मिटाता है।"
+     }
+    ]
+   },
+   {
+    "file": "hindi-blogs/bhagavad-gita-chapter-6-verse-34-hindi.html",
+    "url": "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-chapter-6-verse-34-hindi",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "भगवद गीता 6.34: क्या मन को वश में करना मुमकिन है?",
+      "new": "गीता 6.34: मन को वश में कैसे करें? अर्जुन का प्रश्न"
+     },
+     {
+      "type": "META_DESCRIPTION",
+      "old": "भगवद गीता 6.34: क्या आपका मन भी अर्जुन की तरह चंचल है? जानिए इसे वश में करने का उपाय और आज की भागदौड़ भरी जिंदगी में शांति पाने का तरीका।",
+      "new": "मन चंचल है, वायु की तरह बेकाबू — गीता 6.34 में अर्जुन यही पूछता है। जानिए मन को वश में करने का कृष्ण का उपाय और शांति पाने का मार्ग।"
+     },
+     {
+      "type": "OG_TITLE",
+      "old": "भगवद गीता 6.34: क्या मन को वश में करना मुमकिन है?",
+      "new": "गीता 6.34: मन को वश में कैसे करें? अर्जुन का प्रश्न"
+     },
+     {
+      "type": "OG_DESCRIPTION",
+      "old": "भगवद गीता 6.34: क्या आपका मन भी अर्जुन की तरह चंचल है? जानिए इसे वश में करने का उपाय और आज की भागदौड़ भरी जिंदगी में शांति पाने का तरीका।",
+      "new": "मन चंचल है, वायु की तरह बेकाबू — गीता 6.34 में अर्जुन यही पूछता है। जानिए मन को वश में करने का कृष्ण का उपाय और शांति पाने का मार्ग।"
+     }
+    ]
+   },
+   {
+    "file": "english-blogs/bhagavad-gita-2-21-english.html",
+    "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-21-english",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "When Everything Falls Apart, Gita 2.21 Wisdom",
+      "new": "Bhagavad Gita 2.21: The Truth That Holds You When Life Falls Apart"
+     },
+     {
+      "type": "META_DESCRIPTION",
+      "old": "Explore Bhagavad Gita 2.21 in depth. Discover the immortality of the soul and how to find peace when life falls apart.",
+      "new": "When life falls apart, Gita 2.21 reminds you that the soul is unborn, eternal and indestructible. Discover the truth that gives unshakable peace."
+     },
+     {
+      "type": "OG_TITLE",
+      "old": "When Everything Falls Apart, Gita 2.21 Wisdom",
+      "new": "Bhagavad Gita 2.21: The Truth That Holds You When Life Falls Apart"
+     },
+     {
+      "type": "OG_DESCRIPTION",
+      "old": "Explore Bhagavad Gita 2.21 in depth. Discover the immortality of the soul and how to find peace when life falls apart.",
+      "new": "When life falls apart, Gita 2.21 reminds you that the soul is unborn, eternal and indestructible. Discover the truth that gives unshakable peace."
+     }
+    ]
+   },
+   {
+    "file": "english-blogs/bhagavad-gita-chapter-6-verse-34-english.html",
+    "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-chapter-6-verse-34-english",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "Bhagavad Gita 6.34: Mastering the Restless Mind",
+      "new": "Bhagavad Gita 6.34: How to Control a Restless Mind"
+     },
+     {
+      "type": "META_DESCRIPTION",
+      "old": "Bhagavad Gita 6.34: Is your mind restless like Arjuna's? Learn the ancient techniques to tame the wandering mind and find peace in modern life.",
+      "new": "Arjuna calls the mind restless as the wind. Gita 6.34 gives the answer — practice and detachment. Learn how to steady a wandering mind in daily life."
+     },
+     {
+      "type": "OG_TITLE",
+      "old": "Bhagavad Gita 6.34: Mastering the Restless Mind",
+      "new": "Bhagavad Gita 6.34: How to Control a Restless Mind"
+     },
+     {
+      "type": "OG_DESCRIPTION",
+      "old": "Bhagavad Gita 6.34: Is your mind restless like Arjuna's? Learn the ancient techniques to tame the wandering mind and find peace in modern life.",
+      "new": "Arjuna calls the mind restless as the wind. Gita 6.34 gives the answer — practice and detachment. Learn how to steady a wandering mind in daily life."
+     }
+    ]
+   },
+   {
+    "file": "hindi-blogs/gita-shloka-6-13-body-posture-dhyan-mein.html",
+    "url": "https://krishnbhakti.com/hindi-blogs/gita-shloka-6-13-body-posture-dhyan-mein",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "भगवद गीता 6.13 — ध्यान में शरीर, गर्दन और सिर कैसे रखें — कृष्ण की सटीक विधि | Krishna Bhakti",
+      "new": "गीता 6.13: ध्यान में शरीर और गर्दन कैसे रखें?"
+     },
+     {
+      "type": "META_DESCRIPTION",
+      "old": "भगवद गीता 6.13 — ध्यान में शरीर गर्दन और सिर को सीधा और स्थिर रखो, नाक के अग्रभाग पर दृष्टि स्थिर करो, इधर-उधर मत देखो।",
+      "new": "ध्यान में शरीर, गर्दन और सिर सीधे रखें, नाक के अग्रभाग पर दृष्टि टिकाएँ। गीता 6.13 की सटीक विधि और आसान अभ्यास।"
+     },
+     {
+      "type": "OG_TITLE",
+      "old": "भगवद गीता 6.13 — ध्यान में शरीर, गर्दन और सिर कैसे रखें — कृष्ण की सटीक विधि",
+      "new": "गीता 6.13: ध्यान में शरीर और गर्दन कैसे रखें?"
+     },
+     {
+      "type": "OG_DESCRIPTION",
+      "old": "भगवद गीता 6.13 — ध्यान में शरीर गर्दन और सिर को सीधा और स्थिर रखो, नाक के अग्रभाग पर दृष्टि स्थिर करो, इधर-उधर मत देखो। साधक-संजीवनी, प्रभुपाद और स्वामी मुकुन्दानंद जी की व्याख्या।",
+      "new": "ध्यान में शरीर, गर्दन और सिर सीधे रखें, नाक के अग्रभाग पर दृष्टि टिकाएँ। गीता 6.13 की सटीक विधि और आसान अभ्यास।"
+     }
+    ]
+   },
+   {
+    "file": "english-blogs/bhagavad-gita-2-22-english.html",
+    "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-22-english",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "You Change Clothes, Not Who You Are — Bhagavad Gita 2.22",
+      "new": "Bhagavad Gita 2.22: Change Is the Law of Nature"
+     },
+     {
+      "type": "META_DESCRIPTION",
+      "old": "In Bhagavad Gita 2.22, Lord Krishna compares the changing of bodies by the soul to changing old clothes. Discover the profound meaning.",
+      "new": "Krishna compares the soul changing bodies to a person changing worn-out clothes. Gita 2.22 explains why death is not the end — only a change of garment."
+     },
+     {
+      "type": "OG_TITLE",
+      "old": "You Change Clothes, Not Who You Are — Bhagavad Gita 2.22",
+      "new": "Bhagavad Gita 2.22: Change Is the Law of Nature"
+     },
+     {
+      "type": "OG_DESCRIPTION",
+      "old": "In Bhagavad Gita 2.22, Lord Krishna compares the changing of bodies by the soul to changing old clothes. Discover the profound meaning.",
+      "new": "Krishna compares the soul changing bodies to a person changing worn-out clothes. Gita 2.22 explains why death is not the end — only a change of garment."
+     }
+    ]
+   },
+   {
+    "file": "hindi-blogs/gita-shloka-6-23-dukh-se-viyog-hi-yog-hai.html",
+    "url": "https://krishnbhakti.com/hindi-blogs/gita-shloka-6-23-dukh-se-viyog-hi-yog-hai",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "भगवद गीता 6.23 — दुख से संयोग का टूटना ही असली योग है — और इसे दृढ़ निश्चय से साधो | Krishna Bhakti",
+      "new": "गीता 6.23: संयोग-वियोग का अर्थ और सच्चा योग"
+     },
+     {
+      "type": "META_DESCRIPTION",
+      "old": "भगवद गीता 6.23 — दुख के संयोग से वियोग ही योग है, और इसे दृढ़ निश्चय से तथा अनिर्विण्ण चित्त से साधना चाहिए।",
+      "new": "संयोग और वियोग का अर्थ क्या है? गीता 6.23 कहता है — दुख के संयोग का टूटना ही योग है, जिसे दृढ़ निश्चय से साधा जाता है।"
+     },
+     {
+      "type": "OG_TITLE",
+      "old": "भगवद गीता 6.23 — दुख से संयोग का टूटना ही असली योग है — और इसे दृढ़ निश्चय से साधो",
+      "new": "गीता 6.23: संयोग-वियोग का अर्थ और सच्चा योग"
+     },
+     {
+      "type": "OG_DESCRIPTION",
+      "old": "भगवद गीता 6.23 — दुख के संयोग से वियोग ही योग है, और इसे दृढ़ निश्चय से तथा अनिर्विण्ण चित्त से साधना चाहिए। साधक-संजीवनी, प्रभुपाद और स्वामी मुकुन्दानंद जी की व्याख्या।",
+      "new": "संयोग और वियोग का अर्थ क्या है? गीता 6.23 कहता है — दुख के संयोग का टूटना ही योग है, जिसे दृढ़ निश्चय से साधा जाता है।"
+     }
+    ]
+   },
+   {
+    "file": "vrat/index.html",
+    "url": "https://krishnbhakti.com/vrat",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "व्रत व उपवास — पूरे वर्ष 2026 | Royal Panchang",
+      "new": "व्रत कब है 2026 में? पूरे वर्ष की व्रत सूची | Krishna Bhakti"
+     },
+     {
+      "type": "META_DESCRIPTION",
+      "old": "वर्ष 2026 में आने वाले सभी एकादशी, प्रदोष, संकष्टी, पूर्णिमा, अमावस्या, मासिक शिवरात्रि व दुर्गाष्टमी व्रतों की पूरी सूची।",
+      "new": "2026 में एकादशी, प्रदोष, संकष्टी, पूर्णिमा, अमावस्या, शिवरात्रि और दुर्गाष्टमी व्रत कब हैं? पूरे वर्ष की तारीखों की आसान सूची।"
+     },
+     {
+      "type": "OG_TITLE",
+      "old": "व्रत व उपवास — पूरे वर्ष 2026 | Royal Panchang",
+      "new": "व्रत कब है 2026 में? पूरे वर्ष की व्रत सूची | Krishna Bhakti"
+     },
+     {
+      "type": "OG_DESCRIPTION",
+      "old": "वर्ष 2026 में आने वाले सभी एकादशी, प्रदोष, संकष्टी, पूर्णिमा, अमावस्या, मासिक शिवरात्रि व दुर्गाष्टमी व्रतों की पूरी सूची।",
+      "new": "2026 में एकादशी, प्रदोष, संकष्टी, पूर्णिमा, अमावस्या, शिवरात्रि और दुर्गाष्टमी व्रत कब हैं? पूरे वर्ष की तारीखों की आसान सूची।"
+     },
+     {
+      "type": "JSONLD_NAME",
+      "old": "व्रत व उपवास — पूरे वर्ष 2026 | Royal Panchang",
+      "new": "व्रत कब है 2026 में? पूरे वर्ष की व्रत सूची | Krishna Bhakti"
+     }
+    ]
+   },
+   {
+    "file": "english-blogs/bhagavad-gita-2-27-english.html",
+    "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-27-english",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "Bhagavad Gita 2.27: The Inevitable Truth of Birth and Death",
+      "new": "Bhagavad Gita 2.27: Birth and Death Are Certain — Fear Not"
+     },
+     {
+      "type": "META_DESCRIPTION",
+      "old": "Detailed English commentary on Bhagavad Gita Chapter 2 Verse 27. Discover the truth of birth, death, and Krishna's timeless wisdom.",
+      "new": "Gita 2.27: just as death is certain for the born, birth is certain for the dead. Krishna's words help you face loss and mortality without fear."
+     },
+     {
+      "type": "OG_TITLE",
+      "old": "Bhagavad Gita 2.27: The Inevitable Truth of Birth and Death",
+      "new": "Bhagavad Gita 2.27: Birth and Death Are Certain — Fear Not"
+     },
+     {
+      "type": "OG_DESCRIPTION",
+      "old": "Detailed English commentary on Bhagavad Gita Chapter 2 Verse 27. Discover the truth of birth, death, and Krishna's timeless wisdom.",
+      "new": "Gita 2.27: just as death is certain for the born, birth is certain for the dead. Krishna's words help you face loss and mortality without fear."
+     }
+    ]
+   },
+   {
+    "file": "english-blogs/bhagavad-gita-chapter-2-verse-14-dealing-with-ups-and-downs.html",
+    "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-chapter-2-verse-14-dealing-with-ups-and-downs",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "Bhagavad Gita 2.14: Finding Stability in Life's Chaos",
+      "new": "Bhagavad Gita 2.14: Stay Steady Through Life's Ups and Downs"
+     },
+     {
+      "type": "META_DESCRIPTION",
+      "old": "Feeling overwhelmed? Learn how to navigate the ups and downs of life with the timeless wisdom of Bhagavad Gita 2.14.",
+      "new": "Heat and cold, pleasure and pain — Gita 2.14 says they come and go. Learn to endure them patiently and stay steady through life's ups and downs."
+     },
+     {
+      "type": "OG_TITLE",
+      "old": "Bhagavad Gita 2.14: Finding Stability in Life's Chaos",
+      "new": "Bhagavad Gita 2.14: Stay Steady Through Life's Ups and Downs"
+     },
+     {
+      "type": "OG_DESCRIPTION",
+      "old": "Feeling overwhelmed? Learn how to navigate the ups and downs of life with the timeless wisdom of Bhagavad Gita 2.14.",
+      "new": "Heat and cold, pleasure and pain — Gita 2.14 says they come and go. Learn to endure them patiently and stay steady through life's ups and downs."
+     }
+    ]
+   },
+   {
+    "file": "hindi-blogs/bhagavad-gita-2-23-atman-immortality-hindi.html",
+    "url": "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-2-23-atman-immortality-hindi",
+    "changes": [
+     {
+      "type": "TITLE",
+      "old": "Bhagavad Gita 2.23 in Hindi: आत्मा की अमरता और जीवन का सत्य",
+      "new": "गीता 2.23: आत्मा अमर है — जानिए अमरता का सच"
+     },
+     {
+      "type": "META_DESCRIPTION",
+      "old": "भगवद गीता अध्याय 2 श्लोक 23 की विस्तार से व्याख्या। जानें आत्मा की अमरता का रहस्य और जीवन के हर दुख से उबरने का मार्ग।",
+      "new": "आत्मा अमर है — न शस्त्र उसे काट सकते हैं, न अग्नि जला सकती है। गीता 2.23 का ज्ञान आपके दुख और डर को जड़ से बदल देगा।"
+     },
+     {
+      "type": "OG_TITLE",
+      "old": "Bhagavad Gita 2.23 in Hindi: आत्मा की अमरता और जीवन का सत्य",
+      "new": "गीता 2.23: आत्मा अमर है — जानिए अमरता का सच"
+     },
+     {
+      "type": "OG_DESCRIPTION",
+      "old": "भगवद गीता अध्याय 2 श्लोक 23 की विस्तार से व्याख्या। जानें आत्मा की अमरता का रहस्य और जीवन के हर दुख से उबरने का मार्ग।",
+      "new": "आत्मा अमर है — न शस्त्र उसे काट सकते हैं, न अग्नि जला सकती है। गीता 2.23 का ज्ञान आपके दुख और डर को जड़ से बदल देगा।"
+     }
+    ]
+   }
+  ],
+  "merged_at": "2026-11-10T18:15:41Z",
+  "merge_commit_sha": "2e13513e21190c6b8b50f7e8d6c7f462716768af",
+  "direction": "pending"
  }
 ]
