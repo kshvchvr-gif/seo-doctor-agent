@@ -1,0 +1,88 @@
+name: GA4 Detail Diagnostic
+
+# Read-only GA4 detail: is the Nov 8 zero row a tracking gap or a real zero?
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install deps
+        run: pip install google-analytics-data==0.18.16 google-auth==2.35.0
+      - name: Pull GA4 detail
+        env:
+          GSC_SA_KEY: ${{ secrets.GSC_SA_KEY }}
+          GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
+        run: |
+          python - <<'PY'
+          import os, json
+          from google.oauth2 import service_account
+          from google.analytics.data_v1beta import BetaAnalyticsDataClient
+          from google.analytics.data_v1beta.types import (
+              DateRange, Dimension, Metric, RunReportRequest, OrderBy, FilterExpression, Filter,
+          )
+          key = json.loads(os.environ["GSC_SA_KEY"])
+          ga = BetaAnalyticsDataClient(credentials=service_account.Credentials.from_service_account_info(
+              key, scopes=["https://www.googleapis.com/auth/analytics.readonly"]))
+          prop = os.environ["GA4_PROPERTY_ID"]
+          P = f"properties/{prop}"
+
+          print("=== DAILY sessions/users/events/screenPageViews Nov 1-10 ===")
+          req = RunReportRequest(
+              property=P,
+              dimensions=[Dimension(name="date")],
+              metrics=[Metric(name="sessions"), Metric(name="totalUsers"),
+                       Metric(name="eventCount"), Metric(name="screenPageViews"),
+                       Metric(name="engagedSessions")],
+              date_ranges=[DateRange(start_date="2026-11-01", end_date="2026-11-10")],
+              order_bys=[OrderBy(dimension=OrderBy.DimensionOrderBy(dimension_name="date"))],
+          )
+          for row in ga.run_report(req).rows:
+              print(row.dimension_values[0].value, *[m.value for m in row.metric_values])
+
+          print("=== NOV 8 events (eventName x count) ===")
+          req2 = RunReportRequest(
+              property=P,
+              dimensions=[Dimension(name="eventName")],
+              metrics=[Metric(name="eventCount")],
+              date_ranges=[DateRange(start_date="2026-11-08", end_date="2026-11-08")],
+              order_bys=[OrderBy(metric=OrderBy.MetricOrderBy(metric_name="eventCount"), desc=True)],
+              limit=40,
+          )
+          r2 = ga.run_report(req2)
+          print("rows:", len(r2.rows))
+          for row in r2.rows:
+              print(row.dimension_values[0].value, row.metric_values[0].value)
+
+          print("=== NOV 7 vs NOV 8 vs NOV 9 hostname ===")
+          req3 = RunReportRequest(
+              property=P,
+              dimensions=[Dimension(name="date"), Dimension(name="hostName")],
+              metrics=[Metric(name="sessions"), Metric(name="eventCount")],
+              date_ranges=[DateRange(start_date="2026-11-06", end_date="2026-11-10")],
+              order_bys=[OrderBy(dimension=OrderBy.DimensionOrderBy(dimension_name="date"))],
+              limit=50,
+          )
+          for row in ga.run_report(req3).rows:
+              print(row.dimension_values[0].value, row.dimension_values[1].value, *[m.value for m in row.metric_values])
+
+          print("=== NOV 8 hourly (if any) ===")
+          req4 = RunReportRequest(
+              property=P,
+              dimensions=[Dimension(name="dateHour")],
+              metrics=[Metric(name="sessions"), Metric(name="eventCount")],
+              date_ranges=[DateRange(start_date="2026-11-07", end_date="2026-11-09")],
+              order_bys=[OrderBy(dimension=OrderBy.DimensionOrderBy(dimension_name="dateHour"))],
+              limit=100,
+          )
+          for row in ga.run_report(req4).rows:
+              print(row.dimension_values[0].value, *[m.value for m in row.metric_values])
+          PY
