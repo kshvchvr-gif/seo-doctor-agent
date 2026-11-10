@@ -113,6 +113,12 @@ jobs:
                   di,dc,k,pc,pi,pp,rc,ri,rp=d
                   print(di, k, f"prev={pc}/{pi}@{pp:.1f}")
 
+          print("### TOP PAGES BY IMPRESSIONS (recent window) with CTR")
+          top = q(r_start.isoformat(), r_end.isoformat(), ["page"], 5000)
+          top.sort(key=lambda r: r.get("impressions",0), reverse=True)
+          for r in top[:30]:
+              print(r.get("impressions",0), r.get("clicks",0), round(r.get("ctr",0),4), round(r.get("position",0),1), r["keys"][0])
+
           print("### POSITION SHIFTS (queries, >=30 impressions in both windows)")
           rec = by_dim(r_start.isoformat(), r_end.isoformat(), "query")
           prv = by_dim(p_start.isoformat(), p_end.isoformat(), "query")
