@@ -1,0 +1,129 @@
+name: GSC Decline Diagnostic
+
+# Read-only Search Console analysis: find where organic traffic went.
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "Comparison window in days"
+        required: false
+        default: "28"
+
+permissions:
+  contents: read
+
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install deps
+        run: pip install google-api-python-client==2.149.0 google-auth==2.35.0
+      - name: Pull GSC decline data
+        env:
+          GSC_SA_KEY: ${{ secrets.GSC_SA_KEY }}
+          GSC_SITE_URL: ${{ secrets.GSC_SITE_URL }}
+          DAYS: ${{ github.event.inputs.days }}
+        run: |
+          python - <<'PY'
+          import os, json, datetime, collections
+          from google.oauth2 import service_account
+          from googleapiclient.discovery import build
+
+          key = json.loads(os.environ["GSC_SA_KEY"])
+          gsc = build("searchconsole", "v1", credentials=service_account.Credentials.from_service_account_info(
+              key, scopes=["https://www.googleapis.com/auth/webmasters.readonly"]))
+          site = os.environ.get("GSC_SITE_URL", "sc-domain:krishnbhakti.com")
+          days = int(os.environ.get("DAYS") or 28)
+
+          def q(start, end, dims, limit=5000, extra=None):
+              body = {"startDate": start, "endDate": end, "dimensions": dims, "rowLimit": limit}
+              if extra: body.update(extra)
+              return gsc.searchanalytics().query(siteUrl=site, body=body).execute().get("rows", [])
+
+          # Data through 2 days ago
+          end = datetime.date.today() - datetime.timedelta(days=2)
+          r_end = end
+          r_start = end - datetime.timedelta(days=days-1)
+          p_end = r_start - datetime.timedelta(days=1)
+          p_start = p_end - datetime.timedelta(days=days-1)
+          print(f"### WINDOW recent {r_start}..{r_end} | prev {p_start}..{p_end}")
+
+          print("### MONTHLY TOTALS (last 180d)")
+          d0 = end - datetime.timedelta(days=180)
+          rows = q(d0.isoformat(), end.isoformat(), ["date"], 1000)
+          m = collections.OrderedDict()
+          for r in rows:
+              k = r["keys"][0][:7]
+              a = m.setdefault(k, [0,0,0.0,0.0,0])
+              a[0]+=r.get("clicks",0); a[1]+=r.get("impressions",0)
+              a[2]+=r.get("ctr",0)*r.get("impressions",0); a[3]+=r.get("position",0)*r.get("impressions",0); a[4]+=1
+          for k,a in m.items():
+              ctr = a[2]/a[1] if a[1] else 0
+              pos = a[3]/a[1] if a[1] else 0
+              print(k, a[0], a[1], round(ctr,4), round(pos,1))
+
+          def totals(start, end, dims=[]):
+              rows = q(start, end, dims, 1)
+              if not rows: return 0,0,0,0
+              r=rows[0]; return r.get("clicks",0), r.get("impressions",0), r.get("ctr",0), r.get("position",0)
+
+          print("### PERIOD TOTALS")
+          for label,(s,e) in {"recent":(r_start,r_end),"prev":(p_start,p_end)}.items():
+              c,i,ctr,pos = totals(s.isoformat(), e.isoformat())
+              print(label, c, i, round(ctr,4), round(pos,1))
+
+          print("### DEVICE recent vs prev")
+          for label,(s,e) in {"recent":(r_start,r_end),"prev":(p_start,p_end)}.items():
+              for r in q(s.isoformat(), e.isoformat(), ["device"], 10):
+                  print(label, r["keys"][0], r.get("clicks",0), r.get("impressions",0), round(r.get("position",0),1))
+
+          def by_dim(start, end, dim, limit=5000):
+              out={}
+              for r in q(start, end, [dim], limit):
+                  out[r["keys"][0]] = (r.get("clicks",0), r.get("impressions",0), r.get("position",0))
+              return out
+
+          for dim,label in [("page","PAGE"),("query","QUERY")]:
+              print(f"### {label} DIFF")
+              rec = by_dim(r_start.isoformat(), r_end.isoformat(), dim)
+              prv = by_dim(p_start.isoformat(), p_end.isoformat(), dim)
+              allk = set(rec)|set(prv)
+              diffs=[]
+              for k in allk:
+                  rc,ri,rp = rec.get(k,(0,0,0))
+                  pc,pi,pp = prv.get(k,(0,0,0))
+                  diffs.append((ri-pi, rc-pc, k, pc,pi,pp, rc,ri,rp))
+              diffs.sort()
+              print("-- biggest impression losses --")
+              for d in diffs[:25]:
+                  di,dc,k,pc,pi,pp,rc,ri,rp = d
+                  print(di, dc, k, f"prev={pc}/{pi}@{pp:.1f}", f"rec={rc}/{ri}@{rp:.1f}")
+              print("-- biggest impression gains --")
+              for d in reversed(diffs[-15:]):
+                  di,dc,k,pc,pi,pp,rc,ri,rp = d
+                  print(di, dc, k, f"prev={pc}/{pi}@{pp:.1f}", f"rec={rc}/{ri}@{rp:.1f}")
+              print("-- disappeared (prev>=20 impr, recent=0) --")
+              gone=[d for d in diffs if d[4]>=20 and d[7]==0]
+              gone.sort(key=lambda x:-x[4])
+              for d in gone[:25]:
+                  di,dc,k,pc,pi,pp,rc,ri,rp=d
+                  print(di, k, f"prev={pc}/{pi}@{pp:.1f}")
+
+          print("### POSITION SHIFTS (queries, >=30 impressions in both windows)")
+          rec = by_dim(r_start.isoformat(), r_end.isoformat(), "query")
+          prv = by_dim(p_start.isoformat(), p_end.isoformat(), "query")
+          shifts=[]
+          for k in set(rec)&set(prv):
+              rc,ri,rp=rec[k]; pc,pi,pp=prv[k]
+              if pi>=30 and ri>=30:
+                  shifts.append((rp-pp, k, pp, rp, pi, ri))
+          shifts.sort(reverse=True)
+          print("-- worsened position (higher = worse) --")
+          for s in shifts[:15]: print(round(s[0],1), s[1], f"pos {s[2]:.1f}->{s[3]:.1f}", f"impr {s[4]}->{s[5]}")
+          print("-- improved position --")
+          for s in reversed(shifts[-10:]): print(round(s[0],1), s[1], f"pos {s[2]:.1f}->{s[3]:.1f}", f"impr {s[4]}->{s[5]}")
+          PY
