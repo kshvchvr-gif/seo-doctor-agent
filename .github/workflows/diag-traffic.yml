@@ -1,0 +1,112 @@
+name: Traffic Diagnostic
+
+# One-off diagnostics: daily GA4 + GSC numbers and landing-page split.
+# Read-only. Prints JSON to the job log.
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "How many days back to pull"
+        required: false
+        default: "21"
+
+permissions:
+  contents: read
+
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install deps
+        run: pip install google-analytics-data==0.18.16 google-api-python-client==2.149.0 google-auth==2.35.0
+      - name: Pull GA4 + GSC daily data
+        env:
+          GSC_SA_KEY: ${{ secrets.GSC_SA_KEY }}
+          GSC_SITE_URL: ${{ secrets.GSC_SITE_URL }}
+          GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
+          DAYS: ${{ github.event.inputs.days }}
+        run: |
+          python - <<'PY'
+          import os, json, datetime
+          from google.oauth2 import service_account
+          from google.analytics.data_v1beta import BetaAnalyticsDataClient
+          from google.analytics.data_v1beta.types import (
+              DateRange, Dimension, Metric, RunReportRequest, OrderBy,
+          )
+          from googleapiclient.discovery import build
+
+          days = int(os.environ.get("DAYS") or 21)
+          key = json.loads(os.environ["GSC_SA_KEY"])
+
+          print("=== GA4 DAILY (sessions, pageviews, users) ===")
+          ga = BetaAnalyticsDataClient(credentials=service_account.Credentials.from_service_account_info(
+              key, scopes=["https://www.googleapis.com/auth/analytics.readonly"]))
+          prop = os.environ["GA4_PROPERTY_ID"]
+          req = RunReportRequest(
+              property=f"properties/{prop}",
+              dimensions=[Dimension(name="date")],
+              metrics=[Metric(name="sessions"), Metric(name="screenPageViews"), Metric(name="activeUsers")],
+              date_ranges=[DateRange(start_date=f"{days}daysAgo", end_date="today")],
+              order_bys=[OrderBy(dimension=OrderBy.DimensionOrderBy(dimension_name="date"))],
+          )
+          resp = ga.run_report(req)
+          for row in resp.rows:
+              print(row.dimension_values[0].value, *[m.value for m in row.metric_values])
+
+          print("=== GA4 LANDING PAGES last 7d ===")
+          req2 = RunReportRequest(
+              property=f"properties/{prop}",
+              dimensions=[Dimension(name="landingPagePlusQueryString")],
+              metrics=[Metric(name="sessions"), Metric(name="activeUsers"), Metric(name="screenPageViews")],
+              date_ranges=[DateRange(start_date="7daysAgo", end_date="today")],
+              order_bys=[OrderBy(metric=OrderBy.MetricOrderBy(metric_name="sessions"), desc=True)],
+              limit=40,
+          )
+          for row in ga.run_report(req2).rows:
+              print(row.dimension_values[0].value, *[m.value for m in row.metric_values])
+
+          print("=== GA4 LANDING PAGES prior 7d ===")
+          today = datetime.date.today()
+          s = (today - datetime.timedelta(days=14)).isoformat()
+          e = (today - datetime.timedelta(days=8)).isoformat()
+          req3 = RunReportRequest(
+              property=f"properties/{prop}",
+              dimensions=[Dimension(name="landingPagePlusQueryString")],
+              metrics=[Metric(name="sessions"), Metric(name="activeUsers"), Metric(name="screenPageViews")],
+              date_ranges=[DateRange(start_date=s, end_date=e)],
+              order_bys=[OrderBy(metric=OrderBy.MetricOrderBy(metric_name="sessions"), desc=True)],
+              limit=40,
+          )
+          for row in ga.run_report(req3).rows:
+              print(row.dimension_values[0].value, *[m.value for m in row.metric_values])
+
+          print("=== GSC DAILY (clicks, impressions) ===")
+          gsc = build("searchconsole", "v1", credentials=service_account.Credentials.from_service_account_info(
+              key, scopes=["https://www.googleapis.com/auth/webmasters.readonly"]))
+          site = os.environ.get("GSC_SITE_URL", "sc-domain:krishnbhakti.com")
+          end = today - datetime.timedelta(days=2)
+          start = end - datetime.timedelta(days=days)
+          body = {"startDate": start.isoformat(), "endDate": end.isoformat(),
+                  "dimensions": ["date"], "rowLimit": 200}
+          data = gsc.searchanalytics().query(siteUrl=site, body=body).execute()
+          for row in data.get("rows", []):
+              print(row["keys"][0], row.get("clicks", 0), row.get("impressions", 0),
+                    round(row.get("ctr", 0), 4), round(row.get("position", 0), 1))
+
+          print("=== GSC TOP PAGES last 7d vs prior 7d ===")
+          for label, (a, b) in {
+              "recent": ((end - datetime.timedelta(days=7)).isoformat(), end.isoformat()),
+              "prior": ((end - datetime.timedelta(days=14)).isoformat(), (end - datetime.timedelta(days=7)).isoformat()),
+          }.items():
+              print(f"-- {label} --")
+              body = {"startDate": a, "endDate": b, "dimensions": ["page"],
+                      "rowLimit": 30, "orderBy": [{"fieldName": "impressions", "sortOrder": "DESCENDING"}]}
+              d = gsc.searchanalytics().query(siteUrl=site, body=body).execute()
+              for row in d.get("rows", []):
+                  print(row["keys"][0], row.get("clicks", 0), row.get("impressions", 0),
+                        round(row.get("ctr", 0), 4), round(row.get("position", 0), 1))
+          PY
