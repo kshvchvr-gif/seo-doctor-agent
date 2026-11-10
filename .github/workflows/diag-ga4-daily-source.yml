@@ -1,0 +1,61 @@
+name: GA4 Daily Source Diagnostic
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install deps
+        run: pip install google-analytics-data==0.18.16 google-auth==2.35.0
+      - name: Pull daily source/medium + page
+        env:
+          GSC_SA_KEY: ${{ secrets.GSC_SA_KEY }}
+          GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
+        run: |
+          python - <<'PY'
+          import os, json
+          from google.oauth2 import service_account
+          from google.analytics.data_v1beta import BetaAnalyticsDataClient
+          from google.analytics.data_v1beta.types import (
+              DateRange, Dimension, Metric, RunReportRequest, OrderBy,
+          )
+          key = json.loads(os.environ["GSC_SA_KEY"])
+          ga = BetaAnalyticsDataClient(credentials=service_account.Credentials.from_service_account_info(
+              key, scopes=["https://www.googleapis.com/auth/analytics.readonly"]))
+          P = f"properties/{os.environ['GA4_PROPERTY_ID']}"
+
+          print("=== DAILY x SOURCE/MEDIUM Oct 25 - Nov 10 ===")
+          req = RunReportRequest(
+              property=P,
+              dimensions=[Dimension(name="date"), Dimension(name="sessionSource"), Dimension(name="sessionMedium")],
+              metrics=[Metric(name="sessions"), Metric(name="screenPageViews")],
+              date_ranges=[DateRange(start_date="2026-10-25", end_date="2026-11-10")],
+              order_bys=[OrderBy(dimension=OrderBy.DimensionOrderBy(dimension_name="date"))],
+              limit=500,
+          )
+          for row in ga.run_report(req).rows:
+              print(row.dimension_values[0].value, f"{row.dimension_values[1].value}/{row.dimension_values[2].value}",
+                    row.metric_values[0].value, row.metric_values[1].value)
+
+          print("=== DAILY x PAGE PATH (top pages) Nov 1 - Nov 10 ===")
+          req2 = RunReportRequest(
+              property=P,
+              dimensions=[Dimension(name="date"), Dimension(name="pagePath")],
+              metrics=[Metric(name="screenPageViews"), Metric(name="sessions")],
+              date_ranges=[DateRange(start_date="2026-11-01", end_date="2026-11-10")],
+              order_bys=[OrderBy(dimension=OrderBy.DimensionOrderBy(dimension_name="date"))],
+              limit=500,
+          )
+          for row in ga.run_report(req2).rows:
+              print(row.dimension_values[0].value, row.dimension_values[1].value[:70],
+                    row.metric_values[0].value, row.metric_values[1].value)
+          PY
