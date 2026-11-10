@@ -1,0 +1,83 @@
+name: GSC Page Queries Diagnostic
+
+# Read-only: top search queries per page, to write CTR-focused titles/metas.
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "Lookback window in days"
+        required: false
+        default: "90"
+
+permissions:
+  contents: read
+
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install deps
+        run: pip install google-api-python-client==2.149.0 google-auth==2.35.0
+      - name: Pull per-page queries
+        env:
+          GSC_SA_KEY: ${{ secrets.GSC_SA_KEY }}
+          GSC_SITE_URL: ${{ secrets.GSC_SITE_URL }}
+          DAYS: ${{ github.event.inputs.days }}
+        run: |
+          python - <<'PY'
+          import os, json, datetime
+          from google.oauth2 import service_account
+          from googleapiclient.discovery import build
+
+          key = json.loads(os.environ["GSC_SA_KEY"])
+          gsc = build("searchconsole", "v1", credentials=service_account.Credentials.from_service_account_info(
+              key, scopes=["https://www.googleapis.com/auth/webmasters.readonly"]))
+          site = os.environ.get("GSC_SITE_URL", "sc-domain:krishnbhakti.com")
+          days = int(os.environ.get("DAYS") or 90)
+          end = datetime.date.today() - datetime.timedelta(days=2)
+          start = end - datetime.timedelta(days=days-1)
+          print(f"### WINDOW {start}..{end}")
+
+          pages = [
+            "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-17-balance-in-eating-rest-work-sleep-ends-all-suffering",
+            "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-7-24-nirakar-sakar-bramh",
+            "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you",
+            "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-7-28-man-ki-shanti-ka-marg",
+            "https://krishnbhakti.com/english-blogs/bhagavad-gita-chapter-2-verse-11-english",
+            "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-2-19-hindi-blog",
+            "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-chapter-6-verse-34-hindi",
+            "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-21-english",
+            "https://krishnbhakti.com/english-blogs/bhagavad-gita-chapter-6-verse-34-english",
+            "https://krishnbhakti.com/hindi-blogs/gita-shloka-6-13-body-posture-dhyan-mein",
+            "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-22-english",
+            "https://krishnbhakti.com/hindi-blogs/gita-shloka-6-23-dukh-se-viyog-hi-yog-hai",
+            "https://krishnbhakti.com/vrat",
+            "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-27-english",
+            "https://krishnbhakti.com/english-blogs/bhagavad-gita-chapter-2-verse-14-dealing-with-ups-and-downs",
+            "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-2-23-atman-immortality-hindi",
+          ]
+
+          for page in pages:
+            body = {
+                "startDate": start.isoformat(),
+                "endDate": end.isoformat(),
+                "dimensions": ["query"],
+                "rowLimit": 25,
+                "dimensionFilterGroups": [{
+                    "filters": [{"dimension": "page", "operator": "equals", "expression": page}]
+                }],
+            }
+            rows = gsc.searchanalytics().query(siteUrl=site, body=body).execute().get("rows", [])
+            print("\n### PAGE", page)
+            if not rows:
+                print("  (no query data)")
+                continue
+            for r in rows:
+                print("  %5d impr %3d clicks ctr=%.3f pos=%.1f  %s" % (
+                    r.get("impressions",0), r.get("clicks",0), r.get("ctr",0),
+                    r.get("position",0), r["keys"][0]))
+          PY
