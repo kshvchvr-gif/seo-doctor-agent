@@ -74,6 +74,30 @@ jobs:
           for row in ga.run_report(req3).rows:
               print(row.dimension_values[0].value, row.dimension_values[1].value, *[m.value for m in row.metric_values])
 
+          print("=== SOURCE/MEDIUM Oct 28 - Nov 10 ===")
+          req5 = RunReportRequest(
+              property=P,
+              dimensions=[Dimension(name="sessionSource"), Dimension(name="sessionMedium")],
+              metrics=[Metric(name="sessions"), Metric(name="screenPageViews")],
+              date_ranges=[DateRange(start_date="2026-10-28", end_date="2026-11-10")],
+              order_bys=[OrderBy(metric=OrderBy.MetricOrderBy(metric_name="sessions"), desc=True)],
+              limit=30,
+          )
+          for row in ga.run_report(req5).rows:
+              print(row.dimension_values[0].value, row.dimension_values[1].value, *[m.value for m in row.metric_values])
+
+          print("=== NOV 1 breakdown by source/medium ===")
+          req6 = RunReportRequest(
+              property=P,
+              dimensions=[Dimension(name="sessionSource"), Dimension(name="sessionMedium"), Dimension(name="landingPagePlusQueryString")],
+              metrics=[Metric(name="sessions"), Metric(name="screenPageViews")],
+              date_ranges=[DateRange(start_date="2026-11-01", end_date="2026-11-01")],
+              order_bys=[OrderBy(metric=OrderBy.MetricOrderBy(metric_name="screenPageViews"), desc=True)],
+              limit=20,
+          )
+          for row in ga.run_report(req6).rows:
+              print(row.dimension_values[0].value, row.dimension_values[1].value, row.dimension_values[2].value[:80], *[m.value for m in row.metric_values])
+
           print("=== NOV 8 hourly (if any) ===")
           req4 = RunReportRequest(
               property=P,
