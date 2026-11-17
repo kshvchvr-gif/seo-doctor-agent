@@ -1,9 +1,9 @@
-# 🏥 Website Health Report — 2026-11-16
+# 🏥 Website Health Report — 2026-11-17
 
 ## Status
 - Overall: **🟢 OK**
 - Pages checked: **80**
-- SSL certificate: **77 days** left
+- SSL certificate: **76 days** left
 
 ## Availability (critical URLs)
 | URL | Status |
