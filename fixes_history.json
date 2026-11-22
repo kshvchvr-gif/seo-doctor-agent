@@ -352,9 +352,23 @@
         ]
       }
     ],
-    "direction": "pending",
+    "direction": "improved",
     "merged_at": "2026-11-01T17:45:32Z",
-    "merge_commit_sha": "3d8baebab12616a0831625f0121e8283ba3defc3"
+    "merge_commit_sha": "3d8baebab12616a0831625f0121e8283ba3defc3",
+    "verification": {
+      "direction": "improved",
+      "before": {
+        "clicks": 5.0,
+        "impressions": 437.0
+      },
+      "before_days": 28,
+      "after": {
+        "clicks": 5.0,
+        "impressions": 257.0
+      },
+      "after_days": 17,
+      "checked_on": "2026-11-22"
+    }
   },
   {
     "date": "2026-11-08",
@@ -1422,19 +1436,21 @@
     "direction": "pending"
   },
   {
-    "date": "2026-11-15",
+    "date": "2026-11-22",
     "pr": 10,
     "url": "https://github.com/kshvchvr-gif/krishnbhakti-web/pull/10",
     "branch": "seo-autofix",
     "status": "open",
     "pages": [
       "https://krishnbhakti.com/",
+      "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-14-where-to-fix-the-mind-in-meditation-krishna-reveals-the-secret",
       "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-17-balance-in-eating-rest-work-sleep-ends-all-suffering",
       "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you",
       "https://krishnbhakti.com/gita-gpt",
       "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-38-mind-distraction"
     ],
     "files": [
+      "english-blogs/bhagavad-gita-6-14-where-to-fix-the-mind-in-meditation-krishna-reveals-the-secret.html",
       "english-blogs/bhagavad-gita-6-17-balance-in-eating-rest-work-sleep-ends-all-suffering.html",
       "english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you.html",
       "gita-gpt.html",
@@ -1443,28 +1459,44 @@
     ],
     "fixes": [
       {
+        "file": "english-blogs/bhagavad-gita-6-14-where-to-fix-the-mind-in-meditation-krishna-reveals-the-secret.html",
+        "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-14-where-to-fix-the-mind-in-meditation-krishna-reveals-the-secret",
+        "changes": [
+          {
+            "type": "META_DESCRIPTION",
+            "old": "Discover Bhagavad Gita 6.14 meaning. Krishna reveals the secret to fixing the mind in meditation, staying fearless, and making Him the supreme goal.",
+            "new": "Discover Bhagavad Gita 6.14 meaning. Learn how Krishna reveals the secret to fixing the mind in meditation, staying fearless, and making Him the supreme goal."
+          },
+          {
+            "type": "OG_DESCRIPTION",
+            "old": "Discover Bhagavad Gita 6.14 meaning. Krishna reveals the secret to fixing the mind in meditation, staying fearless, and making Him the supreme goal.",
+            "new": "Discover Bhagavad Gita 6.14 meaning. Learn how Krishna reveals the secret to fixing the mind in meditation, staying fearless, and making Him the supreme goal."
+          }
+        ]
+      },
+      {
         "file": "english-blogs/bhagavad-gita-6-17-balance-in-eating-rest-work-sleep-ends-all-suffering.html",
         "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-17-balance-in-eating-rest-work-sleep-ends-all-suffering",
         "changes": [
           {
             "type": "TITLE",
-            "old": "Bhagavad Gita 6.17: Balance in Eating, Rest &amp; Work Ends Suffering",
-            "new": "Bhagavad Gita 6.17: Yuktahara Viharasya Meaning & Balance"
+            "old": "Bhagavad Gita 6.17: Yuktahara Viharasya Meaning &amp; Balance",
+            "new": "Bhagavad Gita 6.17: Yuktahara Viharasya — Balance & End Suffering"
           },
           {
             "type": "OG_TITLE",
-            "old": "Bhagavad Gita 6.17: Balance in Eating, Rest &amp; Work Ends Suffering",
-            "new": "Bhagavad Gita 6.17: Yuktahara Viharasya Meaning & Balance"
+            "old": "Bhagavad Gita 6.17: Yuktahara Viharasya Meaning &amp; Balance",
+            "new": "Bhagavad Gita 6.17: Yuktahara Viharasya — Balance & End Suffering"
           },
           {
             "type": "META_DESCRIPTION",
-            "old": "Discover Bhagavad Gita 6.17 meaning on balance in eating, rest, work, and sleep. Learn Krishna's practical formula for health and ending suffering.",
-            "new": "Discover Bhagavad Gita 6.17 meaning. Krishna explains how balanced eating, rest, work, and sleep (yuktahara viharasya) end all life suffering."
+            "old": "Discover Bhagavad Gita 6.17 meaning. Krishna explains how balanced eating, rest, work, and sleep (yuktahara viharasya) end all life suffering.",
+            "new": "Discover Bhagavad Gita 6.17 meaning. Krishna explains how balanced eating, rest, work, and sleep (yuktahara viharasya) end all suffering in life."
           },
           {
             "type": "OG_DESCRIPTION",
-            "old": "Discover Bhagavad Gita 6.17 meaning on balance in eating, rest, work, and sleep. Learn Krishna's practical formula for health and ending suffering.",
-            "new": "Discover Bhagavad Gita 6.17 meaning. Krishna explains how balanced eating, rest, work, and sleep (yuktahara viharasya) end all life suffering."
+            "old": "Discover Bhagavad Gita 6.17 meaning. Krishna explains how balanced eating, rest, work, and sleep (yuktahara viharasya) end all life suffering.",
+            "new": "Discover Bhagavad Gita 6.17 meaning. Krishna explains how balanced eating, rest, work, and sleep (yuktahara viharasya) end all suffering in life."
           }
         ]
       },
@@ -1474,23 +1506,23 @@
         "changes": [
           {
             "type": "TITLE",
-            "old": "Bhagavad Gita 6.6 Meaning: The Mind That Saves You",
-            "new": "Bhagavad Gita 6.6: Atmana Sargo Jitah Meaning & Mind Control"
+            "old": "Bhagavad Gita 6.6: Atmana Sargo Jitah Meaning &amp; Mind Control",
+            "new": "Bhagavad Gita 6.6: Atmana Sargo Jitah & Mind Control Meaning"
           },
           {
             "type": "OG_TITLE",
-            "old": "Bhagavad Gita 6.6 Meaning: The Mind That Saves You",
-            "new": "Bhagavad Gita 6.6: Atmana Sargo Jitah Meaning & Mind Control"
+            "old": "Bhagavad Gita 6.6: Atmana Sargo Jitah Meaning &amp; Mind Control",
+            "new": "Bhagavad Gita 6.6: Atmana Sargo Jitah & Mind Control Meaning"
           },
           {
             "type": "META_DESCRIPTION",
-            "old": "Discover Bhagavad Gita 6.6 meaning &amp; atmana sargo jitah meaning in hindi. Learn how a controlled mind becomes your greatest friend and savior.",
-            "new": "Discover Bhagavad Gita 6.6 meaning of Atmana sargo jitah. Learn how a controlled mind becomes your best friend and an uncontrolled mind becomes your enemy."
+            "old": "Discover Bhagavad Gita 6.6 meaning of Atmana sargo jitah. Learn how a controlled mind becomes your best friend and an uncontrolled mind becomes your enemy.",
+            "new": "Discover Bhagavad Gita 6.6 meaning of Atmana Sargo Jitah. Learn how a controlled mind becomes your best friend and an uncontrolled mind becomes your enemy."
           },
           {
             "type": "OG_DESCRIPTION",
-            "old": "Discover Bhagavad Gita 6.6 meaning &amp; atmana sargo jitah meaning in hindi. Learn how a controlled mind becomes your greatest friend and savior.",
-            "new": "Discover Bhagavad Gita 6.6 meaning of Atmana sargo jitah. Learn how a controlled mind becomes your best friend and an uncontrolled mind becomes your enemy."
+            "old": "Discover Bhagavad Gita 6.6 meaning of Atmana sargo jitah. Learn how a controlled mind becomes your best friend and an uncontrolled mind becomes your enemy.",
+            "new": "Discover Bhagavad Gita 6.6 meaning of Atmana Sargo Jitah. Learn how a controlled mind becomes your best friend and an uncontrolled mind becomes your enemy."
           }
         ]
       },
@@ -1542,23 +1574,23 @@
         "changes": [
           {
             "type": "TITLE",
-            "old": "Bhagavad Gita Daily Shlokas in Hindi | Krishna Bhakti",
-            "new": "Bhagavad Gita Daily Shlokas in Hindi with Meaning | Krishna Bhakti"
+            "old": "Bhagavad Gita Daily Shlokas in Hindi with Meaning | Krishna Bhakti",
+            "new": "Bhagavad Gita Daily Shlokas in Hindi with Meaning"
           },
           {
             "type": "OG_TITLE",
-            "old": "Bhagavad Gita Daily Shlokas in Hindi | Krishna Bhakti",
-            "new": "Bhagavad Gita Daily Shlokas in Hindi with Meaning | Krishna Bhakti"
+            "old": "Bhagavad Gita Daily Shlokas in Hindi with Meaning | Krishna Bhakti",
+            "new": "Bhagavad Gita Daily Shlokas in Hindi with Meaning"
           },
           {
             "type": "META_DESCRIPTION",
-            "old": "भगवद गीता के दैनिक श्लोक हिंदी अर्थ सहित और श्री कृष्ण की दिव्य शिक्षाएँ। Daily Gita shlokas in Hindi.",
-            "new": "भगवद गीता के दैनिक श्लोक हिंदी अर्थ सहित और श्री कृष्ण की दिव्य शिक्षाएँ पढ़ें। Daily Gita shlokas in Hindi for your daily spiritual growth."
+            "old": "भगवद गीता के दैनिक श्लोक हिंदी अर्थ सहित और श्री कृष्ण की दिव्य शिक्षाएँ पढ़ें। Daily Gita shlokas in Hindi for your daily spiritual growth.",
+            "new": "पढ़ें भगवद गीता के दैनिक श्लोक हिंदी अर्थ सहित। जानिए श्री कृष्ण की दिव्य शिक्षाएँ और अपनी आध्यात्मिक यात्रा को बनाएं सरल।"
           },
           {
             "type": "OG_DESCRIPTION",
-            "old": "भगवद गीता के दैनिक श्लोक हिंदी अर्थ सहित और श्री कृष्ण की दिव्य शिक्षाएँ। Daily Gita shlokas in Hindi.",
-            "new": "भगवद गीता के दैनिक श्लोक हिंदी अर्थ सहित और श्री कृष्ण की दिव्य शिक्षाएँ पढ़ें। Daily Gita shlokas in Hindi for your daily spiritual growth."
+            "old": "भगवद गीता के दैनिक श्लोक हिंदी अर्थ सहित और श्री कृष्ण की दिव्य शिक्षाएँ पढ़ें। Daily Gita shlokas in Hindi for your daily spiritual growth.",
+            "new": "पढ़ें भगवद गीता के दैनिक श्लोक हिंदी अर्थ सहित। जानिए श्री कृष्ण की दिव्य शिक्षाएँ और अपनी आध्यात्मिक यात्रा को बनाएं सरल।"
           }
         ]
       }
