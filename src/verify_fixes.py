@@ -206,7 +206,10 @@ def run(check_prs=True, auto_revert=None, dry_run=False) -> int:
             refreshed += 1
         if entry.get("status") != "merged":
             continue
-        if entry.get("direction") in ("improved", "worse", "flat"):
+        # Only unclassified entries need GSC verification. Non-CTR fixes are
+        # recorded with a descriptive direction (e.g. "verified_live") and
+        # must not be overwritten by an unrelated clicks-based classification.
+        if entry.get("direction", "pending") != "pending":
             continue
         try:
             metrics = evaluate_entry(entry, today)

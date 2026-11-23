@@ -1440,7 +1440,7 @@
     "pr": 10,
     "url": "https://github.com/kshvchvr-gif/krishnbhakti-web/pull/10",
     "branch": "seo-autofix",
-    "status": "open",
+    "status": "closed",
     "pages": [
       "https://krishnbhakti.com/",
       "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-14-where-to-fix-the-mind-in-meditation-krishna-reveals-the-secret",
@@ -1595,6 +1595,73 @@
         ]
       }
     ],
-    "direction": "pending"
+    "direction": "pending",
+    "closed_at": "2026-11-23T16:16:12Z",
+    "close_reason": "Stale pre-Batch-2 snapshot; CONFLICTING/DIRTY. Merging would revert Batch 2 titles/meta and change homepage/gita-gpt branding. Superseded by current main."
+  },
+  {
+    "date": "2026-11-23",
+    "pr": 11,
+    "url": "https://github.com/kshvchvr-gif/krishnbhakti-web/pull/11",
+    "branch": "health-fixes-nov23",
+    "status": "merged",
+    "pages": [
+      "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-45-english",
+      "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-2-45-hindi",
+      "https://krishnbhakti.com/vrat"
+    ],
+    "files": [
+      "english-blogs/bhagavad-gita-2-45-english.html",
+      "hindi-blogs/bhagavad-gita-2-45-hindi.html",
+      "vrat/index.html",
+      "CHANGELOG.md"
+    ],
+    "fixes": [
+      {
+        "file": "english-blogs/bhagavad-gita-2-45-english.html",
+        "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-45-english",
+        "changes": [
+          {
+            "type": "DUPLICATE_H1",
+            "old": "second <h1 style=\"color:#d35400; margin-bottom:20px;\"> in .blog-content",
+            "new": "<h2 style=\"color:#d35400; margin-bottom:20px;\"> + matching </h2>"
+          }
+        ]
+      },
+      {
+        "file": "hindi-blogs/bhagavad-gita-2-45-hindi.html",
+        "url": "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-2-45-hindi",
+        "changes": [
+          {
+            "type": "DUPLICATE_H1",
+            "old": "second <h1 style=\"color:#d35400; margin-bottom:20px;\"> in .blog-content",
+            "new": "<h2 style=\"color:#d35400; margin-bottom:20px;\"> + matching </h2>"
+          }
+        ]
+      },
+      {
+        "file": "vrat/index.html",
+        "url": "https://krishnbhakti.com/vrat",
+        "changes": [
+          {
+            "type": "GA4_TRACKING",
+            "old": "no gtag / googletagmanager tags",
+            "new": "GA4 snippet G-6C58PL9VXL at end of body"
+          }
+        ]
+      }
+    ],
+    "direction": "verified_live",
+    "verification": {
+      "checked_on": "2026-11-23",
+      "deploy": "success (run 45215034222)",
+      "live_http": "3/3 pages 200, canonical present, h1=1, GA present on /vrat",
+      "chrome_desktop": "0 JS errors, 0 horizontal overflow, 0 broken images on all 4 checked pages",
+      "chrome_mobile_390": "0 horizontal overflow, h1=1 on 2.45 EN/HI and /vrat",
+      "ga_fire": "dataLayer js+config events and google-analytics.com/g/collect resource confirmed on /vrat",
+      "note": "Health/structural fix — no CTR-based GSC classification; verifier skips non-pending directions."
+    },
+    "merged_at": "2026-11-23T16:18:34Z",
+    "merge_commit_sha": "88f3a7572710a25a37ee7eb096b4b11388c84a9a"
   }
 ]
