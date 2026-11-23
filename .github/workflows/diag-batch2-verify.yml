@@ -1,0 +1,81 @@
+name: Batch 2 Verification
+
+# Read-only before/after check for SEO Batch 2 (PR #9, merged 2026-11-10).
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install deps
+        run: pip install google-api-python-client==2.149.0 google-auth==2.35.0
+      - name: Compare Batch 2 pages
+        env:
+          GSC_SA_KEY: ${{ secrets.GSC_SA_KEY }}
+          GSC_SITE_URL: ${{ secrets.GSC_SITE_URL }}
+        run: |
+          python - <<'PY'
+          import os, json, datetime
+          from google.oauth2 import service_account
+          from googleapiclient.discovery import build
+
+          key = json.loads(os.environ["GSC_SA_KEY"])
+          gsc = build("searchconsole", "v1", credentials=service_account.Credentials.from_service_account_info(
+              key, scopes=["https://www.googleapis.com/auth/webmasters.readonly"]))
+          site = os.environ.get("GSC_SITE_URL", "sc-domain:krishnbhakti.com")
+          end = datetime.date.today() - datetime.timedelta(days=2)
+          after_s = datetime.date(2026,11,10); after_e = end
+          before_s = after_s - datetime.timedelta(days=13); before_e = after_s - datetime.timedelta(days=1)
+          ad = (after_e-after_s).days+1; bd = (before_e-before_s).days+1
+          print(f"### BEFORE {before_s}..{before_e} ({bd}d) | AFTER {after_s}..{after_e} ({ad}d)")
+
+          def q(start, finish, dims=["page"], filt=None):
+              body={"startDate":start.isoformat(),"endDate":finish.isoformat(),"dimensions":dims,"rowLimit":5000}
+              if filt: body["dimensionFilterGroups"]=[{"filters":filt}]
+              return gsc.searchanalytics().query(siteUrl=site,body=body).execute().get("rows",[])
+
+          pages = [
+            "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-17-balance-in-eating-rest-work-sleep-ends-all-suffering",
+            "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-7-24-nirakar-sakar-bramh",
+            "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-6-the-mind-you-control-becomes-the-mind-that-saves-you",
+            "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-7-28-man-ki-shanti-ka-marg",
+            "https://krishnbhakti.com/english-blogs/bhagavad-gita-chapter-2-verse-11-english",
+            "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-2-19-hindi-blog",
+            "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-chapter-6-verse-34-hindi",
+            "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-21-english",
+            "https://krishnbhakti.com/english-blogs/bhagavad-gita-chapter-6-verse-34-english",
+            "https://krishnbhakti.com/hindi-blogs/gita-shloka-6-13-body-posture-dhyan-mein",
+            "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-22-english",
+            "https://krishnbhakti.com/hindi-blogs/gita-shloka-6-23-dukh-se-viyog-hi-yog-hai",
+            "https://krishnbhakti.com/vrat",
+            "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-27-english",
+            "https://krishnbhakti.com/english-blogs/bhagavad-gita-chapter-2-verse-14-dealing-with-ups-and-downs",
+            "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-2-23-atman-immortality-hindi",
+          ]
+
+          def bypage(rows):
+              return {r["keys"][0]: (r.get("clicks",0), r.get("impressions",0), r.get("position",0)) for r in rows}
+
+          for label, s, e in [("BEFORE",before_s,before_e),("AFTER",after_s,after_e)]:
+              print("###", label)
+              m=bypage(q(s,e))
+              bc=bi=0
+              for p in pages:
+                  c,i,pos=m.get(p,(0,0,0)); bc+=c; bi+=i
+                  print("  %3d impr %2d clicks ctr=%.3f pos=%.1f  %s"%(i,c,(c/i if i else 0),pos,p.replace("https://krishnbhakti.com","")))
+              print("  TOTAL batch2 pages: %d impr %d clicks ctr=%.4f"%(bi,bc,bc/bi if bi else 0))
+
+          print("### SITE-WIDE")
+          for label,s,e,days in [("BEFORE",before_s,before_e,bd),("AFTER",after_s,after_e,ad)]:
+              rows=q(s,e)
+              c=sum(r.get("clicks",0) for r in rows); i=sum(r.get("impressions",0) for r in rows)
+              print("  %s: %d impr %d clicks ctr=%.4f | per-day impr=%.1f clicks=%.2f"%(label,i,c,c/i if i else 0,i/days,c/days))
+          PY
