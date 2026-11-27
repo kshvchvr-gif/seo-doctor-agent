@@ -1,0 +1,80 @@
+name: Batch 3 Verification
+
+# Read-only before/after check for SEO Batch 3 (PR #12, merged 2026-11-27).
+# GSC lags ~2 days; re-run after a couple of weeks to get the after window.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install deps
+        run: pip install google-api-python-client==2.149.0 google-auth==2.35.0
+      - name: Compare Batch 3 pages
+        env:
+          GSC_SA_KEY: ${{ secrets.GSC_SA_KEY }}
+          GSC_SITE_URL: ${{ secrets.GSC_SITE_URL }}
+        run: |
+          python - <<'PY'
+          import os, json, datetime
+          from google.oauth2 import service_account
+          from googleapiclient.discovery import build
+
+          key = json.loads(os.environ["GSC_SA_KEY"])
+          gsc = build("searchconsole", "v1", credentials=service_account.Credentials.from_service_account_info(
+              key, scopes=["https://www.googleapis.com/auth/webmasters.readonly"]))
+          site = os.environ.get("GSC_SITE_URL", "sc-domain:krishnbhakti.com")
+          merge = datetime.date(2026, 11, 27)
+          before_s = merge - datetime.timedelta(days=14)
+          before_e = merge - datetime.timedelta(days=1)
+          end = datetime.date.today() - datetime.timedelta(days=2)
+          after_s, after_e = merge, end
+          print(f"### BEFORE {before_s}..{before_e} (14d) | AFTER {after_s}..{after_e}")
+          if after_e < after_s:
+              print("### AFTER window not available yet (GSC lag). Rerun later.")
+
+          pages = [
+            "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-5-uplift-yourself-before-your-mind-destroys-you",
+            "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-35-man-ko-vash-mein-kaise-karein",
+            "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-20-immortality-of-soul-english",
+            "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-13-how-to-hold-your-body-in-meditation-krishnas-exact-posture",
+            "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-33-duty-and-righteousness-english",
+            "https://krishnbhakti.com/english-blogs/bhagavad-gita-chapter-2-verse-38-english",
+            "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-41-the-secret-of-focused-mind",
+            "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-24-english-blog",
+            "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-23-soul-immortality-english",
+            "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-29-wonder-of-the-soul-english",
+            "https://krishnbhakti.com/english-blogs/bhagavad-gita-5-27-when-mind-wont-stop-gita-says-do-this",
+            "https://krishnbhakti.com/hindi-blogs/gita-6-33-man-ki-chanchalta-aur-arjun",
+            "https://krishnbhakti.com/english-blogs/gita-shloka-stop-blaming-god-bhagavad-gita-responsibility",
+            "https://krishnbhakti.com/english-blogs/bhagavad-gita-chapter-2-verse-26-english",
+            "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-26-wherever-the-mind-wanders-bring-it-back-that-is-meditation",
+            "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins",
+          ]
+
+          def rows(s, e):
+              body = {"startDate": s.isoformat(), "endDate": e.isoformat(),
+                      "dimensions": ["page"], "rowLimit": 5000}
+              return gsc.searchanalytics().query(siteUrl=site, body=body).execute().get("rows", [])
+
+          def bypage(rs):
+              return {r["keys"][0]: (r.get("clicks", 0), r.get("impressions", 0), r.get("position", 0)) for r in rs}
+
+          for label, s, e in [("BEFORE", before_s, before_e), ("AFTER", after_s, after_e)]:
+              if e < s: continue
+              m = bypage(rows(s, e))
+              tc = ti = 0
+              print("###", label)
+              for p in pages:
+                  c, i, pos = m.get(p, (0, 0, 0)); tc += c; ti += i
+                  print("  %3d impr %2d clicks ctr=%.3f pos=%.1f  %s" % (i, c, (c / i if i else 0), pos, p.replace("https://krishnbhakti.com", "")))
+              print("  TOTAL batch3: %d impr %d clicks ctr=%.4f" % (ti, tc, tc / ti if ti else 0))
+          PY
