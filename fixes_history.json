@@ -1663,5 +1663,317 @@
     },
     "merged_at": "2026-11-23T16:18:34Z",
     "merge_commit_sha": "88f3a7572710a25a37ee7eb096b4b11388c84a9a"
+  },
+  {
+    "date": "2026-11-27",
+    "pr": 12,
+    "url": "https://github.com/kshvchvr-gif/krishnbhakti-web/pull/12",
+    "branch": "seo-titles-batch3",
+    "status": "merged",
+    "pages": [
+      "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-5-uplift-yourself-before-your-mind-destroys-you",
+      "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-35-man-ko-vash-mein-kaise-karein",
+      "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-20-immortality-of-soul-english",
+      "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-13-how-to-hold-your-body-in-meditation-krishnas-exact-posture",
+      "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-33-duty-and-righteousness-english",
+      "https://krishnbhakti.com/english-blogs/bhagavad-gita-chapter-2-verse-38-english",
+      "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-41-the-secret-of-focused-mind",
+      "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-24-english-blog",
+      "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-23-soul-immortality-english",
+      "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-29-wonder-of-the-soul-english",
+      "https://krishnbhakti.com/english-blogs/bhagavad-gita-5-27-when-mind-wont-stop-gita-says-do-this",
+      "https://krishnbhakti.com/hindi-blogs/gita-6-33-man-ki-chanchalta-aur-arjun",
+      "https://krishnbhakti.com/english-blogs/gita-shloka-stop-blaming-god-bhagavad-gita-responsibility",
+      "https://krishnbhakti.com/english-blogs/bhagavad-gita-chapter-2-verse-26-english",
+      "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-26-wherever-the-mind-wanders-bring-it-back-that-is-meditation",
+      "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins"
+    ],
+    "files": [
+      "english-blogs/bhagavad-gita-6-5-uplift-yourself-before-your-mind-destroys-you.html",
+      "hindi-blogs/bhagavad-gita-6-35-man-ko-vash-mein-kaise-karein.html",
+      "english-blogs/bhagavad-gita-2-20-immortality-of-soul-english.html",
+      "english-blogs/bhagavad-gita-6-13-how-to-hold-your-body-in-meditation-krishnas-exact-posture.html",
+      "english-blogs/bhagavad-gita-2-33-duty-and-righteousness-english.html",
+      "english-blogs/bhagavad-gita-chapter-2-verse-38-english.html",
+      "english-blogs/bhagavad-gita-2-41-the-secret-of-focused-mind.html",
+      "english-blogs/bhagavad-gita-2-24-english-blog.html",
+      "english-blogs/bhagavad-gita-2-23-soul-immortality-english.html",
+      "english-blogs/bhagavad-gita-2-29-wonder-of-the-soul-english.html",
+      "english-blogs/bhagavad-gita-5-27-when-mind-wont-stop-gita-says-do-this.html",
+      "hindi-blogs/gita-6-33-man-ki-chanchalta-aur-arjun.html",
+      "english-blogs/gita-shloka-stop-blaming-god-bhagavad-gita-responsibility.html",
+      "english-blogs/bhagavad-gita-chapter-2-verse-26-english.html",
+      "english-blogs/bhagavad-gita-6-26-wherever-the-mind-wanders-bring-it-back-that-is-meditation.html",
+      "english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins.html",
+      "CHANGELOG.md"
+    ],
+    "fixes": [
+      {
+        "file": "english-blogs/bhagavad-gita-6-5-uplift-yourself-before-your-mind-destroys-you.html",
+        "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-5-uplift-yourself-before-your-mind-destroys-you",
+        "changes": [
+          {
+            "type": "TITLE",
+            "old": "(see PR diff)",
+            "new": "Bhagavad Gita 6.5: Uddhared Atmanam — Uplift Yourself"
+          },
+          {
+            "type": "META_DESCRIPTION",
+            "old": "(see PR diff)",
+            "new": "What does 'uddhared atmanam' mean? Gita 6.5 explains how to uplift yourself with the mind instead of letting it destroy ..."
+          }
+        ]
+      },
+      {
+        "file": "hindi-blogs/bhagavad-gita-6-35-man-ko-vash-mein-kaise-karein.html",
+        "url": "https://krishnbhakti.com/hindi-blogs/bhagavad-gita-6-35-man-ko-vash-mein-kaise-karein",
+        "changes": [
+          {
+            "type": "TITLE",
+            "old": "(see PR diff)",
+            "new": "भगवद गीता 6.35: मन को काबू कैसे करें? कृष्ण का उपाय"
+          },
+          {
+            "type": "META_DESCRIPTION",
+            "old": "(see PR diff)",
+            "new": "मन को काबू कैसे करें? भगवद गीता 6.35 में भगवान कृष्ण अर्जुन को मन वश करने का सरल और अचूक उपाय बताते हैं — पढ़िए आसान हिं..."
+          }
+        ]
+      },
+      {
+        "file": "english-blogs/bhagavad-gita-2-20-immortality-of-soul-english.html",
+        "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-20-immortality-of-soul-english",
+        "changes": [
+          {
+            "type": "TITLE",
+            "old": "(see PR diff)",
+            "new": "Bhagavad Gita 2.20: Ajatam — The Soul Never Dies"
+          },
+          {
+            "type": "META_DESCRIPTION",
+            "old": "(see PR diff)",
+            "new": "Bhagavad Gita 2.20 explains why the soul is never born and never dies. Read the English meaning of 'ajatam' and Krishna'..."
+          }
+        ]
+      },
+      {
+        "file": "english-blogs/bhagavad-gita-6-13-how-to-hold-your-body-in-meditation-krishnas-exact-posture.html",
+        "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-13-how-to-hold-your-body-in-meditation-krishnas-exact-posture",
+        "changes": [
+          {
+            "type": "TITLE",
+            "old": "(see PR diff)",
+            "new": "Bhagavad Gita 6.13: Exact Meditation Posture & Gaze"
+          },
+          {
+            "type": "META_DESCRIPTION",
+            "old": "(see PR diff)",
+            "new": "Bhagavad Gita 6.13 gives Krishna's exact meditation posture: erect torso, neck and head, steady gaze at the nose tip. Le..."
+          }
+        ]
+      },
+      {
+        "file": "english-blogs/bhagavad-gita-2-33-duty-and-righteousness-english.html",
+        "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-33-duty-and-righteousness-english",
+        "changes": [
+          {
+            "type": "TITLE",
+            "old": "(see PR diff)",
+            "new": "Bhagavad Gita 2.33: Duty Over Despair — Krishna on Dharma"
+          },
+          {
+            "type": "META_DESCRIPTION",
+            "old": "(see PR diff)",
+            "new": "Bhagavad Gita 2.33: when crisis shakes you, Krishna says hold to dharma and duty. Read the English meaning with practica..."
+          }
+        ]
+      },
+      {
+        "file": "english-blogs/bhagavad-gita-chapter-2-verse-38-english.html",
+        "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-chapter-2-verse-38-english",
+        "changes": [
+          {
+            "type": "TITLE",
+            "old": "(see PR diff)",
+            "new": "Bhagavad Gita 2.38: Samadhi — Treat Joy and Grief Alike"
+          },
+          {
+            "type": "META_DESCRIPTION",
+            "old": "(see PR diff)",
+            "new": "Bhagavad Gita 2.38 explains samadhi: treating happiness and distress, gain and loss alike. Read the English commentary w..."
+          }
+        ]
+      },
+      {
+        "file": "english-blogs/bhagavad-gita-2-41-the-secret-of-focused-mind.html",
+        "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-41-the-secret-of-focused-mind",
+        "changes": [
+          {
+            "type": "TITLE",
+            "old": "(see PR diff)",
+            "new": "Bhagavad Gita 2.41: Vyavasayatmika Buddhi — One-Point Focus"
+          },
+          {
+            "type": "META_DESCRIPTION",
+            "old": "(see PR diff)",
+            "new": "Struggling to focus? Bhagavad Gita 2.41 reveals Vyavasayatmika Buddhi — the one-pointed determination Krishna praises. R..."
+          }
+        ]
+      },
+      {
+        "file": "english-blogs/bhagavad-gita-2-24-english-blog.html",
+        "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-24-english-blog",
+        "changes": [
+          {
+            "type": "TITLE",
+            "old": "(see PR diff)",
+            "new": "Bhagavad Gita 2.24: The Soul Cannot Be Cut, Burned or Killed"
+          },
+          {
+            "type": "META_DESCRIPTION",
+            "old": "(see PR diff)",
+            "new": "Bhagavad Gita 2.24: Krishna explains that the soul cannot be cut, burned, wetted or dried. Read the full English meaning..."
+          }
+        ]
+      },
+      {
+        "file": "english-blogs/bhagavad-gita-2-23-soul-immortality-english.html",
+        "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-23-soul-immortality-english",
+        "changes": [
+          {
+            "type": "TITLE",
+            "old": "(see PR diff)",
+            "new": "Bhagavad Gita 2.23: Atman Is Eternal — Soul Immortality"
+          },
+          {
+            "type": "META_DESCRIPTION",
+            "old": "(see PR diff)",
+            "new": "Bhagavad Gita 2.23 explains that the atman is eternal and cannot be killed. Read the English meaning of soul immortality..."
+          }
+        ]
+      },
+      {
+        "file": "english-blogs/bhagavad-gita-2-29-wonder-of-the-soul-english.html",
+        "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-2-29-wonder-of-the-soul-english",
+        "changes": [
+          {
+            "type": "TITLE",
+            "old": "(see PR diff)",
+            "new": "Bhagavad Gita 2.29: The Soul Is the Wonder of All Wonders"
+          },
+          {
+            "type": "META_DESCRIPTION",
+            "old": "(see PR diff)",
+            "new": "Bhagavad Gita 2.29 calls the soul the greatest wonder: one sees it, another describes it, another hears it. Read the Eng..."
+          }
+        ]
+      },
+      {
+        "file": "english-blogs/bhagavad-gita-5-27-when-mind-wont-stop-gita-says-do-this.html",
+        "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-5-27-when-mind-wont-stop-gita-says-do-this",
+        "changes": [
+          {
+            "type": "TITLE",
+            "old": "(see PR diff)",
+            "new": "Bhagavad Gita 5.27: Silence a Restless Mind — Breath & Senses"
+          },
+          {
+            "type": "META_DESCRIPTION",
+            "old": "(see PR diff)",
+            "new": "Bhagavad Gita 5.27 shows how to silence a restless mind: draw the senses inward, balance the breath, and rest in the Sel..."
+          }
+        ]
+      },
+      {
+        "file": "hindi-blogs/gita-6-33-man-ki-chanchalta-aur-arjun.html",
+        "url": "https://krishnbhakti.com/hindi-blogs/gita-6-33-man-ki-chanchalta-aur-arjun",
+        "changes": [
+          {
+            "type": "TITLE",
+            "old": "(see PR diff)",
+            "new": "भगवद गीता 6.33: मन चंचल है? अर्जुन का प्रश्न, कृष्ण का उपाय"
+          },
+          {
+            "type": "META_DESCRIPTION",
+            "old": "(see PR diff)",
+            "new": "भगवद गीता 6.33 में अर्जुन पूछते हैं — मन चंचल क्यों है और इसे कैसे वश करें? कृष्ण का स्पष्ट उत्तर और आसान हिंदी में व्या..."
+          }
+        ]
+      },
+      {
+        "file": "english-blogs/gita-shloka-stop-blaming-god-bhagavad-gita-responsibility.html",
+        "url": "https://krishnbhakti.com/english-blogs/gita-shloka-stop-blaming-god-bhagavad-gita-responsibility",
+        "changes": [
+          {
+            "type": "TITLE",
+            "old": "(see PR diff)",
+            "new": "Gita 5.14 & 18.66: Why You're Responsible, Not God"
+          },
+          {
+            "type": "META_DESCRIPTION",
+            "old": "(see PR diff)",
+            "new": "Does God decide everything? Gita 5.14 and 18.66 explain swabhava, personal responsibility and surrender. Read a clear En..."
+          }
+        ]
+      },
+      {
+        "file": "english-blogs/bhagavad-gita-chapter-2-verse-26-english.html",
+        "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-chapter-2-verse-26-english",
+        "changes": [
+          {
+            "type": "TITLE",
+            "old": "(see PR diff)",
+            "new": "Bhagavad Gita 2.26: Na Hanyate — The Soul Is Never Killed"
+          },
+          {
+            "type": "META_DESCRIPTION",
+            "old": "(see PR diff)",
+            "new": "Bhagavad Gita 2.26 explains 'na hanyate': the soul is never killed even when the body dies. Read the English meaning and..."
+          }
+        ]
+      },
+      {
+        "file": "english-blogs/bhagavad-gita-6-26-wherever-the-mind-wanders-bring-it-back-that-is-meditation.html",
+        "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-26-wherever-the-mind-wanders-bring-it-back-that-is-meditation",
+        "changes": [
+          {
+            "type": "TITLE",
+            "old": "(see PR diff)",
+            "new": "Bhagavad Gita 6.26: Bring the Wandering Mind Back to the Self"
+          },
+          {
+            "type": "META_DESCRIPTION",
+            "old": "(see PR diff)",
+            "new": "Bhagavad Gita 6.26: wherever the restless mind wanders, gently bring it back to the Self. Read the English meaning and a..."
+          }
+        ]
+      },
+      {
+        "file": "english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins.html",
+        "url": "https://krishnbhakti.com/english-blogs/bhagavad-gita-6-12-sit-focus-the-mind-this-is-how-meditation-begins",
+        "changes": [
+          {
+            "type": "TITLE",
+            "old": "(see PR diff)",
+            "new": "Bhagavad Gita 6.12: Sit Still, Control Senses, Purify the Mind"
+          },
+          {
+            "type": "META_DESCRIPTION",
+            "old": "(see PR diff)",
+            "new": "Bhagavad Gita 6.12 explains how meditation begins: sit in a steady seat, make the mind one-pointed, and control the sens..."
+          }
+        ]
+      }
+    ],
+    "direction": "pending",
+    "verification": {
+      "checked_on": "2026-11-27",
+      "deploy": "success (run 46040971765)",
+      "live": "16/16 pages 200 with exact new title+meta, h1=1, no duplicate titles, 0 invalid JSON-LD",
+      "browser": "desktop + mobile 390px: 0 JS errors, 0 overflow, 0 broken images (5-page spot check)",
+      "gsc_baseline": "14d before (2026-11-13..26): 546 impressions, 3 clicks, CTR 0.0055 (diag-batch3-verify.yml). After window pending GSC lag; rerun in ~2 weeks."
+    },
+    "merged_at": "2026-11-27T17:19:51Z",
+    "merge_commit_sha": "274c9ac559cbe494447ba36a2f01cf0e64d88cbb"
   }
 ]
