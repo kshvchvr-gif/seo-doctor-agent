@@ -67,8 +67,9 @@ jobs:
               if i < 15: continue
               qs = query(["query"], page=p)
               qs.sort(key=lambda r: r.get("impressions", 0), reverse=True)
-              print(f"-- {p} | impr={i} clicks={c} pos={pos:.1f}")
-              for r in qs[:6]:
+              qsum = sum(r.get("impressions", 0) for r in qs)
+              print(f"-- {p} | impr={i} clicks={c} pos={pos:.1f} | query rows={len(qs)} sum_impr={qsum}")
+              for r in qs[:15]:
                   qi = r.get("impressions", 0)
                   print(f"   {qi:4d} impr {r.get('clicks',0):2d} click pos={r.get('position',0):5.1f}  {r['keys'][0]}")
           PY
