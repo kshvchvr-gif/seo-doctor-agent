@@ -1,0 +1,74 @@
+name: Batch 3 Candidate Diagnostic
+
+# Read-only: top impression pages with low CTR + their real GSC queries.
+# Used to choose Batch 3 title/meta targets. Nothing is modified on the site.
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "Lookback window in days (GSC lags ~2 days)"
+        required: false
+        default: "28"
+
+permissions:
+  contents: read
+
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install deps
+        run: pip install google-api-python-client==2.149.0 google-auth==2.35.0
+      - name: Pull page + query data
+        env:
+          GSC_SA_KEY: ${{ secrets.GSC_SA_KEY }}
+          GSC_SITE_URL: ${{ secrets.GSC_SITE_URL }}
+          DAYS: ${{ github.event.inputs.days }}
+        run: |
+          python - <<'PY'
+          import os, json, datetime
+          from google.oauth2 import service_account
+          from googleapiclient.discovery import build
+
+          key = json.loads(os.environ["GSC_SA_KEY"])
+          gsc = build("searchconsole", "v1", credentials=service_account.Credentials.from_service_account_info(
+              key, scopes=["https://www.googleapis.com/auth/webmasters.readonly"]))
+          site = os.environ.get("GSC_SITE_URL", "sc-domain:krishnbhakti.com")
+          days = int(os.environ.get("DAYS") or 28)
+          end = datetime.date.today() - datetime.timedelta(days=2)
+          start = end - datetime.timedelta(days=days - 1)
+          print(f"### WINDOW {start}..{end} ({days}d)")
+
+          def query(dims, page=None):
+              body = {"startDate": start.isoformat(), "endDate": end.isoformat(),
+                      "dimensions": dims, "rowLimit": 5000}
+              if page:
+                  body["dimensionFilterGroups"] = [{"filters": [
+                      {"dimension": "page", "operator": "equals", "expression": page}]}]
+              return gsc.searchanalytics().query(siteUrl=site, body=body).execute().get("rows", [])
+
+          rows = query(["page"])
+          pages = []
+          for r in rows:
+              pages.append((r.get("impressions", 0), r.get("clicks", 0),
+                            r.get("position", 0), r["keys"][0]))
+          pages.sort(reverse=True)
+          print("### TOP PAGES BY IMPRESSIONS (impr, clicks, ctr, pos, url)")
+          for i, c, pos, p in pages[:40]:
+              if i < 10: continue
+              print(f"{i:5d} {c:3d} {(c/i if i else 0):.4f} {pos:5.1f}  {p}")
+
+          print("### TOP QUERIES PER PAGE (>=15 impr)")
+          for i, c, pos, p in pages[:30]:
+              if i < 15: continue
+              qs = query(["query"], page=p)
+              qs.sort(key=lambda r: r.get("impressions", 0), reverse=True)
+              print(f"-- {p} | impr={i} clicks={c} pos={pos:.1f}")
+              for r in qs[:6]:
+                  qi = r.get("impressions", 0)
+                  print(f"   {qi:4d} impr {r.get('clicks',0):2d} click pos={r.get('position',0):5.1f}  {r['keys'][0]}")
+          PY
